@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/modules/head.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/homepage/modules/head.php'; ?>
 
 <main>
     <div class="introduction">
