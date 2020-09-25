@@ -1,0 +1,22 @@
+main {
+    margin: 5%;
+}
+
+.intro-photo-frame {
+    max-width: 50%;
+    text-align: center;
+    border: 1.5px solid black;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+#carouselphotos {
+    max-width: 44%;
+    height: auto;
+    margin: auto;
+}
+
+.carousel-indicators {
+    max-width: 44%;
+    margin-left: 25%;
+}
