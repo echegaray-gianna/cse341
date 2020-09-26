@@ -35,3 +35,4 @@ var today = new Date();
             var current = wd + ", " + " " + dd + " " + mm + " " + yy;
 
             document.getElementById("currentdate").innerHTML = current;
+

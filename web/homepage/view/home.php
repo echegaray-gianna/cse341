@@ -1,6 +1,8 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/homepage/modules/head.php'; ?>
 
 <main>
+
+    <h1> Home Page </h1>
     <div class="introduction">
         <div class="intro-photo-frame">
             <div class="intro-photo">
@@ -8,23 +10,20 @@
             </div>
         </div>
         <p class="intro-one">
-            Hello my name is Gianna. I am a wife, mother of a 4 year old daughter and a student. I’m originally from
-            Cordoba, Argentina. I live in Lehi, Utah since I got
-            married 8 years ago.
+            Hello my name is Gianna. I am a wife, a mother of a 4 year old daughter, and a student. I’m originally from
+            Cordoba, Argentina. I have lived in Lehi, Utah since I got married 8 years ago.
         </p>
 
         <p class="intro_two">
-            I am currently a student at BYU-I studying Web Design and Development with an emphasis on
-            Development. I
-            still have 2 more semesters left to finish.
+            I am currently a student at BYU-I studying Web Design and Development with an emphasis in
+            Development. I have 2 more semesters left to finish.
         </p>
 
         <p class="intro_three">
             I enjoy spending time with my family. I also like walks, going to the gym (since the pandemic I just
-            ejercice in my house), and doing DIY projects at my house.
-            I spent this last month's break painting my house, renovating the guest bathroom, the house
-            entrance, my
-            daughter's closet, and finish some projects that I had pending.
+            exercise in my house), and doing DIY projects at my house.
+            I spent this last month's break painting my house, renovating the guest bathroom, house
+            entrance, my daughter's closet, and finishing some projects that I had pending.
         </p>
 
         <p class="intro_three">
@@ -37,7 +36,7 @@
     <div class="renovation-photos">
         <p class="reno-one">
             Here are some before and after photos of the renovation I did with my husband. Some are finished
-            others I need to be finish.
+            others need to be finished.
         </p>
 
         <div id="carouselphotos" class="carousel slide" data-ride="carousel">
@@ -55,34 +54,66 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <img src="photos/mudroom1.jpg" class="reno-photo" alt="Mudroom Before">
+                    <div class="carousel-caption">
+                        <h3>Mudroom</h3>
+                        <p>Before</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/mudroom.jpg" class="reno-photo" alt="Mudroom After">
+                    <div class="carousel-caption">
+                        <h3>Mudroom</h3>
+                        <p>After</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/PHOTO-2020-09-11-20-13-11.jpg" class="reno-photo" alt="Closet Before">
+                    <div class="carousel-caption">
+                        <h3>Closet</h3>
+                        <p>Before</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/IMG_8168.JPG" class="reno-photo" alt="Closet After">
+                    <div class="carousel-caption">
+                        <h3>Closet</h3>
+                        <p>After</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/IMG_5926.JPG" class="reno-photo" alt="Stairs Before">
+                    <div class="carousel-caption">
+                        <h3>Stairs</h3>
+                        <p>Before</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/IMG_8276.JPG" class="reno-photo" alt="Stairs After">
+                    <div class="carousel-caption">
+                        <h3>Stairs</h3>
+                        <p>After</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/IMG_5927.JPG" class="reno-photo" alt="Third slide">
+                    <div class="carousel-caption">
+                        <h3>Bathroom</h3>
+                        <p>Before</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="photos/IMG_8277.JPG" class="reno-photo" alt="Third slide">
+                    <div class="carousel-caption">
+                        <h3>Bathroom</h3>
+                        <p>After</p>
+                    </div>
                 </div>
 
 
@@ -102,10 +133,10 @@
 
 
 <footer>
-
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/homepage/modules/footer.php'; ?>
 </footer>
 
-<script src="script.js"></script>
+<script src="/homepage/script/script.js"></script>
 
 </body>
 
