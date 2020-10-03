@@ -1,0 +1,274 @@
+
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap');
+/*//////////////////////////////////*/
+/************ CommonPage  *************/
+/*//////////////////////////////////*/
+
+body {
+    margin: 5%;
+    max-width: 70%;
+    margin: auto;
+}
+
+main {
+    max-width: 90%;
+    margin-left: 3%;
+}
+
+
+/********** Main Logo************/
+.logo {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #051937 0%, #12B0A8 100% );
+    color: white;
+    font-size: 30px;
+}
+
+/************ Nav  *************/
+nav {
+    margin-top: 3%;
+}
+
+a.nav-link {
+    font-size: 30px;
+    color: black;
+}
+
+
+a.nav-link:hover {
+    background-color: #4b89e6;
+    color: white;
+    font-size: 28px;
+} 
+
+/************ Text  *************/
+
+body {
+    font-family: 'David Libre', serif;
+}
+
+h1 {
+    margin-top: 3%;
+    font-size: 28px;
+}
+
+h2 {
+    margin-top: 3%;
+    font-size: 26px;
+    text-align: center;
+    border: solid 1px black;
+    margin-bottom: 3%;
+
+}
+
+h3 {
+    margin-top: 5%;
+    font-size: 24px;
+}
+
+h4{
+    margin-top: 2%;
+    font-size: 18px;
+    margin-left: 3%;
+    margin-bottom: 5%;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title-header, .text-header {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 45px;
+    
+}
+
+.notification {
+    margin-top: 3%;
+    margin-left: 1%;
+    font-size: 22px ;
+    color: crimson;
+}
+
+.notificationT {
+    margin-top: 3%;
+    text-align: center;
+    font-size: 22px ;
+    color: crimson;
+}
+
+/************ Footer  *************/
+
+footer{
+    margin-top: 12%;
+}
+
+.container-footer {
+    background: linear-gradient(to bottom, #12B0A8 0%,#051937 100% );
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.footer-bar {
+    margin-top: 2%;
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/*//////////////////////////////////*/
+/************ HomePage  *************/
+/*//////////////////////////////////*/
+
+/************ Photo  *************/
+.prod-img {
+    max-width: 50%;
+    text-align: center;
+    border: 1.5px solid black;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    margin: auto;
+}
+
+.prod-img img {
+    width: 60%;
+    margin: 20px 0px;
+    border: 1.5px solid black;
+}
+
+.prod-price, #quant{
+    margin-left: 2%;
+}
+
+#quant{
+    margin-bottom: 7%;
+}
+
+/************ Flex  *************/
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    
+}
+
+.product {
+    align-self: center;
+    flex-basis: 50%;
+}
+
+
+
+/*//////////////////////////////////*/
+/********** ShoppingCart  ***********/
+/*//////////////////////////////////*/
+
+
+
+/************ Photo  *************/
+.shop-img {
+    text-align: left;
+    width: 40%;
+    
+}
+.shop-img img {
+    width: 30%;
+    margin: 20px 0px;
+    margin-right: 3%;
+    border: 1.5px solid black;
+    box-sizing: inherit;
+}
+
+/************ Table *************/
+table {
+    width: 95%;
+}
+
+th {
+    border-bottom: solid black 1px;
+}
+
+td.shop-name {
+    text-align: left;
+}
+
+.shop-grandtotal {
+    border-top: solid black .3px;
+    margin-top: 2%;
+    font-size: 22px;
+
+}
+
+.btn-upd {
+    color: cornflowerblue;
+}
+
+.links{
+    margin-top: 4%;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+}
+.links a {
+    font-size: 22px;
+    padding: 3%;
+}
+
+
+.shop-empty {
+    font-size: 22px;
+}
+
+
+
+
+/*//////////////////////////////////*/
+/************ Checkout  *************/
+/*//////////////////////////////////*/
+
+.checkout-form {
+    margin-top: 4%;
+    margin-left: 25%;
+    border-top: solid black 1px;
+    max-width: 50%;   
+}
+
+.checkout-form label{
+    margin-left: 3%;
+}
+
+.checkout-form input {
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.checkout-form input.btn-checkout{
+    margin-left: 35%;
+    margin-top: 7%;
+    color: #4b89e6;
+    border: none;
+    font-size: 22px;
+}
+
+.checkout-form input.btn-checkout:hover{
+text-decoration: underline;
+}
+
+/*//////////////////////////////////*/
+/********** Confirmation  ***********/
+/*//////////////////////////////////*/
+
+.conf-shipping-container {
+    text-align: center;
+}
+
+.conf-shipping-container p{
+    font-size: 22px;
+}
