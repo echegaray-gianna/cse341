@@ -1,4 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
+require_once 'connections/jobconnection.php';
+?>
+
 
 <main>
 
@@ -14,7 +17,7 @@
 
         echo 'job: ' . $row['jobName'] . ' location: ' . $row['jobLocation'] . '<br/>';
     }
-    
+
     ?>
 
 </main>
