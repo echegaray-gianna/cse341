@@ -15,7 +15,7 @@ function get_db() {
 		if (!isset($dbUrl) || empty($dbUrl)) {
 			// example localhost configuration URL with user: "ta_user", password: "ta_pass"
 			// and a database called "scripture_ta"
-			$dbUrl = "'postgres://xwhtsbrazoztaf:ef0a2f61008b696a391e62abfd4d798920226ee5cf78ea8c4afc9595ee290455@ec2-54-158-222-248.compute-1.amazonaws.com:5432/db7dhsc98v47n7";
+			$dbUrl = "postgres://xwhtsbrazoztaf:ef0a2f61008b696a391e62abfd4d798920226ee5cf78ea8c4afc9595ee290455@ec2-54-158-222-248.compute-1.amazonaws.com:5432/db7dhsc98v47n7";
 
 			// NOTE: It is not great to put this sensitive information right
 			// here in a file that gets committed to version control. It's not
@@ -57,7 +57,7 @@ function get_db() {
     $statement ->execute();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        
+
         echo 'job: ' . $row['jobName'] . ' location: ' . $row['jobLocation'] . '<br/>';
     }
     ?>
