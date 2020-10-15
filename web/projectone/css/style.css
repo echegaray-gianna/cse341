@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap');
+
+/*//////////////////////////////////*/
+/************ CommonPage  *************/
+/*//////////////////////////////////*/
+
+body {
+    margin: 5%;
+    max-width: 70%;
+    margin: auto;
+}
+
+main {
+    max-width: 90%;
+    margin-left: 3%;
+}
+
+
+/********** Main Logo************/
+.logo {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #051937 0%, #12B0A8 100%);
+    color: white;
+    font-size: 30px;
+}
+
+/************ Nav  *************/
+.nav-info {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav-info li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+
+
+.nav-info li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 3%;
+}
+
+a.nav-link {
+    font-size: 26px;
+    color: black;
+}
+
+
+a.nav-link:hover {
+    background-color: #4b89e6;
+    color: white;
+    font-size: 28px;
+}
+
+
+a.nav-link:active {
+    background-color: #12B0A8;
+}
+
+/************ Text  *************/
+
+body {
+    font-family: 'David Libre', serif;
+}
+
+h1 {
+    margin-top: 3%;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title-header,
+.text-header {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 45px;
+
+}
+
+/************ Footer  *************/
+
+footer {
+    margin-top: 12%;
+}
+
+.container-footer {
+    background: linear-gradient(to bottom, #12B0A8 0%, #051937 100%);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.footer-bar {
+    margin-top: 2%;
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+}
