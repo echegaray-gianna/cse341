@@ -53,6 +53,8 @@ function get_db() {
 
 	return $db;
 }
+
+$db = get_db();
     $statement = $db->query('SELECT jobName, jobLocation FROM job');
     $statement ->execute();
 
