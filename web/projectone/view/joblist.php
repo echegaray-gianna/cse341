@@ -16,7 +16,7 @@ function get_db() {
 		if (!isset($dbUrl) || empty($dbUrl)) {
 			// example localhost configuration URL with user: "ta_user", password: "ta_pass"
 			// and a database called "scripture_ta"
-			$dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
+			$dbUrl = "postgres://gianna:Tamarack10.@localhost:5432/cs313db";
 
 			// NOTE: It is not great to put this sensitive information right
 			// here in a file that gets committed to version control. It's not
