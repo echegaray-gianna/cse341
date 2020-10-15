@@ -37,7 +37,7 @@ catch (PDOException $ex)
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
         
-        print_r($row['jobName']);
+        print_r($row);
     }
 
     ?>
