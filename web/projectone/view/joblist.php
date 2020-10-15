@@ -54,7 +54,10 @@ function get_db() {
 }
 
     $statement = $db->query('SELECT jobName, jobLocation FROM job');
+    $statement ->execute();
+
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        
         echo 'job: ' . $row['jobName'] . ' location: ' . $row['jobLocation'] . '<br/>';
     }
     ?>
