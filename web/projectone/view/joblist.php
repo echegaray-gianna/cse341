@@ -31,7 +31,7 @@ catch (PDOException $ex)
   die();
 }
 	
-    $statement = $db->query('SELECT jobName, jobLocation FROM job');
+    $statement = $db->query('SELECT * FROM job');
    
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
