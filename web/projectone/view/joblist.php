@@ -31,12 +31,12 @@ catch (PDOException $ex)
   die();
 }
 	
-    $statement = $db->prepare('SELECT jobName FROM job');
+    $statement = $db->prepare('SELECT jobLocation FROM job');
     $statement-> execute();
    
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
-        echo 'Job Name: '. $row['jobName'] . '<br>';
+        echo 'Job Name: '. $row['jobLocation'] . '<br>';
     }
 
     ?>
