@@ -12,43 +12,38 @@
     include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
 
 
-    function getCategories()
-    {
+ 
         $db = jobConnect();
         $sql = 'SELECT * FROM category';
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
-        $categories = $stmt->fetch(PDO::FETCH_ASSOC);
-        $stmt->closeCuror();
+        while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        return $categories;
+            echo 'Category Name: ' . $categories['categoryname'] . '<br>';
 
-    }
-
-    echo 'Category Name: ' . $categories . '<br>';
-
-   
-
-
-    $catList = '<select name= "categoryId" id= "categoryId" class="categoryId">';
-    $catList .= "<option> Choose a Category </option>";
-
-    foreach ($categories as $category) {
-        $catList .= "<option value= '$category[categoryId]'";
-
-        if (isset($categoryId)) {
-
-            if ($category['categoryId' === $categoryId]) {
-                $catList .= 'selected';
+            $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
+            $catList .= "<option> Choose a Category </option>";
+        
+            foreach ($categories as $category) {
+                $catList .= "<option value= '$category[categoryid]'";
+        
+                if (isset($categoryId)) {
+        
+                    if ($category['categoryid' === $categoryid]) {
+                        $catList .= 'selected';
+                    }
+                }
+        
+                $catList .= ">$category[categoryname] </option>";
+        
+                echo $category['categoryname'];
             }
+            $catList .= '</select>';
+
         }
 
-        $catList .= ">$category[categoryName] </option>";
 
-        echo $category['categoryName'];
-    }
-    $catList .= '</select>';
 
 
 
