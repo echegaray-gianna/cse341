@@ -23,9 +23,11 @@
         $stmt->closeCuror();
 
         return $categories;
+
+        echo 'CAtegory NAme: ' . $categories['categoryname'] . '<br>';
     }
 
-    echo 'CAtegory NAme: ' . $categories['categoryname'] . '<br>';
+   
 
 
     $catList = '<select name= "categoryId" id= "categoryId" class="categoryId">';
