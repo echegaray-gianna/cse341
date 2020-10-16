@@ -10,34 +10,17 @@
     <?php
 
         require "jobconnection.php";
+
         $db = jobConnect();
-        $sql = 'SELECT * FROM category';
+        $sql = 'SELECT * FROM job';
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
         while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            echo 'Category Name: ' . $categories['categoryname'] . '<br>';
+            echo 'Job Name: ' . $categories['jobname'] . '<br>';
 
-            $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
-            $catList .= "<option> Choose a Category </option>";
-        
-            foreach ($categories as $category) {
-                $catList .= "<option value= '$category[categoryid]'";
-        
-                if (isset($categoryId)) {
-        
-                    if ($category['categoryid' === $categoryid]) {
-                        $catList .= 'selected';
-                    }
-                }
-        
-                $catList .= ">$category[categoryname] </option>";
-        
-                echo $category['categoryname'];
-            }
-            $catList .= '</select>';
-
+            
         }
 
 
