@@ -16,14 +16,11 @@
 
     while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        echo 'Job Name: ' . $categories['categoryname'] . '<br>';
-
-
         $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
         $catList .= "<option> Choose a Category </option>";
 
-    
-        $catList .= "<option value= '$category[categoryid]'";
+        foreach ($categories as $category) {
+            $catList .= "<option value= '$category[categoryid]'";
 
             if (isset($categoryid)) {
 
@@ -32,9 +29,9 @@
                 }
             }
 
-        $catList .= ">$category[categoryname] </option>";
+            $catList .= ">$category[categoryname] </option>";
 
-        
+        }
     }
     $catList .= '</select>';
 
