@@ -12,13 +12,17 @@
      include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
     
 
-    $statement = $db->prepare('SELECT * FROM job');
-    $statement->execute();
+    $sql = 'SELECT * FROM job';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $categories = $stmt->fetchAll();
+    $stmt ->closeCuror();
 
-        echo 'Job Name: ' . $row['jobname'] . '<br>';
-    }
+    return $categories;
+
+        echo 'Job Name: ' . $categories['jobname'] . '<br>';
+    
 
     $catList = '<select name= "categoryId" id= "categoryId" class="categoryId">';
     $catList .= "<option> Choose a Category </option>";
