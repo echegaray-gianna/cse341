@@ -57,7 +57,7 @@
     ?>
 
 
-<label for="categoryId">
+<label for="categoryid">
             <span>Category</span>
             <?php echo $catList; ?>
 </label>
