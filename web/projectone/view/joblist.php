@@ -33,7 +33,7 @@
             }
         }
 
-        $catList .= ">$category[categoryName] </option>";
+        $catList .= ">$category[categoryname] </option>";
     }
     $catList .= '</select>';
 
