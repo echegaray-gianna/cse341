@@ -26,7 +26,7 @@
 
     }
 
-    echo 'Category Name: ' . $categories['categoryName'] . '<br>';
+    echo 'Category Name: ' . $categories . '<br>';
 
    
 
@@ -45,6 +45,8 @@
         }
 
         $catList .= ">$category[categoryName] </option>";
+
+        echo $category['categoryName'];
     }
     $catList .= '</select>';
 
