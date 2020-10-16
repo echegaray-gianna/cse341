@@ -22,20 +22,19 @@
         $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
         $catList .= "<option> Choose a Category </option>";
 
-        foreach ($categories as $category) {
-            $catList .= "<option value= '$category[categoryid]'";
+    
+        $catList .= "<option value= '$category[categoryid]'";
 
-            if (isset($categoryId)) {
+            if (isset($categoryid)) {
 
                 if ($category['categoryid' === $categoryid]) {
                     $catList .= 'selected';
                 }
             }
 
-            $catList .= ">$category[categoryname] </option>";
+        $catList .= ">$category[categoryname] </option>";
 
-            echo $category['categoryname'];
-        }
+        
     }
     $catList .= '</select>';
 
