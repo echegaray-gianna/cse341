@@ -24,8 +24,9 @@
 
         return $categories;
 
-        echo 'CAtegory NAme: ' . $categories['categoryname'] . '<br>';
     }
+
+    echo 'CAtegory NAme: ' . $categories['categoryname'] . '<br>';
 
    
 
@@ -34,16 +35,16 @@
     $catList .= "<option> Choose a Category </option>";
 
     foreach ($categories as $category) {
-        $catList .= "<option value= '$category[categoryid]'";
+        $catList .= "<option value= '$category[categoryId]'";
 
         if (isset($categoryId)) {
 
-            if ($category['categoryid' === $categoryId]) {
+            if ($category['categoryId' === $categoryId]) {
                 $catList .= 'selected';
             }
         }
 
-        $catList .= ">$category[categoryname] </option>";
+        $catList .= ">$category[categoryName] </option>";
     }
     $catList .= '</select>';
 
