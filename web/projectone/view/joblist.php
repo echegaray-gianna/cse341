@@ -57,10 +57,10 @@
     ?>
 
 
-    <div for="categoryid">
-        <p>Category</p>
-        <?php echo $catList; ?>
-    </div>
+<label for="categoryId">
+            <span>Category</span>
+            <?php echo $catList; ?>
+</label>
 
 </main>
 
