@@ -17,10 +17,35 @@
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
-        echo 'Job Name: ' . $row['jobname'];
+        echo 'Job Name: ' . $row['jobname'] . '<br>';
     }
 
+    $catList = '<select name= "categoryId" id= "categoryId" class="categoryId">';
+    $catList .= "<option> Choose a Category </option>";
+
+    foreach ($categories as $category) {
+        $catList .= "<option value= '$category[categoryId]'";
+
+        if (isset ($categoryId)) {
+
+            if($category['categoryId' === $categoryId]){
+            $catList .= 'selected';
+            }
+        }
+
+        $catList .= ">$category[categoryName] </option>";
+    }
+    $catList .= '</select>';
+
+    
+
     ?>
+
+
+<div for="categoryId">
+            <p>Category</p>
+            <?php echo $catList; ?>
+</div>
 
 </main>
 
