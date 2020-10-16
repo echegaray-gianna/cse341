@@ -17,25 +17,25 @@
     while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         echo 'Job Name: ' . $categories['categoryname'] . '<br>';
-    }
 
-    
-    $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
-    $catList .= "<option> Choose a Category </option>";
 
-    foreach ($categories as $category) {
-        $catList .= "<option value= '$category[categoryid]'";
+        $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
+        $catList .= "<option> Choose a Category </option>";
 
-        if (isset($categoryId)) {
+        foreach ($categories as $category) {
+            $catList .= "<option value= '$category[categoryid]'";
 
-            if ($category['categoryid' === $categoryid]) {
-                $catList .= 'selected';
+            if (isset($categoryId)) {
+
+                if ($category['categoryid' === $categoryid]) {
+                    $catList .= 'selected';
+                }
             }
+
+            $catList .= ">$category[categoryname] </option>";
+
+            echo $category['categoryname'];
         }
-
-        $catList .= ">$category[categoryname] </option>";
-
-        echo $category['categoryname'];
     }
     $catList .= '</select>';
 
