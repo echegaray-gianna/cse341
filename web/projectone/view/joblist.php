@@ -9,9 +9,9 @@
 
     <?php
 
-        require "jobconnection.php";
+        
 
-        $db = jobConnect();
+        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
         $sql = 'SELECT * FROM job';
         $stmt = $db->prepare($sql);
         $stmt->execute();

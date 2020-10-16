@@ -1,6 +1,5 @@
 <?php
-function jobConnect()
-{
+
     try {
         // default Heroku Postgres configuration URL
         $dbUrl = getenv('DATABASE_URL');
@@ -26,4 +25,4 @@ function jobConnect()
         echo "Error connecting to DB. Details: $ex";
         die();
     }
-}
+
