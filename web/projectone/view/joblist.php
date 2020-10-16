@@ -46,14 +46,14 @@
     
     $catList .= '</select>';
 
-
+    echo $catList;
     ?>
 
 
-<label for="categoryid">
+<!-- <label for="categoryid">
             <span>Category</span>
-            <?php echo $catList; ?>
-</label>
+            
+</label> -->
 
 </main>
 
