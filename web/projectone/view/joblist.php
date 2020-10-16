@@ -19,14 +19,14 @@
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
-        $categories = $stmt->fetchAll();
+        $categories = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCuror();
 
         return $categories;
 
     }
 
-    echo 'CAtegory NAme: ' . $categories['categoryname'] . '<br>';
+    echo 'Category Name: ' . $categories['categoryName'] . '<br>';
 
    
 
