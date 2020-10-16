@@ -15,7 +15,7 @@
     function getCategories()
     {
         $db = jobConnect();
-        $sql = 'SELECT * FROM job';
+        $sql = 'SELECT * FROM category';
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
@@ -25,7 +25,7 @@
         return $categories;
     }
 
-    echo 'Job Name: ' . $categories['jobname'] . '<br>';
+    echo 'CAtegory NAme: ' . $categories['categoryname'] . '<br>';
 
 
     $catList = '<select name= "categoryId" id= "categoryId" class="categoryId">';
