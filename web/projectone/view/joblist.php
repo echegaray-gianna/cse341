@@ -38,6 +38,7 @@
 
     foreach ($db->query('SELECT * FROM category') as $categories) {
         echo 'name: ' . $categories['categoriesname'];
+    }
 
     ?>
 
