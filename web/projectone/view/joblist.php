@@ -9,7 +9,7 @@
 
     <?php
      
-    require_once 'connections/jobconnection.php';
+    require 'connections/jobconnection.php';
     
 
     $statement = $db->prepare('SELECT * FROM job');
