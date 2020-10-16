@@ -9,10 +9,7 @@
 
     <?php
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
-
-
- 
+        require "jobconnection.php";
         $db = jobConnect();
         $sql = 'SELECT * FROM category';
         $stmt = $db->prepare($sql);
