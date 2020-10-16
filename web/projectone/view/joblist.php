@@ -9,14 +9,13 @@
 
     <?php
      
-    require 'connections/jobconnection.php';
+     include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
     
 
     $statement = $db->prepare('SELECT * FROM job');
     $statement->execute();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-
 
         echo 'Job Name: ' . $row['jobname'];
     }
