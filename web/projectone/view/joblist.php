@@ -8,7 +8,7 @@
     <h1> Job Post </h1>
 
     <?php
-
+require_once 'connections/jobconnection.php';
     $db = get_db();
 
     $statement = $db->prepare('SELECT * FROM job');
