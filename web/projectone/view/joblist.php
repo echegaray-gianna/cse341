@@ -24,11 +24,11 @@
     $catList .= "<option> Choose a Category </option>";
 
     foreach ($categories as $category) {
-        $catList .= "<option value= '$category[categoryId]'";
+        $catList .= "<option value= '$category[categoryid]'";
 
         if (isset ($categoryId)) {
 
-            if($category['categoryId' === $categoryId]){
+            if($category['categoryid' === $categoryId]){
             $catList .= 'selected';
             }
         }
