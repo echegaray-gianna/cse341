@@ -45,7 +45,7 @@
     <div for="categoryId">
         <p>Category</p>
         <?php
-        //echo $catList;
+        echo $catList;
 
         ?>
 
