@@ -36,7 +36,7 @@
         $stmt->execute();
 
         $jobinfo = $stmt->fetch(PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
+        
 
         return $jobinfo;
 
