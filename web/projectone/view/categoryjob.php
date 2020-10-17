@@ -1,6 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
-
-?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; ?>
 
 
 <main>
@@ -45,15 +43,17 @@
 
         } else {
 
-        echo "<h1 class='title-category-job'> $categoryname</h1>";
-        echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
-        echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
-        echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
-        echo "<p class= 'comp-salary'>  $jobsalary  </p>";
-        echo "<p class= 'comp-requirements'>   $jorequirements </p>";
-        echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
-        echo "<p class= 'comp-description'>  $jobdescription  </p>";
-    };
+            echo "<h1 class='title-category-job'> $categoryname</h1>";
+            echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
+            echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
+            echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
+            echo "<p class= 'comp-salary'>  $jobsalary  </p>";
+            echo "<p class= 'comp-requirements'>   $jorequirements </p>";
+            echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
+            echo "<p class= 'comp-description'>  $jobdescription  </p>";
+        };
+   
+    }
 
 
     ?>
