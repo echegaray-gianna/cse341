@@ -72,7 +72,7 @@
                 $catname = $categories['categoryname'];
                 $catid = $categories['categoryid'];
     
-            echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+            $catList.= "<option value='$category[categoryid]'>$category[categoryname]</option>";;
     
             }
 
