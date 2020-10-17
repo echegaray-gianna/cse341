@@ -17,7 +17,7 @@
             WHERE job.categoryid= :categoryid
             ORDER BY jobname DESC';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':categoryid', $jobname, PDO::PARAM_INT);
+    
     $stmt->execute();
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -26,7 +26,7 @@
         $catid = $jobinfo['categoryid'];
         $jobname= $jobinfo['jobname'];
 
-        echo "<h4 class= 'category-list'> $jobname</h4>";
+        echo "<h4 class= 'category-list'> $catname</h4>";
     }
 
     ?>
