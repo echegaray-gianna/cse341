@@ -13,10 +13,11 @@
     $sql = 'SELECT job.*, category.* 
             FROM job 
             INNER JOIN category
-            ON job.categoryid = category.categoryid';
+            WHERE job.categoryid = category.categoryid';
+            
 
     $stmt = $db->prepare($sql);
-    
+    $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
