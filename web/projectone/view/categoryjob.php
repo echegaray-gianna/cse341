@@ -44,8 +44,9 @@
         }
 
         echo "<h4 class= 'category-list'> $jobinfo</h4>";
+        print_r($jobinfo);
 
-        echo "hola";
+        echo "hola 2";
 
     ?>
 
