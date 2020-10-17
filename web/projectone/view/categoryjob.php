@@ -29,7 +29,7 @@
     // $stmt->bindValue(':jobresponsibilities', $jobresponsibilities);
     // $stmt->bindValue(':jobdescription', $jobdescription);
 
-    $stmt->execute(array('categoryid' => $categoryid));
+    $stmt->execute(array(':categoryid' => $categoryid));
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
