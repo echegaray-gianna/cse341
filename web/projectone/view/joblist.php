@@ -30,8 +30,8 @@
         <span>Category</span>
         <?php echo $catList; ?>
 </lable>
-
-<input type="submit" name= "submit" class="sub-btn" value="JobListByCat">
+<input type="hidden" name= "action" value="JobListByCat">
+<input type="submit" name= "submit" class="sub-btn" value="Search">
 
 </form>
 
