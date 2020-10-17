@@ -8,5 +8,5 @@ switch ($action) {
 
   default:
     
-  include '../view/joblist.php';
+  include '../view/jobpost.php';
 }

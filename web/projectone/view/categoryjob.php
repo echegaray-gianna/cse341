@@ -29,7 +29,7 @@
         $jobcompany = $jobinfo['jobcompany'];
         $joblocation = $jobinfo['joblocation'];
         $jobsalary = $jobinfo['jobsalary'];
-        $jorequirements = $jobinfo['jorequirements'];
+        $jobrequirements = $jobinfo['jobrequirements'];
         $jobresponsibilities = $jobinfo['jobresponsibilities'];
         $jobdescription = $jobinfo['jobdescription'];
 
@@ -39,7 +39,7 @@
         echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
         echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
         echo "<p class= 'comp-salary'>  $jobsalary  </p>";
-        echo "<p class= 'comp-requirements'>   $jorequirements </p>";
+        echo "<p class= 'comp-requirements'>   $jobrequirements </p>";
         echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
         echo "<p class= 'comp-description'>  $jobdescription  </p>";
     

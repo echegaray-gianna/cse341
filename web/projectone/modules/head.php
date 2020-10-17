@@ -40,7 +40,7 @@
                 <li><a class="nav-link" href="/projectone/index.php">Home</a> </li>
                 <li><a class="nav-link" href="/projectone/job-index/index.php">Jobs </a></li>
                 <li><a class="nav-link" href="/projectone/post-index/index.php">Post a Job </a></li>
-                <li style="float:right"><a class="nav-link login" href="#about">Login</a></li>
+                <li style="float:right"><a class="nav-link login" href="">Login</a></li>
 
             </ul>
         </nav>
