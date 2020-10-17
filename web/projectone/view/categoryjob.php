@@ -38,12 +38,12 @@
             empty($jobname) || empty($jobcompany) || empty($joblocation)
             || empty($jobsalary) || empty($jorequirements) || empty($jobresponsibilities) || empty($jobdescription)
 
-        ) {
+        ){
 
             echo "<h1 class='title-category-job'> $categoryname</h1>";
             echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
 
-        }else {
+        } else {
 
         echo "<h1 class='title-category-job'> $categoryname</h1>";
         echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";

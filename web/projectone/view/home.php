@@ -30,6 +30,7 @@
 
 </form>
 
+
 <div class="create_account">
     <p class="login-not-memeber"> Not a member? </p>
     <div class="btn_registration">
