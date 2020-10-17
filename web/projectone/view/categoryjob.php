@@ -17,7 +17,7 @@
             WHERE categoryid= :categoryid
             ORDER BY jobname DESC';
     $stmt = $db->prepare($sql);
-    $stmt->execute(array(':categoryid' => $categoryid));
+    $stmt->execute();
 
 
 
