@@ -18,7 +18,7 @@
             
 
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':categoryid', $categoryid);
+    // $stmt->bindValue(':categoryid', $categoryid);
     // $stmt->bindValue(':categoryname', $categoryname);
     // $stmt->bindValue(':jobid', $jobid);
     // $stmt->bindValue(':jobname', $jobname);
