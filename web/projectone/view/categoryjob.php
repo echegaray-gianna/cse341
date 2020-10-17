@@ -31,7 +31,7 @@
 
         $stmt->execute();
 
-        while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $jobinfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
             print_r($jobinfo);
             
@@ -41,7 +41,7 @@
             echo "<h4 class= 'category-list'> $jobinfo</h4>";
 
             echo "hola";
-        }
+        
 
         echo "<h4 class= 'category-list'> $jobinfo</h4>";
         print_r($jobinfo);
