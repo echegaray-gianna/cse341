@@ -26,8 +26,8 @@
 
     foreach ($db->query('SELECT * FROM category') as $category) {
 
-        $catname = $categories['categoryname'];
-        $catid = $categories['categoryid'];
+        $catname = $category['categoryname'];
+        $catid = $category['categoryid'];
 
         $catList = '<h4 class= "category-list"> Category:';
         $catList .= $catname;
