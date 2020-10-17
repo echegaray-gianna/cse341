@@ -18,7 +18,7 @@
             
 
     $stmt = $db->prepare($sql);
- $stmt->bindValue(':categoryid', $categoryid);
+    // $stmt->bindValue(':categoryid', $categoryid);
     // $stmt->bindValue(':categoryname', $categoryname);
     // $stmt->bindValue(':jobid', $jobid);
     // $stmt->bindValue(':jobname', $jobname);
@@ -29,7 +29,7 @@
     // $stmt->bindValue(':jobresponsibilities', $jobresponsibilities);
     // $stmt->bindValue(':jobdescription', $jobdescription);
 
-    $stmt->execute();
+    $stmt->execute(array('categoryid' => $categoryid));
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
