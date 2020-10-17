@@ -24,21 +24,6 @@
 
     ?>
 
-<form action="/projectone/job-index/index.php" method="POST" name="view-jobs" class = "choose-category">
-
-<lable for="categoryId">
-        <span>Category</span>
-        <?php echo $catList; ?>
-</lable>
-
-<input type="submit" name= "submit" class="sub-btn" value="JobListByCat">
-
-</form>
-
-
-
-
-
 </main>
 
 
