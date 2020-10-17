@@ -19,7 +19,7 @@
         $catid = $categories['categoriesid'];
 
         $catList = '<h4 class= "category-list"> Category:';
-        $catList .= '$catname';
+        $catList .= $catname;
         $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
     }
 
