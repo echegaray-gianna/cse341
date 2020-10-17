@@ -62,15 +62,18 @@
 
             include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
 
-            $catList = '<select name="categoryid" id="categoryList">';
+            $catList = '<select name="categoryid" id="categorylist">';
             $catList .= "<option>Choose a Category</option>";
 
             $sql = 'SELECT category * FROM category';
 
             foreach ($db->query($sql) as $getcategory) {
 
+                echo $getcategory['categoryname'];
+
                 $catList .= "<option value='$getcategory[categoryid]'>$getcategory[categoryname]</option>";
             }
+
             $catList .= '</select>';
 
             echo $catList;
