@@ -6,7 +6,7 @@
 <main>
     <?php
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+        // include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
         
         $categoryid= $_GET['id'];
 
