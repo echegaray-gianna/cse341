@@ -72,7 +72,7 @@
                 $catname = $categories['categoryname'];
                 $catid = $categories['categoryid'];
     
-            $catList.= "<option value='$category[categoryid]'>$category[categoryname]</option>";;
+            $catList.= "<option value='$catid[categoryid]'>$catname</option>";;
     
             }
 
