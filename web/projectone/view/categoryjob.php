@@ -22,7 +22,7 @@
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        $catid= $jobinfo['categoryid'];
+        $catid = $jobinfo['categoryid'];
         $categoryname = $jobinfo['categoryname'];
         $jobname = $jobinfo['jobname'];
         $jobcompany = $jobinfo['jobcompany'];
@@ -34,7 +34,8 @@
 
 
         if (
-            empty($catid)
+            empty($catid) || empty($jobname) || empty($jobcompany) || empty($joblocation)
+            || empty($jobsalary) || empty($jorequirements) || empty($jobresponsibilities) || empty($jobdescription)
 
         ){
 
