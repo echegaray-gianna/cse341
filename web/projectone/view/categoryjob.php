@@ -6,49 +6,54 @@
 <main>
     <?php
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
-        
-        $categoryid= $_GET['id'];
+    include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
 
-        
-        $sql = 'SELECT job.*, category.* 
+    $categoryid = $_GET['id'];
+
+
+    $sql = 'SELECT job.*, category.* 
                 FROM job 
                 JOIN category
                 ON job.categoryid = category.categoryid
                 WHERE job.categoryid = :categoryid';
-                
-
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
-        $stmt->execute();
-
-        while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {        
-            
-            $categoryname = $jobinfo['categoryname'];
-            $jobname= $jobinfo['jobname'];
-            $jobcompany= $jobinfo['jobcompany'];
-            $joblocation= $jobinfo['joblocation'];
-            $jobsalary= $jobinfo['jobsalary'];
-            $jorequirements= $jobinfo['jorequirements'];
-            $jobresponsibilities= $jobinfo['jobresponsibilities'];
-            $jobdescription= $jobinfo['jobdescription'];
 
 
-        
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
+    $stmt->execute();
+
+    while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+        $categoryname = $jobinfo['categoryname'];
+        $jobname = $jobinfo['jobname'];
+        $jobcompany = $jobinfo['jobcompany'];
+        $joblocation = $jobinfo['joblocation'];
+        $jobsalary = $jobinfo['jobsalary'];
+        $jorequirements = $jobinfo['jorequirements'];
+        $jobresponsibilities = $jobinfo['jobresponsibilities'];
+        $jobdescription = $jobinfo['jobdescription'];
+
+
+        if (
+            empty($jobname) || empty($jobcompany) || empty($joblocation)
+            || empty($jobsalary) || empty($jorequirements) || empty($jobresponsibilities) || empty($jobdescription)
+
+        ) {
+
             echo "<h1 class='title-category-job'> $categoryname</h1>";
-            echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
-            echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
-            echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
-            echo "<p class= 'comp-salary'>  $jobsalary  </p>";
-            echo "<p class= 'comp-requirements'>   $jorequirements </p>";
-            echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
-            echo "<p class= 'comp-description'>  $jobdescription  </p>";
+            echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
 
+        }else {
 
-
-
-            
-        };
+        echo "<h1 class='title-category-job'> $categoryname</h1>";
+        echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
+        echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
+        echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
+        echo "<p class= 'comp-salary'>  $jobsalary  </p>";
+        echo "<p class= 'comp-requirements'>   $jorequirements </p>";
+        echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
+        echo "<p class= 'comp-description'>  $jobdescription  </p>";
+    };
 
 
     ?>
