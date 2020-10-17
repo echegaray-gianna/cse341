@@ -5,7 +5,8 @@
 
 <main>
 
-    <h1> Job Post </h1>
+    <h1> Job Category </h1>
+    <h3> Please select a category </h3>
 
     <?php
 
