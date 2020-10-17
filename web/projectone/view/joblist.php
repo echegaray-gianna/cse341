@@ -10,30 +10,29 @@
     <?php
 
     include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
-    // $sql = 'SELECT * FROM category';
-    // $stmt = $db->prepare($sql);
-    // $stmt->execute();
-    // while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-    //     $catname = $categories['categoryname'];
-    //     $catid = $categories['categoryid'];
-
-    //     $catList = '<h4 class= "category-list"> Category:';
-    //     $catList .= $catname;
-    //     $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
-    // }
-
-
-    foreach ($db->query('SELECT * FROM category') as $category) {
-
+    $sql = 'SELECT * FROM category';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $catname = $category['categoryname'];
         $catid = $category['categoryid'];
 
-        $catList = "<h4 class= 'category-list'> $category[categoryname]";
-        $catList .= "<a href='categoryjob.php?id=$catid'> Select </a>";
+        $catList = "<h4 class= 'category-list'> $catname ";
+        $catList .= "<a href='/projectone/view/categoryjob.php?id=$catid'> Select </a>";
 
-        echo 'cat name:' . $category['categoryname'];
     }
+
+
+    // foreach ($db->query('SELECT * FROM category') as $category) {
+
+    //     $catname = $category['categoryname'];
+    //     $catid = $category['categoryid'];
+
+    //     $catList = "<h4 class= 'category-list'> $catname ";
+    //     $catList .= "<a href='/projectone/view/categoryjob.php?id=$catid'> Select </a>";
+
+    //     echo 'cat name:' . $category['categoryname'];
+    // }
     
 
     ?>
