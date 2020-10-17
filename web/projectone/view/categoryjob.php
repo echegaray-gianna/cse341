@@ -14,11 +14,11 @@
             FROM job 
             JOIN category
             ON job.categoryid = category.categoryid
-            WHERE job.categoryid = category.categoryid';
+            WHERE job.categoryid = :categoryid';
             
 
     $stmt = $db->prepare($sql);
-    // $stmt->bindValue(':categoryid', $categoryid);
+     $stmt->bindValue(':categoryid', $categoryid);
     // $stmt->bindValue(':categoryname', $categoryname);
     // $stmt->bindValue(':jobid', $jobid);
     // $stmt->bindValue(':jobname', $jobname);
