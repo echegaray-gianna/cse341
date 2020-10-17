@@ -20,16 +20,6 @@
 
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
-        // $stmt->bindValue(':categoryname', $categoryname, PDO::PARAM_STR);
-        // $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
-        // $stmt->bindValue(':jobname', $jobname, PDO::PARAM_STR);
-        // $stmt->bindValue(':jobcompany', $jobcompany, PDO::PARAM_STR);
-        // $stmt->bindValue(':joblocation', $joblocation, PDO::PARAM_STR);
-        // $stmt->bindValue(':jobsalary', $jobsalary, PDO::PARAM_STR);
-        // $stmt->bindValue(':jorequirements', $jorequirements, PDO::PARAM_STR);
-        // $stmt->bindValue(':jobresponsibilities', $jobresponsibilities, PDO::PARAM_STR);
-        // $stmt->bindValue(':jobdescription', $jobdescription, PDO::PARAM_STR);
-
         $stmt->execute();
 
         while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {        
@@ -45,17 +35,14 @@
 
 
         
-            echo "<h4 class= 'category-list'> $jocategorynamebinfo</h4>";
-            echo "<h5> $jobname </h5>";
-
-
-
-
-
-
-
-
-
+            echo "<h1 class='title-category-job'> $categoryname</h1>";
+            echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
+            echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
+            echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
+            echo "<p class= 'comp-salary'>  $jobsalary  </p>";
+            echo "<p class= 'comp-requirements'>   $jorequirements </p>";
+            echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
+            echo "<p class= 'comp-description'>  $jobdescription  </p>";
 
 
 
@@ -63,10 +50,6 @@
             
         };
 
-        echo "<h4 class= 'category-list'> $jobinfo INGOO</h4>";
-        print_r($jobinfo);
-
-        echo "hola 2";
 
     ?>
 
