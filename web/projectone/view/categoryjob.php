@@ -8,7 +8,7 @@
 
         include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
         
-        $categoryid= filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+        $categoryid= $_GET['id'];
 
         function getcategory($categoryid){
         
