@@ -26,7 +26,7 @@
         $catid = $jobinfo['categoryid'];
         $jobname= $jobinfo['jobname'];
 
-        echo "<h4 class= 'category-list'> $jobname</h4>";
+        echo "<h4 class= 'category-list'> $catname</h4>";
     }
 
     ?>
