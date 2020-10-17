@@ -9,6 +9,7 @@ switch ($action) {
     //Add Title
     $page_title = 'Category - Jobs';
     include '../view/categoryjob.php';
+    
   break;
 
   default:
