@@ -18,10 +18,10 @@
             
 
     $stmt = $db->prepare($sql);
-     //$stmt->bindValue(':categoryid', $categoryid);
-    // $stmt->bindValue(':categoryname', $categoryname);
+    $stmt->bindValue(':categoryid', $categoryid);
+    //$stmt->bindValue(':categoryname', $categoryname);
     // $stmt->bindValue(':jobid', $jobid);
-     $stmt->bindValue(':jobname', $jobname);
+    //$stmt->bindValue(':jobname', $jobname);
     // $stmt->bindValue(':jobcompany', $jobcompany);
     // $stmt->bindValue(':joblocation', $joblocation);
     // $stmt->bindValue(':jobsalary', $jobsalary);
@@ -38,7 +38,7 @@
         $jobname= $jobinfo['jobname'];
 
        
-        // echo "<h4 class= 'category-list'> $jobinfo[categoryname]</h4>";
+         echo "<h4 class= 'category-list'> $jobinfo</h4>";
     }
 
     ?>
