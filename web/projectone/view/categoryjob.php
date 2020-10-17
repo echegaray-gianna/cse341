@@ -15,7 +15,7 @@
                 FROM job 
                 JOIN category
                 ON job.categoryid = category.categoryid
-                -- WHERE job.categoryid = :categoryid';
+                WHERE job.categoryid = :categoryid';
                 
 
         $stmt = $db->prepare($sql);
