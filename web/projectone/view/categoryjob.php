@@ -33,28 +33,18 @@
         $jobdescription = $jobinfo['jobdescription'];
 
 
-        if (
-            empty($catid) || empty($jobname) || empty($jobcompany) || empty($joblocation)
-            || empty($jobsalary) || empty($jorequirements) || empty($jobresponsibilities) || empty($jobdescription)
-
-        ) {
-
-            echo "<h1 class='title-category-job'> $categoryname</h1>";
-            echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
-        } else {
-
-            echo "<h1 class='title-category-job'> $categoryname</h1>";
-            echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
-            echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
-            echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
-            echo "<p class= 'comp-salary'>  $jobsalary  </p>";
-            echo "<p class= 'comp-requirements'>   $jorequirements </p>";
-            echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
-            echo "<p class= 'comp-description'>  $jobdescription  </p>";
-        };
+        echo "<h1 class='title-category-job'> $categoryname</h1>";
+        echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
+        echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
+        echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
+        echo "<p class= 'comp-salary'>  $jobsalary  </p>";
+        echo "<p class= 'comp-requirements'>   $jorequirements </p>";
+        echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
+        echo "<p class= 'comp-description'>  $jobdescription  </p>";
+    
     }
    
-        echo "<h1 class='title-category-job'> $categoryname</h1>";
+        
         echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
     
 

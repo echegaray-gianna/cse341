@@ -1,4 +1,5 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
+$page_title = 'Category - Jobs';
 
 ?>
 
