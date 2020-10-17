@@ -17,42 +17,42 @@
 
             <label for="jobcompany">
                 <span>Company Name</span>
-                <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Position Name" <?php if (isset($jobcompany)) {
+                <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" <?php if (isset($jobcompany)) {
                                                                                                             echo "value='$jobcompany'";
                                                                                                         }  ?> required>
             </label>
 
             <label for="joblocation">
-                <span>Position Name</span>
-                <input type="text" name="joblocation" id="joblocation" placeholder="Enter Position Name" <?php if (isset($joblocation)) {
+                <span>Job Location</span>
+                <input type="text" name="joblocation" id="joblocation" placeholder="Enter Job Location" <?php if (isset($joblocation)) {
                                                                                                                 echo "value='$joblocation'";
                                                                                                             }  ?> required>
             </label>
 
             <label for="jobsalary">
-                <span>Position Name</span>
-                <input type="text" name="jobsalary" id="jobsalary" placeholder="Enter Position Name" <?php if (isset($jobsalary)) {
+                <span>Job Salary</span>
+                <input type="text" name="jobsalary" id="jobsalary" placeholder="Enter Job Salary" <?php if (isset($jobsalary)) {
                                                                                                             echo "value='$jobsalary'";
                                                                                                         }  ?> required>
             </label>
 
             <label for="jobrequirements">
-                <span>Position Name</span>
-                <input type="text" name="jobrequirements" id="jobrequirements" placeholder="Enter Position Name" <?php if (isset($jobrequirements)) {
+                <span>Job Requirements</span>
+                <input type="text" name="jobrequirements" id="jobrequirements" placeholder="Enter Job Requirements" <?php if (isset($jobrequirements)) {
                                                                                                                         echo "value='$jobrequirements'";
                                                                                                                     }  ?> required>
             </label>
 
             <label for="jobresponsibilities">
-                <span>Position Name</span>
-                <input type="text" name="jobresponsibilities" id="jobresponsibilities" placeholder="Enter Position Name" <?php if (isset($jobresponsibilities)) {
+                <span>Job Responsibilities</span>
+                <input type="text" name="jobresponsibilities" id="jobresponsibilities" placeholder="Enter Job Responsibilities" <?php if (isset($jobresponsibilities)) {
                                                                                                                                 echo "value='$jobresponsibilities'";
                                                                                                                             }  ?> required>
             </label>
 
             <label for="jobdescription">
-                <span>Position Name</span>
-                <input type="text" name="jobdescription" id="jobdescription" placeholder="Enter Position Name" <?php if (isset($jobdescription)) {
+                <span>Job Description</span>
+                <input type="text" name="jobdescription" id="jobdescription" placeholder="Enter Job Description" <?php if (isset($jobdescription)) {
                                                                                                                     echo "value='$jobdescription'";
                                                                                                                 }  ?> required>
             </label>
@@ -62,11 +62,11 @@
 
             include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
 
+            $catList = '<select name="categoryid" id="categoryList">';
+            $catList .= "<option>Choose a Category</option>";
+
             $sql = 'SELECT category * 
             FROM category';
-
-            $catList = '<select name="categoryId" id="categoryList">';
-            $catList .= "<option>Choose a Category</option>";
 
             foreach ($db->query($sql) as $getcategory) {
                 $catList .= "<option value='$getcategory[categoryId]'>$getcategory[categoryName]</option>";
@@ -77,7 +77,7 @@
 
             ?>
 
-            <label for="categoryId">
+            <label for="categoryid">
                 <span>Category</span>
                 <?php echo $catList; ?>
             </label>
