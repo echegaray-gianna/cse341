@@ -24,16 +24,15 @@
 
     ?>
 
-<form action="/projectone/job-index/index.php" method="POST" name="view-jobs" class = "choose-category">
 
-<lable for="categoryId">
-        <span>Category</span>
+
+<div for="categoryId">
+        <p>Category</p>
         <?php echo $catList; ?>
-</lable>
-<input type="hidden" name= "action" value="JobListByCat">
-<input type="submit" name= "submit" class="sub-btn" value="Search">
+    </div>
+<a href="categoryjob.php?id=<?php $category['id'] ?>"> Search </a>
 
-</form>
+
 
 
 
