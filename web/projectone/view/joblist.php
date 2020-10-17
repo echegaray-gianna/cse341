@@ -26,12 +26,14 @@
 
     foreach ($db->query('SELECT * FROM category') as $category) {
 
-        $catname = $category['categoryname'];
-        $catid = $category['categoryid'];
+        // $catname = $category['categoryname'];
+        // $catid = $category['categoryid'];
 
-        $catList = '<h4 class= "category-list"> Category:';
-        $catList .= $catname;
-        $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
+        // $catList = '<h4 class= "category-list"> Category:';
+        // $catList .= $catname;
+        // $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
+
+        echo 'cat name:' . $category['categoryname'];
     }
     
 
@@ -43,7 +45,7 @@
     <div for="categoryId">
         <p>Category</p>
         <?php
-        echo $catList;
+        //echo $catList;
 
         ?>
 

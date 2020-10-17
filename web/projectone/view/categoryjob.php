@@ -5,24 +5,54 @@
 
 <main>
 
-    <h1> category </h1>
+    <h1> Job Post </h1>
 
     <?php
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+//     include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+//     // $sql = 'SELECT * FROM category';
+//     // $stmt = $db->prepare($sql);
+//     // $stmt->execute();
 
-        $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
-        $catList .= "<option> Choose a Category </option>";
+//     // while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        foreach ($db->query('SELECT * FROM category') as $category) {
+//     //     $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
+//     //     $catList .= "<option> Choose a Category </option>";
 
-            $catList .= "<option value= '$category[categoryid]'> $category[categoryname]";
-            $catList .= "</option>";
-        }
-        
-        $catList .= '</select>';
+//     //     foreach ($categories as $category) {
+//     //         $catList .= "<option value= '$category[categoryid]'";
 
-    ?>
+//     //         if (isset($categoryid)) {
+
+//     //             if ($category['categoryid' === $categoryid]) {
+//     //                 $catList .= 'selected';
+//     //             }
+//     //         }
+
+//     //         $catList .= ">$category[categoryname] </option>";
+
+//     //     }
+//     // }
+//     // $catList .= '</select>';
+
+//     $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
+//     $catList .= "<option> Choose a Category </option>";
+
+//     foreach ($db->query('SELECT * FROM category') as $category) {
+
+//         $catList .= "<option value= '$category[categoryid]'> $category[categoryname]";
+//         $catList .= "</option>";
+//     }
+    
+//     $catList .= '</select>';
+
+//     ?>
+
+
+
+
+
+
 
 </main>
 
