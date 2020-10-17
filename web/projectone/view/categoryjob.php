@@ -14,28 +14,22 @@
             FROM job 
             INNER JOIN category
             ON job.categoryid = category.categoryid
-            WHERE categoryid= :categoryid
+            WHERE job.categoryid= :categoryid
             ORDER BY jobname DESC';
     $stmt = $db->prepare($sql);
+    $stmt->bindValue(':categoryid', $jobname, PDO::PARAM_INT);
     $stmt->execute();
 
+    while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-
-    while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-        $catname = $categories['categoryname'];
-        $catid = $categories['categoryid'];
-        $jobname= $categories['jobname'];
+        $catname = $jobinfo['categoryname'];
+        $catid = $jobinfo['categoryid'];
+        $jobname= $jobinfo['jobname'];
 
         echo "<h4 class= 'category-list'> $jobname</h4>";
     }
 
     ?>
-
-
-
-
-
 
 
 
