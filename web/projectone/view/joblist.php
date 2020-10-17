@@ -17,22 +17,10 @@
         $catname = $categories['categoryname'];
         $catid = $categories['categoryid'];
 
-       echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+       $catList= "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
 
     }
-
-
-    // foreach ($db->query('SELECT * FROM category') as $category) {
-
-    //     $catname = $category['categoryname'];
-    //     $catid = $category['categoryid'];
-
-    //     $catList = "<h4 class= 'category-list'> $catname ";
-    //     $catList .= "<a href='/projectone/view/categoryjob.php?id=$catid'> Select </a>";
-
-    //     echo 'cat name:' . $category['categoryname'];
-    // }
-    
+   
 
     ?>
 
