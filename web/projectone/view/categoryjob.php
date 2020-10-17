@@ -13,6 +13,7 @@
     $sql = 'SELECT job.*, category.* 
             FROM job 
             INNER JOIN category
+            ON job.categoryid = category.categoryid
             WHERE job.categoryid = category.categoryid';
             
 
