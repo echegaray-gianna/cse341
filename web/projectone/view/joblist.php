@@ -30,7 +30,7 @@
         <p>Category</p>
         <?php echo $catList; ?>
     </div>
-<a href="categoryjob.php?id=<?php $category['id'] ?>"> Search </a>
+<a href="categoryjob.php?id=<?php $category['categoryid'] ?>"> Search </a>
 
 
 
