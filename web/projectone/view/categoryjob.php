@@ -19,15 +19,15 @@
 
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':categoryid', $categoryid);
-        //$stmt->bindValue(':categoryname', $categoryname);
-        // $stmt->bindValue(':jobid', $jobid);
-        //$stmt->bindValue(':jobname', $jobname);
-        // $stmt->bindValue(':jobcompany', $jobcompany);
-        // $stmt->bindValue(':joblocation', $joblocation);
-        // $stmt->bindValue(':jobsalary', $jobsalary);
-        // $stmt->bindValue(':jorequirements', $jorequirements);
-        // $stmt->bindValue(':jobresponsibilities', $jobresponsibilities);
-        // $stmt->bindValue(':jobdescription', $jobdescription);
+        $stmt->bindValue(':categoryname', $categoryname);
+        $stmt->bindValue(':jobid', $jobid);
+        $stmt->bindValue(':jobname', $jobname);
+        $stmt->bindValue(':jobcompany', $jobcompany);
+        $stmt->bindValue(':joblocation', $joblocation);
+        $stmt->bindValue(':jobsalary', $jobsalary);
+        $stmt->bindValue(':jorequirements', $jorequirements);
+        $stmt->bindValue(':jobresponsibilities', $jobresponsibilities);
+        $stmt->bindValue(':jobdescription', $jobdescription);
 
         $stmt->execute();
 
