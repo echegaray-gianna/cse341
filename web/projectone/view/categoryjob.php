@@ -14,14 +14,14 @@
             FROM job 
             JOIN category
             ON job.categoryid = category.categoryid
-            WHERE job.categoryid = :category.categoryid';
+            WHERE job.categoryid = :categoryid';
             
 
     $stmt = $db->prepare($sql);
-     $stmt->bindValue(':categoryid', $categoryid);
+     //$stmt->bindValue(':categoryid', $categoryid);
     // $stmt->bindValue(':categoryname', $categoryname);
     // $stmt->bindValue(':jobid', $jobid);
-    // $stmt->bindValue(':jobname', $jobname);
+     $stmt->bindValue(':jobname', $jobname);
     // $stmt->bindValue(':jobcompany', $jobcompany);
     // $stmt->bindValue(':joblocation', $joblocation);
     // $stmt->bindValue(':jobsalary', $jobsalary);
@@ -33,11 +33,11 @@
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-
+        print_r($jobinfo);
         
         $jobname= $jobinfo['jobname'];
 
-        print_r($jobinfo);
+       
         // echo "<h4 class= 'category-list'> $jobinfo[categoryname]</h4>";
     }
 
