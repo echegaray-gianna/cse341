@@ -10,17 +10,18 @@
     <?php
 
         include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+        while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        $catList = '<select name= "categoryid" id= "categoryid" class="categoryid">';
-        $catList .= "<option> Choose a Category </option>";
+            $catname= $categories['categoriesname'];
+            $catid= $categories['categoriesid'];
 
-        foreach ($db->query('SELECT * FROM category') as $category) {
+            $catList = '<h4 class= "category-list"> Category:';
+            $catList .= '$catname';
+            $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
 
-            $catList .= "<option value= '$category[categoryid]'> $category[categoryname]";
-            $catList .= "</option>";
-        }
-        
-        $catList .= '</select>';
+
+
+        }    
 
         
 
@@ -32,12 +33,10 @@
         <p>Category</p>
         <?php 
             echo $catList; 
-            echo '<a href="categoryjob.php?id=category[categoryid]"> Search </a>';
-
-        
+           
         ?>
 
-    </div>
+</div>
 
 
 
