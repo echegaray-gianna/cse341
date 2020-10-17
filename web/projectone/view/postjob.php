@@ -64,19 +64,17 @@
 
             $catList = '<select name="categoryid" id="categorylist">';
             $catList .= "<option>Choose a Category</option>";
-
-            $sql = 'SELECT category * FROM category';
-
-            foreach ($db->query($sql) as $getcategory) {
-
-                echo $getcategory['categoryname'];
-
-                $catList .= "<option value='$getcategory[categoryid]'>$getcategory[categoryname]</option>";
+            
+            $sql = 'SELECT * FROM category';
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $catname = $categories['categoryname'];
+                $catid = $categories['categoryid'];
+    
+            echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+    
             }
-
-            $catList .= '</select>';
-
-            echo $catList;
 
             ?>
 
