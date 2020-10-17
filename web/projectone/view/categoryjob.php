@@ -18,18 +18,18 @@
             
 
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
-    $stmt->bindValue(':categoryname', $categoryname, PDO::PARAM_STR);
-    $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
-    $stmt->bindValue(':jobname', $jobname, PDO::PARAM_STR);
-    $stmt->bindValue(':jobcompany', $jobcompany, PDO::PARAM_STR);
-    $stmt->bindValue(':joblocation', $joblocation, PDO::PARAM_STR);
-    $stmt->bindValue(':jobsalary', $jobsalary, PDO::PARAM_STR);
-    $stmt->bindValue(':jorequirements', $jorequirements, PDO::PARAM_STR);
-    $stmt->bindValue(':jobresponsibilities', $jobresponsibilities, PDO::PARAM_STR);
-    $stmt->bindValue(':jobdescription', $jobdescription, PDO::PARAM_STR);
+    // $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
+    // $stmt->bindValue(':categoryname', $categoryname, PDO::PARAM_STR);
+    // $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
+    // $stmt->bindValue(':jobname', $jobname, PDO::PARAM_STR);
+    // $stmt->bindValue(':jobcompany', $jobcompany, PDO::PARAM_STR);
+    // $stmt->bindValue(':joblocation', $joblocation, PDO::PARAM_STR);
+    // $stmt->bindValue(':jobsalary', $jobsalary, PDO::PARAM_STR);
+    // $stmt->bindValue(':jorequirements', $jorequirements, PDO::PARAM_STR);
+    // $stmt->bindValue(':jobresponsibilities', $jobresponsibilities, PDO::PARAM_STR);
+    // $stmt->bindValue(':jobdescription', $jobdescription, PDO::PARAM_STR);
 
-    $stmt->execute();
+    $stmt->execute(array(':categoryid' =>$categoryid));
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
