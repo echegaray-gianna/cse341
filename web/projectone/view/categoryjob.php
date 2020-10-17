@@ -17,6 +17,16 @@
             
 
     $stmt = $db->prepare($sql);
+    $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
+    $stmt->bindValue(':categoryname', $categoryname, PDO::PARAM_INT);
+    $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
+    $stmt->bindValue(':jobname', $jobname, PDO::PARAM_INT);
+    $stmt->bindValue(':jobCompany', $categoryid, PDO::PARAM_INT);
+    $stmt->bindValue(':jobLocation', $categoryid, PDO::PARAM_INT);
+    $stmt->bindValue(':jobSalary', $categoryid, PDO::PARAM_INT);
+    $stmt->bindValue(':joRequirements', $categoryid, PDO::PARAM_INT);
+    $stmt->bindValue(':jobResponsibilities', $categoryid, PDO::PARAM_INT);
+    $stmt->bindValue(':jobDescription', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
