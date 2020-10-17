@@ -17,7 +17,6 @@
             
 
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
