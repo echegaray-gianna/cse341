@@ -6,13 +6,10 @@
 <main>
     <?php
 
-        // include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
         
         $categoryid= $_GET['id'];
 
-        function getcategory($categoryid){
-        
-        $db= connection();
         
         $sql = 'SELECT job.*, category.* 
                 FROM job 
@@ -22,7 +19,7 @@
                 
 
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
+       // $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
         // $stmt->bindValue(':categoryname', $categoryname, PDO::PARAM_STR);
         // $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
         // $stmt->bindValue(':jobname', $jobname, PDO::PARAM_STR);
@@ -35,17 +32,10 @@
 
         $stmt->execute();
 
-        $jobinfo = $stmt->fetch(PDO::FETCH_ASSOC);
+        while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         
 
-        return $jobinfo;
-
-        echo $jobinfo;
-        print_r($jobinfo);
-
-        }
-
-        $jobinfo = getcategory($categoryid);
+    
 
         
             print_r($jobinfo);
@@ -56,7 +46,7 @@
             echo "<h4 class= 'category-list'> $jobinfo</h4>";
 
             echo "hola";
-        
+        };
 
         echo "<h4 class= 'category-list'> $jobinfo</h4>";
         print_r($jobinfo);
