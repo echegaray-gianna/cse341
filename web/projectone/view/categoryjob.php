@@ -32,23 +32,38 @@
 
         $stmt->execute();
 
-        while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        
-
-    
-
-        
-            print_r($jobinfo);
+        while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {        
             
+            $categoryname = $jobinfo['categoryname'];
             $jobname= $jobinfo['jobname'];
+            $jobcompany= $jobinfo['jobcompany'];
+            $joblocation= $jobinfo['joblocation'];
+            $jobsalary= $jobinfo['jobsalary'];
+            $jorequirements= $jobinfo['jorequirements'];
+            $jobresponsibilities= $jobinfo['jobresponsibilities'];
+            $jobdescription= $jobinfo['jobdescription'];
+
 
         
-            echo "<h4 class= 'category-list'> $jobinfo</h4>";
+            echo "<h4 class= 'category-list'> $jocategorynamebinfo</h4>";
+            echo "<h5> $jobname </h5>";
 
-            echo "hola";
+
+
+
+
+
+
+
+
+
+
+
+
+            
         };
 
-        echo "<h4 class= 'category-list'> $jobinfo</h4>";
+        echo "<h4 class= 'category-list'> $jobinfo INGOO</h4>";
         print_r($jobinfo);
 
         echo "hola 2";
