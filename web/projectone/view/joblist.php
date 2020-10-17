@@ -15,8 +15,8 @@
     $stmt->execute();
     while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        $catname = $categories['categoriesname'];
-        $catid = $categories['categoriesid'];
+        $catname = $categories['categoryname'];
+        $catid = $categories['categoryid'];
 
         $catList = '<h4 class= "category-list"> Category:';
         $catList .= $catname;
