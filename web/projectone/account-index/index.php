@@ -4,10 +4,11 @@
 $page_title = 'Login';
 
 switch ($action) {
+
   case 'registration':
     //Add Title
-    $page_title = 'registration';
-    include '../view/registration.php';
+    $page_title = 'Registration';
+    header('location:../view/registration.php');
     break;
 
   default:
