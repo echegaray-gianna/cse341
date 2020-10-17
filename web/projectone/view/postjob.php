@@ -60,20 +60,20 @@
 
             <?php
 
-            // include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
 
-            // $sql = 'SELECT category * 
-            // FROM category';
+            $sql = 'SELECT category * 
+            FROM category';
 
-            // $catList = '<select name="categoryId" id="categoryList">';
-            // $catList .= "<option>Choose a Category</option>";
+            $catList = '<select name="categoryId" id="categoryList">';
+            $catList .= "<option>Choose a Category</option>";
 
-            // foreach ($db->query($sql) as $getcategory) {
-            //     $catList .= "<option value='$category[categoryId]'>$category[categoryName]</option>";
-            // }
-            // $catList .= '</select>';
+            foreach ($db->query($sql) as $getcategory) {
+                $catList .= "<option value='$category[categoryId]'>$category[categoryName]</option>";
+            }
+            $catList .= '</select>';
 
-            // echo $catList;
+            echo $catList;
 
             ?>
 
