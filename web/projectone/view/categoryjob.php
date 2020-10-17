@@ -5,6 +5,7 @@
     <?php
 
     include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+    $page_title = 'Category - Jobs';
 
     $categoryid = $_GET['id'];
 
