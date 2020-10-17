@@ -33,9 +33,11 @@
 
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
+
+        
         $jobname= $jobinfo['jobname'];
 
-        echo "<h4 class= 'category-list'> $jobname</h4>";
+        echo "<h4 class= 'category-list'> $jobinfo[categoryname]</h4>";
     }
 
     ?>
