@@ -14,8 +14,8 @@
     $stmt = $db->prepare($sql);
     $stmt->execute();
     while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $catname = $category['categoryname'];
-        $catid = $category['categoryid'];
+        $catname = $categories['categoryname'];
+        $catid = $categories['categoryid'];
 
        echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
 
