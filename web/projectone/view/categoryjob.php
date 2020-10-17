@@ -19,7 +19,7 @@
                 
 
         $stmt = $db->prepare($sql);
-       // $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
+        $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
         // $stmt->bindValue(':categoryname', $categoryname, PDO::PARAM_STR);
         // $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
         // $stmt->bindValue(':jobname', $jobname, PDO::PARAM_STR);
