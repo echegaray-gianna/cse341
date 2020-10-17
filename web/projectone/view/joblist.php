@@ -22,15 +22,24 @@
         
         $catList .= '</select>';
 
+        
+
     ?>
 
 
 
 <div for="categoryId">
         <p>Category</p>
-        <?php echo $catList; ?>
+        <?php 
+            echo $catList; 
+            echo '<a href="categoryjob.php?id=$category[categoryid]"> Search </a>';
+
+        
+        ?>
+
     </div>
-<a href="categoryjob.php?id=<?php $category['categoryid'] ?>"> Search </a>
+
+
 
 
 
