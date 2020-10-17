@@ -95,17 +95,6 @@
 
     </form>
 
-
-    <div class="create_account">
-        <p class="login-not-memeber"> Not a member? </p>
-        <div class="btn_registration">
-            <a href="#" title="Create an Account">
-                Create an Account
-            </a>
-        </div>
-    </div>
-
-
 </main>
 
 
