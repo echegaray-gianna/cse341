@@ -17,8 +17,7 @@
         $catname = $category['categoryname'];
         $catid = $category['categoryid'];
 
-        $catList = "<h4 class= 'category-list'> $catname ";
-        $catList .= "<a href='/projectone/view/categoryjob.php?id=$catid'> Select </a>";
+       echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a>";
 
     }
 
