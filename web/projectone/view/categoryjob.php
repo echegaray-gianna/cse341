@@ -37,7 +37,8 @@
         
         $jobname= $jobinfo['jobname'];
 
-        echo "<h4 class= 'category-list'> $jobinfo[categoryname]</h4>";
+        print_r($jobinfo);
+        // echo "<h4 class= 'category-list'> $jobinfo[categoryname]</h4>";
     }
 
     ?>
