@@ -69,7 +69,7 @@
             $catList .= "<option>Choose a Category</option>";
 
             foreach ($db->query($sql) as $getcategory) {
-                $catList .= "<option value='$category[categoryId]'>$category[categoryName]</option>";
+                $catList .= "<option value='$getcategory[categoryId]'>$getcategory[categoryName]</option>";
             }
             $catList .= '</select>';
 
