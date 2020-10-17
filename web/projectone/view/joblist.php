@@ -9,34 +9,34 @@
 
     <?php
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
-        while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+    $sql = 'SELECT * FROM category';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $catname= $categories['categoriesname'];
-            $catid= $categories['categoriesid'];
+        $catname = $categories['categoriesname'];
+        $catid = $categories['categoriesid'];
 
-            $catList = '<h4 class= "category-list"> Category:';
-            $catList .= '$catname';
-            $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
+        $catList = '<h4 class= "category-list"> Category:';
+        $catList .= '$catname';
+        $catList .= '<a href="categoryjob.php?id=$catid"> Select </a>';
+    }
 
 
-
-        }    
-
-        
 
     ?>
 
 
 
-<div for="categoryId">
+    <div for="categoryId">
         <p>Category</p>
-        <?php 
-            echo $catList; 
-           
+        <?php
+        echo $catList;
+
         ?>
 
-</div>
+    </div>
 
 
 
