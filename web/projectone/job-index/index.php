@@ -8,8 +8,8 @@ switch ($action) {
   case 'JobListByCat':
     //Add Title
     $page_title = 'Category - Jobs';
-    include '../view/categoryjob.php';
-    
+    header('location:../view/categoryjob.php');
+
   break;
 
   default:
