@@ -25,7 +25,7 @@
         <!--Main Nav Bar-->
         <nav class="nav-container">
             <ul class="nav-info">
-                <li><a class="nav-link" href="/eportfolio/view/index.php">Home</a></li>
+                <li><a class="nav-link" href="/eportfolio/view/home.php">Home</a></li>
                 <li><a class="nav-link" href="/eportfolio/view/summary.php">Summary</a></li>
                 <li><a class="nav-link" href="/eportfolio/view/resume.php">Resume</a></li>
                 <li><a class="nav-link" href="/eportfolio/view/courses.php">Courses</a></li>
