@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="carousel-item">
-                <img src="photos/mudroom.jpg" class="reno-photo" alt="Mudroom After">
+                    <img src="photos/IMG_8168.jpg" class="reno-photo" alt="Closet After">
                     <div class="carousel-caption">
                         <h3>Closet</h3>
                         <p>After</p>
