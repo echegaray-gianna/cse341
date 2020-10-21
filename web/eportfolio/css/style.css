@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Playfair+Display&display=swap');
+
+
+/*//////////////////////////////////*/
+/************ CommonPage  *************/
+/*//////////////////////////////////*/
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 5%;
+    max-width: 95%;
+    margin: auto;
+    border: 1px solid black;
+    background-image: linear-gradient(to bottom, #e3e1f2, #e6e4f4, #e9e8f5, #edebf7, #f0eff8);
+}
+
+main {
+    max-width: 90%;
+    margin-left: 3%;    
+}
+
+
+/********** Main Logo************/
+.logo {
+    padding: 25px;
+    text-align: center;
+    background-image: linear-gradient(to right top, #b7b4c4, #bfbccc, #c7c5d5, #d0cddd, #d8d6e6, #d8d6e6, #d8d6e6, #d8d6e6, #d0cddd, #c7c5d5, #bfbccc, #b7b4c4);
+    color: white; 
+}
+
+.container-logo a {
+    text-decoration: none;
+
+}
+
+
+/************ Nav  *************/
+
+.nav-container {
+    margin: 0;
+}
+
+.nav-info {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#8d899e;
+    text-align: center;
+    border-top:  1px solid black;
+    border-bottom:  1px solid black;
+}
+
+.nav-info li {
+    display: inline;
+    margin: 1.5%;
+}
+
+
+.nav-info li:last-child {
+    border-right: none;
+}
+
+
+.nav-info li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 3%;
+}
+
+a.nav-link {
+    font-size: 26px;
+    color: black;
+}
+
+
+a.nav-link:hover {
+    background-color: #b7b4c4;
+    color: #595762;
+    font-size: 28px;
+}
+
+
+a.nav-link:active {
+    background-color: #b7b4c4;
+}
+
+
+
+
+/************ Text  *************/
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 30px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title-header {
+    font-family:'Pacifico', cursive;
+    font-size: 90px;
+    color: #3C3751;
+    margin: 1%;
+}
+
+.text-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    color: #595762;
+    margin: 1%;
+}
+
+/************ Footer  *************/
+
+footer {
+    margin-top: 12%;
+}
+
+.container-footer {
+    border-top: 1px solid black;
+    background-image: linear-gradient(to bottom, #e3e1f2, #d8d6e6, #cdcadb, #c2bfcf, #b7b4c4);
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+.footer-bar {
+    margin-top: 2%;
+    color: #7b788b;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+
+
+/*---------------------------------------------------------------------------------*/
+/*-------------------------------  Contact Page --------------------------------------*/
+/*---------------------------------------------------------------------------------*/
+
+.container-contact {
+    margin-left: 25%;
+}
+
+
+
+.form-contact {
+    border: 1.5px solid black;
+    margin: 0 15px;
+    padding: 10px;
+    max-width: 60%;
+}
+
+.form-contact fieldset {
+    border: none;
+}
+
+label span {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+}
+
+input {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    display: block;
+    padding: .3em;
+    margin: .3em;
+    color: #4d4d4d;
+    width: 80%;
+}
+
+textarea {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    padding-top: .4em;
+    border-radius: .4em;
+    color: #4d4d4d;
+    width: 80%;
+}
+
+input.submitbtn {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    background-color:#8d899e;
+    color: white;
+    width: 40%;
+    padding: .2rem;
+    margin: 0 10% 10% 2%;
+    border: 0.5px solid black;
+}
+
+input.submitbtn:hover {
+    background-color: #b7b4c4;
+    color: #595762;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*-------------------------------  Resume Page --------------------------------------*/
+/*---------------------------------------------------------------------------------*/
+
+.container-resume{
+    margin-left: 25%;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*-----------------------------  Courses Page -------------------------------------*/
+/*---------------------------------------------------------------------------------*/
+
+.container-courses {
+    margin-left: 25%;
+    max-width: 30%;
+    border: 1px solid black;
+    border-top: none;
+    padding-bottom: 3%;
+}
+
+.class-info {
+    background-color:#8d899e;
+    border: 1px solid black ;
+    text-align: center;
+    margin-top: 13%;
+}
+
+.class-name {
+   text-align: center;
+   margin-bottom: 3%;
+}
+
+/*---------------------------------------------------------------------------------*/
+/*-----------------------------  Portfolio Page -----------------------------------*/
+/*---------------------------------------------------------------------------------*/
+
+
