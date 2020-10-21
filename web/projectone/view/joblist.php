@@ -11,9 +11,9 @@
 
         <?php
 
-        require "dbconnect.php";
+        require_once "../connections/dbconnect.php";
         $db= getdb();
-        
+
         $sql = 'SELECT * FROM category';
         $stmt = $db->prepare($sql);
         $stmt->execute();
