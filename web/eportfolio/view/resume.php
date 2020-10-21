@@ -3,7 +3,7 @@
 <main>
     <h1 class="title">Resume</h1>
     <div class="container-resume">
-        <img type= "plain" src="/img/resume.jpg" alt="resume">
+        <img type= "plain" src="/eportfolio/img/resume.jpg" alt="resume">
     </div>
 </main>
 
