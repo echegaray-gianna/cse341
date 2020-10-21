@@ -4,9 +4,9 @@
 <main>
     <?php
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
-    $page_title = 'Category - Jobs';
-
+    require_once "../connections/dbconnect.php";
+    $db = getdb();
+    
     $categoryid = $_GET['id'];
 
 
@@ -42,12 +42,11 @@
         echo "<p class= 'comp-requirements'>   $jobrequirements </p>";
         echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
         echo "<p class= 'comp-description'>  $jobdescription  </p>";
-    
     }
-   
-        
-        echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
-    
+
+
+    echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
+
 
     ?>
 
