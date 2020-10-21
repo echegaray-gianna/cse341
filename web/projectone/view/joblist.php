@@ -11,7 +11,9 @@
 
         <?php
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+        require "dbconnect.php";
+        $db= getdb();
+        
         $sql = 'SELECT * FROM category';
         $stmt = $db->prepare($sql);
         $stmt->execute();

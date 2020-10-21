@@ -1,10 +1,25 @@
 <?php
 
-function connection(){
+function getdb(){
+
+    // try{
+    //     $user='postgres';
+    //     $password= '';
+    //     $db= new PDO('psql host=localhost; dbname= 7dhsc98v47n7; port= 5432; $user; $password');
+    //     return $db;
+    // } catch (PDOException $ex) {
+    //     // If this were in production, you would not want to echo
+    //     // the details of the exception.
+    //     echo "Error connecting to DB. Details: $ex";
+    //     die();
+    // }
+
+    
+
+
     try {
         // default Heroku Postgres configuration URL
         $dbUrl = getenv('DATABASE_URL');
-
 
         // Get the various parts of the DB Connection from the URL
         $dbopts = parse_url($dbUrl);
@@ -31,3 +46,5 @@ function connection(){
     }
 
 }
+
+getdb();
