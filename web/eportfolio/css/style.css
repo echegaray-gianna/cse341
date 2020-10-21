@@ -21,7 +21,7 @@ body {
     max-width: 95%;
     margin: auto;
     border: 1px solid black;
-    background-image: linear-gradient(to bottom, #e3e1f2, #e6e4f4, #e9e8f5, #edebf7, #f0eff8);
+    background-image: linear-gradient(to bottom, #d3d0e3, #d6d3e6, #d9d6e8, #dcdaeb, #dfddee, #dfddee, #dfddee, #dfddee, #dcdaeb, #d9d6e8, #d6d3e6, #d3d0e3);
 }
 
 main {
