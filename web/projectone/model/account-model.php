@@ -8,10 +8,10 @@ $db = getdb();
 $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
         VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword, :clienttype)';
 $stmt = $db->prepare($sql); 
-$stmt->bindValue(':clientFirstname', $clientfirstname, PDO::PARAM_STR);
-$stmt->bindValue(':clientLastname', $clientlastname, PDO::PARAM_STR);
-$stmt->bindValue(':clientEmail', $clientemail, PDO::PARAM_STR);
-$stmt->bindValue(':clientPassword', $clientpassword, PDO::PARAM_STR);     
+$stmt->bindValue(':clientfirstname', $clientfirstname, PDO::PARAM_STR);
+$stmt->bindValue(':clientlastname', $clientlastname, PDO::PARAM_STR);
+$stmt->bindValue(':clientemail', $clientemail, PDO::PARAM_STR);
+$stmt->bindValue(':clientpassword', $clientpassword, PDO::PARAM_STR);     
 $stmt->bindValue(':clienttype', $clienttype, PDO::PARAM_STR);     
 
 $stmt->execute();

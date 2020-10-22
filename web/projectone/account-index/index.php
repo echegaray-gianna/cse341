@@ -9,11 +9,11 @@ switch ($action) {
 
     $page_title = 'Login';
     // Filter and store the data
-    $clientfirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
-    $clientlastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
-    $clientemail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
-    $clientpassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
-    $clienttype = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_STRING);
+    $clientfirstname = filter_input(INPUT_POST, 'clientfirstname', FILTER_SANITIZE_STRING);
+    $clientlastname = filter_input(INPUT_POST, 'clientlastname', FILTER_SANITIZE_STRING);
+    $clientemail = filter_input(INPUT_POST, 'clientemail', FILTER_SANITIZE_EMAIL);
+    $clientpassword = filter_input(INPUT_POST, 'clientpassword', FILTER_SANITIZE_STRING);
+    $clienttype = filter_input(INPUT_POST, 'clienttype', FILTER_SANITIZE_STRING);
 
     //Lesson 7 - Server-side Validation -  connect to functions.php 
     $clientEmail = checkEmail($clientemail);
@@ -21,7 +21,7 @@ switch ($action) {
 
 
     //Lesson 8 Unique Registration Check
-    $existingEmail = checkExistingEmail($clientEmail);
+    $existingEmail = checkExistingEmail($clientemail);
 
     // Check for existing email address in the table
     if ($existingEmail) {
@@ -32,7 +32,7 @@ switch ($action) {
 
 
     // Check for missing data
-    if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
+    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkpassword) || empty($clienttype)) {
       $message = '<p>Please provide information for all empty form fields.</p>';
       include '../view/registration.php';
       exit;
@@ -47,16 +47,16 @@ switch ($action) {
       // Check and report the result
       if ($regOutcome === 1) {
         //Lesson 8- Creating a registration Cookie
-        setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
-        $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        setcookie('firstname', $clientfirstname, strtotime('+1 year'), '/');
+        $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
 
-        $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
       } else {
-        $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+        $message = "<p>Sorry $clientfirstname, but the registration failed. Please try again.</p>";
         include '../view/registration.php';
         exit;
       }
