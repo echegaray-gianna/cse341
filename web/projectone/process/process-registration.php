@@ -36,18 +36,31 @@
     // }
 
 
-    $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
-        VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':clientfirstname', $clientfirstname);
-    $stmt->bindValue(':clientlastname', $clientlastname);
-    $stmt->bindValue(':clientemail', $clientemail);
-    $stmt->bindValue(':clientpassword', $clientpassword);
-    $stmt->bindValue(':clienttype', $clienttype);
+    function regclient($clientfirstname, $clientlastname, $clientemail, $clientpassword, $clienttype){
 
-    $stmt->execute();
+        $db = getdb();
+
+        $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
+            VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':clientfirstname', $clientfirstname);
+        $stmt->bindValue(':clientlastname', $clientlastname);
+        $stmt->bindValue(':clientemail', $clientemail);
+        $stmt->bindValue(':clientpassword', $clientpassword);
+        $stmt->bindValue(':clienttype', $clienttype);
+
+        $stmt->execute();
+
+        $regadd = $stmt;
+
+        return $regadd;
+
+
+    }
 
     // $clientid = $db->lastInsertId("clientid_seq");
+
+    $regOutcome =regclient($clientfirstname, $clientlastname, $clientemail, $clientpassword, $clienttype);
 
     if ($regOutcome === 1) {
         //Lesson 8- Creating a registration Cookie
