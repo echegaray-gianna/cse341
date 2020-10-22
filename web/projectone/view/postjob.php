@@ -25,15 +25,15 @@
             <label for="joblocation">
                 <span>Job Location</span>
                 <input type="text" name="joblocation" id="joblocation" placeholder="Enter Job Location" <?php if (isset($joblocation)) {
-                                                                                                                echo "value='$joblocation'";
-                                                                                                            }  ?> required>
+                                                                                                            echo "value='$joblocation'";
+                                                                                                        }  ?> required>
             </label>
 
             <label for="jobsalary">
                 <span>Job Salary</span>
                 <input type="text" name="jobsalary" id="jobsalary" placeholder="Enter Job Salary" <?php if (isset($jobsalary)) {
-                                                                                                            echo "value='$jobsalary'";
-                                                                                                        }  ?> required>
+                                                                                                        echo "value='$jobsalary'";
+                                                                                                    }  ?> required>
             </label>
 
             <label for="jobrequirements">
@@ -46,34 +46,35 @@
             <label for="jobresponsibilities">
                 <span>Job Responsibilities</span>
                 <input type="text" name="jobresponsibilities" id="jobresponsibilities" placeholder="Enter Job Responsibilities" <?php if (isset($jobresponsibilities)) {
-                                                                                                                                echo "value='$jobresponsibilities'";
-                                                                                                                            }  ?> required>
+                                                                                                                                    echo "value='$jobresponsibilities'";
+                                                                                                                                }  ?> required>
             </label>
 
             <label for="jobdescription">
                 <span>Job Description</span>
                 <input type="text" name="jobdescription" id="jobdescription" placeholder="Enter Job Description" <?php if (isset($jobdescription)) {
-                                                                                                                    echo "value='$jobdescription'";
-                                                                                                                }  ?> required>
+                                                                                                                        echo "value='$jobdescription'";
+                                                                                                                    }  ?> required>
             </label>
 
 
             <?php
 
-            include $_SERVER['DOCUMENT_ROOT'] . '/projectone/connections/jobconnection.php';
+            //connect to DB
+            require_once "../connections/dbconnect.php";
+            $db = getdb();
 
             $catList = '<select name="categoryid" id="categorylist">';
             $catList .= "<option>Choose a Category</option>";
-            
+
             $sql = 'SELECT * FROM category';
             $stmt = $db->prepare($sql);
             $stmt->execute();
             while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $catname = $categories['categoryname'];
                 $catid = $categories['categoryid'];
-    
-            $catList.= "<option value='$catid[categoryid]'>$catname</option>";;
-    
+
+                $catList .= "<option value='$catid[categoryid]'>$catname</option>";;
             }
 
             ?>

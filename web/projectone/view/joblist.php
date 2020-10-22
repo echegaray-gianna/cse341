@@ -11,9 +11,11 @@
 
         <?php
 
+        //connect to DB
         require_once "../connections/dbconnect.php";
         $db= getdb();
 
+        //statement
         $sql = 'SELECT * FROM category';
         $stmt = $db->prepare($sql);
         $stmt->execute();

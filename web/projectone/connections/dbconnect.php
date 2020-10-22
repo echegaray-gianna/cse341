@@ -5,7 +5,7 @@ function getdb(){
     // try{
     //     $user='postgres';
     //     $password= '';
-    //     $db= new PDO('psql host=localhost; dbname= 7dhsc98v47n7; port= 5432; $user; $password');
+    //     $db= new PDO("psql host=localhost; dbname=7dhsc98v47n7; port=5432; $user; $password");
     //     return $db;
     // } catch (PDOException $ex) {
     //     // If this were in production, you would not want to echo
