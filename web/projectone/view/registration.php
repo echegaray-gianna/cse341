@@ -21,7 +21,7 @@
 
     <h1> Registration</h1>
 
-    <form action="/projectone/account-index/index.php" method="POST" name="account_reg" class="form regist">
+    <form action="/projectone/view/readyreg.php" method="POST" name="account_reg" class="form regist">
 
         <fieldset class="form_registration_container">
             <label>
@@ -76,7 +76,6 @@
 
             </label>
 
-            <input type="hidden" name="action" value="register">
             <input type="submit" name="submit" class="regbtn" value="Register">
             
 

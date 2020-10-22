@@ -28,7 +28,7 @@
     // $clientid = $db->lastInsertId("clientid_seq");
 
     echo 'Thanks for registering. Please use your email and password to login';
-    
+
     include '../view/login.php';
 
 
@@ -40,12 +40,12 @@
 	die();
 }
 
-
+header ('location: /projectone/view/login./php');
 
 ?>
 
 
-<main>
+<!-- <main>
 
     <h1 class="title-category"> Job Category </h1>
     <h3 class="subtitle-category"> Please select a category </h3>
@@ -56,26 +56,26 @@
         <?php
 
         //connect to DB
-         require_once "../connections/dbconnect.php";
-        $db= getdb();
+        //  require_once "../connections/dbconnect.php";
+        // $db= getdb();
 
-        $sql = 'SELECT * FROM client';
+        // $sql = 'SELECT * FROM client';
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
+        // $stmt = $db->prepare($sql);
+        // $stmt->execute();
     
-        while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        // while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
     
-            $catid = $client['clientid'];
-            $clyname = $client['clientfirstname'];
-            $cltype = $client['clienttype'];
+        //     $catid = $client['clientid'];
+        //     $clyname = $client['clientfirstname'];
+        //     $cltype = $client['clienttype'];
     
     
     
-            echo "<p class='title-category-job'> $client[clientid] </p>";
-            echo "<p class= 'subtitle-category-job'> $clyname </p>";
-            echo "<p class= 'subtitle-category-job'> $cltype </p>";
-        }
+        //     echo "<p class='title-category-job'> $client[clientid] </p>";
+        //     echo "<p class= 'subtitle-category-job'> $clyname </p>";
+        //     echo "<p class= 'subtitle-category-job'> $cltype </p>";
+        //}
 
          //statement
         // $sql = 'SELECT * FROM category';
@@ -97,11 +97,11 @@
 
 
 <footer>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/footer.php'; ?>
+    <?php //include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/footer.php'; ?>
 </footer>
 
 <script src="/projectone/script/script.js"></script>
 
 </body>
 
-</html> 
+</html>  -->
