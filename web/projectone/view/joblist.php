@@ -28,8 +28,8 @@
     
     
     
-            echo "<p class='title-category-job'> $client[clientid]</p>";
-            echo "<p class= 'subtitle-category-job'> $client[clientname] </p>";
+            echo "<p class='title-category-job'> $client[clientid] </p>";
+            echo "<p class= 'subtitle-category-job'> $client[clientName] </p>";
             echo "<p class= 'subtitle-category-job'> $cltype </p>";
         }
 
