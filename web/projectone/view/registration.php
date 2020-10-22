@@ -5,47 +5,26 @@
     <?php
 
 
-    //connect to DB
-    require_once "../connections/dbconnect.php";
-    $db = getdb();
-    $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
-            VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword, :clienttype)';
-    $stmt = $db->prepare($sql); 
-    $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
-    $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
-    $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
-    $stmt->bindValue(':clientPassword', $clientPassword, PDO::PARAM_STR);     
-    $stmt->bindValue(':clienttype', $clienttype, PDO::PARAM_STR);     
-
-    $stmt->execute();
-
-
     ?>
 
     <h1> Registration</h1>
 
-    <form action="" method="POST" name="account_reg" class="form regist">
+    <form action="/projectone/account-index/index.php" method="POST" name="account_reg" class="form regist">
 
         <fieldset class="form_registration_container">
             <label>
                 <span>Name</span>
-                <input type="text" name="clientfirstname" placeholder="Name" <?php if (isset($clientfirstname)) {
-                                                                                    echo "value='$clientfirstname'";
-                                                                                }  ?> required>
+                <input type="text" name="clientfirstname" placeholder="Name" required>
             </label>
 
             <label>
                 <span>Last Name</span>
-                <input type="text" name="clientlastname" placeholder="Last Name" <?php if (isset($clientlastname)) {
-                                                                                        echo "value='$clientlastname'";
-                                                                                    }  ?> required>
+                <input type="text" name="clientlastname" placeholder="Last Name" required>
             </label>
 
             <label>
                 <span>Email</span>
-                <input type="email" name="clientemail" placeholder="Email" <?php if (isset($clientemail)) {
-                                                                                echo "value='$clientemail'";
-                                                                            }  ?> required>
+                <input type="email" name="clientemail" placeholder="Email"  required>
             </label>
 
             <label>
