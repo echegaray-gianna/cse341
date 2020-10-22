@@ -98,5 +98,5 @@ switch ($action) {
 
   default:
 
-    include '../view/login.php';
+    include '../view/joblist.php';
 }
