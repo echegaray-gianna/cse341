@@ -29,11 +29,11 @@
     }
 
     // Check for missing data
-    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkpassword)) {
-        $message = '<p>Please provide information for all empty form fields.</p>';
-        include '../view/registration.php';
-        exit;
-    }
+    // if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkpassword)) {
+    //     $message = '<p>Please provide information for all empty form fields.</p>';
+    //     include '../view/registration.php';
+    //     exit;
+    // }
 
 
     $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
