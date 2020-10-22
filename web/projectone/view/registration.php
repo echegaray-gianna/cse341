@@ -8,8 +8,17 @@
     //connect to DB
     require_once "../connections/dbconnect.php";
     $db = getdb();
-    $query = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword)
-    VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword)';
+    $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
+            VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword, :clienttype)';
+    $stmt = $db->prepare($sql); 
+    $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
+    $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
+    $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+    $stmt->bindValue(':clientPassword', $clientPassword, PDO::PARAM_STR);     
+    $stmt->bindValue(':clienttype', $clienttype, PDO::PARAM_STR);     
+
+    $stmt->execute();
+
 
     ?>
 
@@ -73,7 +82,7 @@
                     <select name="clienttype" id="typelist">
                         <option>Choose your Account Type </option>
                         <option value='typename'> Company </option>
-                        <option value='typename'> Company </option>
+                        <option value='typename'> Client </option>
                     </select>
 
                 </label>
