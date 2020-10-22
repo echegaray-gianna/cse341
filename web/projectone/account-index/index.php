@@ -1,5 +1,5 @@
 <?php
-
+require_once "../connections/dbconnect.php";
 
 $page_title = 'Login';
 
@@ -15,7 +15,7 @@ switch ($action) {
     $clientpassword = htmlspecialchars ($_POST['clientpassword']);
     $clienttype = htmlspecialchars ($_POST['clienttype']);
 
-    require_once "../connections/dbconnect.php";
+    
     $db = getdb();
 
     $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
@@ -32,7 +32,7 @@ switch ($action) {
     $clientId = $db->lastInsertId("clientid_seq");
     
 
-    include '../view/login.php';
+    include '../view/joblist.php';
 
 
 
@@ -98,5 +98,5 @@ switch ($action) {
 
   default:
 
-    include '../view/joblist.php';
+    include '../view/login.php';
 }
