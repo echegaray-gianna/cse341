@@ -33,7 +33,6 @@
                 <input type="password" name="clientpassword" placeholder="Password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
             </label>
 
-            <label>
                 <?php
 
                 // //connect to DB
