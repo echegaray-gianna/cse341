@@ -51,14 +51,11 @@
 
     if ($regOutcome === 1) {
         //Lesson 8- Creating a registration Cookie
-
+        setcookie('firstname', $clientfirstname, strtotime('+1 year'), '/');
         $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
-
-        $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
-        include '../view/login.php';
-        exit;
+        
       } else {
         $message = "<p>Sorry $clientfirstname, but the registration failed. Please try again.</p>";
         include '../view/registration.php';
