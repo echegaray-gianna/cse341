@@ -32,9 +32,15 @@
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientemail', $clientemail);
 
-    $clientdata = $statement->execute();
+    $result = $statement->execute();
+
+    if ($result){
+
+        $clientdata = $stmt->fetch();
+
 
     $hashCheck = password_verify($clientPassword, $clientdata['clientpassword']);
+    }
 
     if (!$hashCheck) {
         $message = '<p class="notice">Please check your password and try again.</p>';
