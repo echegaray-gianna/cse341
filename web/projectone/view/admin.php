@@ -9,10 +9,10 @@
         exit;
     }
 
-    $clientFirstname = $_SESSION ['clientdata'] ['clientfirstname'];
-    $clientLastname = $_SESSION ['clientdata'] ['clientlastname'];
-    $clientEmail = $_SESSION ['clientdata'] ['clientemail'];
-    $clientLevel = $_SESSION ['clientdata'] ['clienttype'];
+    $clientfirstname = $_SESSION ['clientdata'] ['clientfirstname'];
+    $clientlastname = $_SESSION ['clientdata'] ['clientlastname'];
+    $clientemail = $_SESSION ['clientdata'] ['clientemail'];
+    $clienttype = $_SESSION ['clientdata'] ['clienttype'];
     
 
     echo "<h1> $clientfirstname $clientlastname </h1>
