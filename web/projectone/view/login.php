@@ -14,23 +14,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     }
     ?>
 
-    <form action="#" method="POST" name="account_login" class="form_login">
+    <form action="/projectone/process/process-registration.php"" method="POST" name="account_login" class="form login">
 
         <div class="form_login_container">
             <label>
                 <span>Email</span>
-                <input type="email" name="clientEmail" placeholder="Enter Email" <?php if (isset($clientEmail)) {
-                                                                                        echo "value='$clientEmail'";
+                <input type="email" name="clientemail" placeholder="Enter Email" <?php if (isset($clientemail)) {
+                                                                                        echo "value='$clientemail'";
                                                                                     } ?> required>
             </label>
 
             <label>
                 <span>Password</span>
                 <span class="password_info"> </span>
-                <input type="password" name="clientPassword" placeholder="Enter Password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                <input type="password" name="clientpassword" placeholder="Enter Password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
             </label>
-
-            <input type="hidden" name="action" value="login_user"> <br>
 
             <input type="submit" name="submit" class="btn login" value="Login">
 

@@ -42,6 +42,9 @@
         exit;
       }
 
+      $hashedPassword = password_hash($clientpassword, PASSWORD_DEFAULT);
+
+      //Insert info
 
         $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
             VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
@@ -49,7 +52,7 @@
         $stmt->bindValue(':clientfirstname', $clientfirstname);
         $stmt->bindValue(':clientlastname', $clientlastname);
         $stmt->bindValue(':clientemail', $clientemail);
-        $stmt->bindValue(':clientpassword', $clientpassword);
+        $stmt->bindValue(':clientpassword', $hashedPassword);
         $stmt->bindValue(':clienttype', $clienttype);
 
         $stmt->execute();

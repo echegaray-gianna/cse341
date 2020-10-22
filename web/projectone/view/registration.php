@@ -11,7 +11,7 @@
     }
     ?>
 
-    <form action="/projectone/process/process-registration.php" method="POST" name="account_reg" class="form regist">
+    <form action="/projectone/process/process-registration.php" method="POST" name="account_reg" class="form registration">
 
         <fieldset class="form_registration_container">
             <label>
@@ -45,7 +45,7 @@
 
             </label>
 
-            <input type="submit" name="submit" class="regbtn" value="Register">
+            <input type="submit" name="submit" class="btn registration" value="Register">
 
 
         </fieldset>

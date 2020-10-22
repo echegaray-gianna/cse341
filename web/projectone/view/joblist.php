@@ -15,33 +15,33 @@
          require_once "../connections/dbconnect.php";
         $db= getdb();
 
-        $sql = 'SELECT * FROM client';
+        // $sql = 'SELECT * FROM client';
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-    
-        while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    
-            $catid = $client['clientid'];
-            $clyname = $client['clientfirstname'];
-            $cltype = $client['clienttype'];
-       
-            echo "<p class='title-category-job'> $client[clientid] </p>";
-            echo "<p class= 'subtitle-category-job'> $clyname </p>";
-            echo "<p class= 'subtitle-category-job'> $cltype </p>";
-        }
-
-        //statement
-        // $sql = 'SELECT * FROM category';
         // $stmt = $db->prepare($sql);
         // $stmt->execute();
-        // while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        //     $catname = $categories['categoryname'];
-        //     $catid = $categories['categoryid'];
-
-        // echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
-
+    
+        // while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    
+        //     $catid = $client['clientid'];
+        //     $clyname = $client['clientfirstname'];
+        //     $cltype = $client['clienttype'];
+       
+        //     echo "<p class='title-category-job'> $client[clientid] </p>";
+        //     echo "<p class= 'subtitle-category-job'> $clyname </p>";
+        //     echo "<p class= 'subtitle-category-job'> $cltype </p>";
         // }
+
+        //statement
+        $sql = 'SELECT * FROM category';
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $catname = $categories['categoryname'];
+            $catid = $categories['categoryid'];
+
+        echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+
+        }
         
         ?>
 
