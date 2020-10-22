@@ -76,8 +76,9 @@
 
             </label>
 
-            <input type="submit" name="submit" class="regbtn" value="Register">
             <input type="hidden" name="action" value="register">
+            <input type="submit" name="submit" class="regbtn" value="Register">
+            
 
         </fieldset>
 
