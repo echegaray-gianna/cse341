@@ -36,10 +36,6 @@
     // }
 
 
-    function regclient($clientfirstname, $clientlastname, $clientemail, $clientpassword, $clienttype){
-
-        $db = getdb();
-
         $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
             VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
         $stmt = $db->prepare($sql);
@@ -51,30 +47,10 @@
 
         $stmt->execute();
 
-        $regadd = $stmt;
-
-        return $regadd;
-
-
-    }
-
-    // $clientid = $db->lastInsertId("clientid_seq");
-
-    $regOutcome =regclient($clientfirstname, $clientlastname, $clientemail, $clientpassword, $clienttype);
-
-    if ($regOutcome === 1) {
-        //Lesson 8- Creating a registration Cookie
         setcookie('firstname', $clientfirstname, strtotime('+1 year'), '/');
         $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
-
-      } else {
-        $message = "<p>Sorry $clientfirstname, but the registration failed. Please try again.</p>";
-        include '../view/registration.php';
-        exit;
-      }
-
 
 
 }catch (Exception $ex)
