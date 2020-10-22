@@ -15,7 +15,7 @@
 
 
     $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
-        VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword, :clienttype)';
+        VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientfirstname', $clientfirstname);
     $stmt->bindValue(':clientlastname', $clientlastname);
