@@ -19,23 +19,6 @@ switch ($action) {
     $clientEmail = checkEmail($clientemail);
     $checkPassword = checkPassword($clientpassword);
 
-    function checkExistingEmail($clientemail){
-      $db = getdb();
-      $sql = 'SELECT clientemail 
-              FROM clients 
-              WHERE clientemail = :clientemail';
-      $stmt = $db->prepare($sql);
-      $stmt->bindValue(':clientemail', $clientemail, PDO::PARAM_STR);
-      $stmt->execute();
-      $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
-      $stmt->closeCursor();
-      if (empty($matchEmail)) {
-          return 0;
-      } else {
-          return 1;
-      }
-  }
-
 
     //Lesson 8 Unique Registration Check
     $existingEmail = checkExistingEmail($clientEmail);
@@ -55,28 +38,28 @@ switch ($action) {
       exit;
     }
 
-  //   // Hash the checked password
-  //  // $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+    //   // Hash the checked password
+    //  // $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
 
-  //   // Send the data to the model
-  //   $regOutcome = regClient($clientfirstname, $clientlastname, $clientemail, $hclientpassword, $clienttype);
+     // Send the data to the model
+     $regOutcome = regClient($clientfirstname, $clientlastname, $clientemail, $hclientpassword, $clienttype);
 
-  //   // Check and report the result
-  //   if ($regOutcome === 1) {
-  //     //Lesson 8- Creating a registration Cookie
-  //     setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
-  //     $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-  //     include '../view/login.php';
-  //     exit;
+      // Check and report the result
+      if ($regOutcome === 1) {
+        //Lesson 8- Creating a registration Cookie
+        setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
+        $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        include '../view/login.php';
+        exit;
 
-  //     $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-  //     include '../view/login.php';
-  //     exit;
-  //   } else {
-  //     $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-  //     include '../view/registration.php';
-  //     exit;
-  //   }
+        $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        include '../view/login.php';
+        exit;
+      } else {
+        $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+        include '../view/registration.php';
+        exit;
+      }
     break;
 
   default:
