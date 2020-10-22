@@ -16,7 +16,7 @@ session_start();
     }
     ?>
 
-    <form action="/projectone/process/process-registration.php"" method="POST" name="account_login" class="form login">
+    <form action="/projectone/process/process-login.php" method="POST" name="account_login" class="form login">
 
         <div class="form_login_container">
             <label>

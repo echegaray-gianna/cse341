@@ -26,21 +26,21 @@
     }
 
 
-        $sql = 'SELECT *
-                FROM client
-                WHERE clientemail = :clientemail';
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':clientemail', $clientemail);
+    $sql = 'SELECT *
+            FROM client
+            WHERE clientemail = :clientemail';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientemail', $clientemail);
 
-        $clientdata = $statement->execute();
+    $clientdata = $statement->execute();
 
-        $hashCheck = password_verify($clientPassword, $clientdata['clientpassword']);
+    $hashCheck = password_verify($clientPassword, $clientdata['clientpassword']);
 
-        if (!$hashCheck) {
-          $message = '<p class="notice">Please check your password and try again.</p>';
-          include '../view/login.php';
-          exit;
-        }
+    if (!$hashCheck) {
+        $message = '<p class="notice">Please check your password and try again.</p>';
+        include '../view/login.php';
+        exit;
+    }
 
     // A valid user exists, log them in
     $_SESSION['loggedin'] = TRUE;
