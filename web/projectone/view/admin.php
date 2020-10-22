@@ -1,5 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
+session_start();
 
 ?>
 
@@ -7,7 +8,7 @@
 <main>
 
 <?php
-    if(!$_SESSION['loggedin']){
+    if($_SESSION['loggedin']= FALSE){
         header('location: /projectone/index.php');
         exit;
     }

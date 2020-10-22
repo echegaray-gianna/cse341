@@ -48,7 +48,6 @@
                     echo '<li style="float:right">';
                     echo '<a class="nav-link" href="/projectone/account-index/index.php?action=logout_user" title="Logout"> Logout </a>';
        
-
                 } else {
                     echo '<a class="nav-link login" href="/projectone/view/login.php">Login</a></li>';
                 }
