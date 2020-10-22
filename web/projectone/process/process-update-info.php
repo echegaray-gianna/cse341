@@ -16,9 +16,9 @@ try {
     $clientemail = checkEmail($clientemail);
 
      //Check if the email is the same as the logged account
-    if ($clientEmail != $_SESSION ['clientData']['clientEmail']) {
+    if ($clientemail != $_SESSION ['clientdata']['clientemail']) {
         //Unique Registration Check - Check for existing email address in the table
-        $existingEmail = checkExistingEmail($clientEmail);
+        $existingEmail = checkExistingEmail($clientemail);
         // if exist...
         if ($existingEmail) {
           $message = '<p class="notice">That email address already exists.</p>';
