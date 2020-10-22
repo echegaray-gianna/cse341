@@ -25,7 +25,7 @@
 
     $stmt->execute();
 
-    $clientId = $db->lastInsertId("clientid_seq");
+    // $clientid = $db->lastInsertId("clientid_seq");
 
 
 }catch (Exception $ex)
