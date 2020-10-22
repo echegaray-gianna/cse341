@@ -56,7 +56,7 @@
 
         // array_pop($clientdata);
         // // Store the array into the session
-         $_SESSION['clientData'] = $clientData;
+         $_SESSION['clientdata'] = $clientdata;
 
         // // Send them to the admin view
         include '../view/admin.php';
