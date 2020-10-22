@@ -34,6 +34,29 @@
 
 
     ?>
+
+
+
+<?php
+
+//connect to DB
+require_once "../connections/dbconnect.php";
+$db= getdb();
+
+//statement
+$sql = 'SELECT * FROM category';
+$stmt = $db->prepare($sql);
+$stmt->execute();
+while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $catname = $categories['categoryname'];
+    $catid = $categories['categoryid'];
+
+echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+
+}
+
+?>
+
 </main>
 
 
