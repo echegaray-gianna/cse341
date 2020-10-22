@@ -9,42 +9,42 @@
 
  try {
 
-    $clientfirstname = htmlspecialchars ($_POST['clientfirstname']);
-    $clientlastname = htmlspecialchars ($_POST['clientlastname']);
-    $clientemail = htmlspecialchars ($_POST['clientemail']);
-    $clientpassword = htmlspecialchars ($_POST['clientpassword']);
-    $clienttype = htmlspecialchars ($_POST['clienttype']);
+        $clientfirstname = htmlspecialchars ($_POST['clientfirstname']);
+        $clientlastname = htmlspecialchars ($_POST['clientlastname']);
+        $clientemail = htmlspecialchars ($_POST['clientemail']);
+        $clientpassword = htmlspecialchars ($_POST['clientpassword']);
+        $clienttype = htmlspecialchars ($_POST['clienttype']);
 
 
-    $clientemail = checkEmail($clientemail);
-    $checkPassword = checkPassword($clientpassword);
+        $clientemail = checkEmail($clientemail);
+        $checkPassword = checkPassword($clientpassword);
 
-    $existingEmail = checkExistingEmail($clientemail);
+        $existingEmail = checkExistingEmail($clientemail);
 
-    // Check for existing email address in the table
-    if ($existingEmail) {
-        $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-        include '../view/login.php';
-        exit;
-    }
+        // Check for existing email address in the table
+        if ($existingEmail) {
+            $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+            include '../view/login.php';
+            exit;
+        }
 
-    // Check for missing data
+        // Check for missing data
 
-    if ($clienttype === 'Choose your Account Type' ){
-        $message = '<p>Please provide information for all empty form fields.</p>';
-        include '../view/registration.php';
-        exit;
-    }
+        if ($clienttype === 'Choose your Account Type' ){
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/registration.php';
+            exit;
+        }
 
-    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkPassword)) {
-        $message = '<p>Please provide information for all empty form fields.</p>';
-        include '../view/registration.php';
-        exit;
-      }
+        if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkPassword)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/registration.php';
+            exit;
+        }
 
-      $hashedPassword = password_hash($clientpassword, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($clientpassword, PASSWORD_DEFAULT);
 
-      //Insert info
+        //Insert info
 
         $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
             VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
@@ -61,15 +61,15 @@
         $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
+ 
 
-
-}catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
-	die();
-}
+    }catch (Exception $ex)
+    {
+        // Please be aware that you don't want to output the Exception message in
+        // a production environment
+        echo "Error with DB. Details: $ex";
+        die();
+    }
 
 header ('location: /projectone/view/login./php');
 
