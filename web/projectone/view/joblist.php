@@ -23,13 +23,13 @@
         while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
     
             $catid = $client['clientid'];
-            $clyname = $client['clientname'];
+            $clyname = $client['clientfirstname'];
             $cltype = $clientt['clienttype'];
     
     
     
             echo "<p class='title-category-job'> $client[clientid] </p>";
-            echo "<p class= 'subtitle-category-job'> $client[clientName] </p>";
+            echo "<p class= 'subtitle-category-job'> $clyname </p>";
             echo "<p class= 'subtitle-category-job'> $cltype </p>";
         }
 
