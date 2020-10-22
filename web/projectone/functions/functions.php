@@ -20,7 +20,7 @@ function checkExistingEmail($clientemail)
 {
   $db = getdb();
   $sql = 'SELECT clientemail 
-          FROM clients 
+          FROM client
           WHERE clientemail = :clientemail';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientemail', $clientemail, PDO::PARAM_STR);
