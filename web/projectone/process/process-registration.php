@@ -36,6 +36,12 @@
         exit;
     }
 
+    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkPassword)) {
+        $message = '<p>Please provide information for all empty form fields.</p>';
+        include '../view/registration.php';
+        exit;
+      }
+
 
         $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
             VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
