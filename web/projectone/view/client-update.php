@@ -5,7 +5,7 @@
 
 <?php
 //Only allow access to the view if client is logged in
-if (!$_SESSION['loggedin']) {
+if ($_SESSION['loggedin']= FALSE) {
     header('location: /projectone/index.php');
     exit;
 }
