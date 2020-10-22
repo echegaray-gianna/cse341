@@ -1,11 +1,18 @@
-<?php 
-    include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
 ?>
 
 <main>
 
     <h1> Login </h1>
+
+    <?php
+
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
 
     <form action="#" method="POST" name="account_login" class="form_login">
 

@@ -25,15 +25,13 @@
             $catid = $client['clientid'];
             $clyname = $client['clientfirstname'];
             $cltype = $client['clienttype'];
-    
-    
-    
+       
             echo "<p class='title-category-job'> $client[clientid] </p>";
             echo "<p class= 'subtitle-category-job'> $clyname </p>";
             echo "<p class= 'subtitle-category-job'> $cltype </p>";
         }
 
-         //statement
+        //statement
         // $sql = 'SELECT * FROM category';
         // $stmt = $db->prepare($sql);
         // $stmt->execute();
