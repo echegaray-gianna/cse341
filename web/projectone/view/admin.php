@@ -32,7 +32,7 @@ session_start();
           </ul>
           <p class= 'adm_text'> Use the link below to manage your account. </p>
           <div class= 'admnAccLink'>
-                <a href= '#' title= 'Update Account Information'> Update Account Information </a>
+                <a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
           </div>" ;
 
 

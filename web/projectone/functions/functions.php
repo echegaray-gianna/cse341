@@ -1,5 +1,6 @@
 <?php
 
+
 function checkEmail($clientemail)
 {
     $valEmail = filter_var($clientemail, FILTER_VALIDATE_EMAIL);
@@ -36,3 +37,16 @@ function checkExistingEmail($clientemail)
   }
 }
 
+function getAccountInfo($clientid){
+  
+  $db = getdb();
+  $sql = 'SELECT clientid, clientfirstname, clientlastname, clientemail
+          FROM client
+          WHERE clientid = :clientid';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':clientid', $clientid);
+  $stmt->execute();
+  $clientInfoGet = $stmt->fetch();
+ 
+  return $clientInfoGet;
+}
