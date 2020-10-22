@@ -21,22 +21,27 @@
             exit;
         }
 
+        function getclient($clientemail) {
+        
+            $db = getdb();
+            $sql = 'SELECT *
+                    FROM client
+                    WHERE clientemail = :clientemail';
+            $stmt = $db->prepare($sql);
+            $stmt->bindValue(':clientemail', $clientemail);
 
-        $sql = 'SELECT *
-                FROM client
-                WHERE clientemail = :clientemail';
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':clientemail', $clientemail);
-
-        $result = $statement->execute();
-
-        if ($result){
+            $stmt->execute();
 
             $clientdata = $stmt->fetch();
+            return $clientdata;
+
+        }
+
+        $clientdata = getclient($clientemail);
  
 
-        $hashCheck = password_verify($clientPassword, $clientdata['clientpassword']);
-        }
+        $hashCheck = password_verify($clientpassword, $clientdata['clientpassword']);
+        
 
         if (!$hashCheck) {
             $message = '<p class="notice">Please check your password and try again.</p>';
@@ -45,13 +50,13 @@
         }
 
         // // A valid user exists, log them in
-        // $_SESSION['loggedin'] = TRUE;
-        // setcookie('firstname', '', time() - 3600, '/');
+        $_SESSION['loggedin'] = TRUE;
+        setcookie('firstname', '', time() - 3600, '/');
         // // Remove the password from the array
 
         // array_pop($clientdata);
         // // Store the array into the session
-        // $_SESSION['clientData'] = $clientData;
+         $_SESSION['clientData'] = $clientData;
 
         // // Send them to the admin view
         include '../view/admin.php';
