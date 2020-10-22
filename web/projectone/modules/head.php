@@ -50,7 +50,7 @@
        
 
                 } else {
-                    echo '<a class="nav-link login" href="/projectone/view/admin.php">Login</a></li>';
+                    echo '<a class="nav-link login" href="/projectone/account-index/index.php">Login</a></li>';
                 }
 
                 ?>
