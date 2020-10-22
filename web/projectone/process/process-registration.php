@@ -29,7 +29,7 @@
     }
 
     // Check for missing data
-    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkpassword) || empty($clienttype)) {
+    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkpassword)) {
         $message = '<p>Please provide information for all empty form fields.</p>';
         include '../view/registration.php';
         exit;
@@ -55,7 +55,7 @@
         $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
-        
+
       } else {
         $message = "<p>Sorry $clientfirstname, but the registration failed. Please try again.</p>";
         include '../view/registration.php';
