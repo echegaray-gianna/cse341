@@ -62,8 +62,7 @@
 
                     $typename = $types['clienttype'];
 
-
-                    $clType .= "<option value='catname'>$catname</option>";;
+                    $clType .= "<option value='$typename'> $typename </option>";;
                 }
 
                 ?>
