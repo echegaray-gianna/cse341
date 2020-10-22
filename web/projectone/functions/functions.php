@@ -26,10 +26,11 @@ function checkExistingEmail($clientemail)
   $stmt->bindValue(':clientemail', $clientemail, PDO::PARAM_STR);
   $stmt->execute();
   $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
-  $stmt->closeCursor();
+  
   if (empty($matchEmail)) {
     return 0;
-  } else {
+
+  }  else {
     return 1;
   }
 }
