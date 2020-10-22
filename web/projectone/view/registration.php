@@ -70,8 +70,8 @@
                 <span>Account type</span>
                 <select name="clienttype" id="typelist">
                     <option>Choose your Account Type </option>
-                    <option value='typename'> Company </option>
-                    <option value='typename'> Client </option>
+                    <option value='company'> Company </option>
+                    <option value='client'> Client </option>
                 </select>
 
             </label>
