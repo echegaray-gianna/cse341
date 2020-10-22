@@ -28,7 +28,7 @@
     
     
     
-            echo "<p class='title-category-job'> $catid</p>";
+            echo "<p class='title-category-job'> $client</p>";
             echo "<p class= 'subtitle-category-job'> $clyname </p>";
             echo "<p class= 'subtitle-category-job'> $cltype </p>";
         }
