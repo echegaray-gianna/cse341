@@ -27,6 +27,10 @@
 
     // $clientid = $db->lastInsertId("clientid_seq");
 
+    echo 'Thanks for registering. Please use your email and password to login';
+    
+    include '../view/login.php';
+
 
 }catch (Exception $ex)
 {
@@ -35,6 +39,7 @@
 	echo "Error with DB. Details: $ex";
 	die();
 }
+
 
 
 ?>

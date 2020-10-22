@@ -7,32 +7,48 @@ switch ($action) {
 
   case 'register':
 
-    $page_title = 'Registration';
-
-    $clientfirstname = htmlspecialchars ($_POST['clientfirstname']);
-    $clientlastname = htmlspecialchars ($_POST['clientlastname']);
-    $clientemail = htmlspecialchars ($_POST['clientemail']);
-    $clientpassword = htmlspecialchars ($_POST['clientpassword']);
-    $clienttype = htmlspecialchars ($_POST['clienttype']);
-
-    
+    require_once "../connections/dbconnect.php";
     $db = getdb();
+   
+   
+    try {
+   
+       $clientfirstname = htmlspecialchars ($_POST['clientfirstname']);
+       $clientlastname = htmlspecialchars ($_POST['clientlastname']);
+       $clientemail = htmlspecialchars ($_POST['clientemail']);
+       $clientpassword = htmlspecialchars ($_POST['clientpassword']);
+       $clienttype = htmlspecialchars ($_POST['clienttype']);
+   
+   
+   
+   
+       $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
+           VALUES (:clientfirstname, :clientlastname, :clientemail, :clientpassword, :clienttype)';
+       $stmt = $db->prepare($sql);
+       $stmt->bindValue(':clientfirstname', $clientfirstname);
+       $stmt->bindValue(':clientlastname', $clientlastname);
+       $stmt->bindValue(':clientemail', $clientemail);
+       $stmt->bindValue(':clientpassword', $clientpassword);
+       $stmt->bindValue(':clienttype', $clienttype);
+   
+       $stmt->execute();
+   
+       // $clientid = $db->lastInsertId("clientid_seq");
+   
+   
+   }catch (Exception $ex)
+   {
+     // Please be aware that you don't want to output the Exception message in
+     // a production environment
+     echo "Error with DB. Details: $ex";
+     die();
+   }
 
-    $sql = 'INSERT INTO client (clientfirstname, clientlastname, clientemail, clientpassword, clienttype)
-        VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword, :clienttype)';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':clientfirstname', $clientfirstname);
-    $stmt->bindValue(':clientlastname', $clientlastname);
-    $stmt->bindValue(':clientemail', $clientemail);
-    $stmt->bindValue(':clientpassword', $clientpassword);
-    $stmt->bindValue(':clienttype', $clienttype);
-
-    $stmt->execute();
-
-    $clientId = $db->lastInsertId("clientid_seq");
+   echo 'Thanks for registering. Please use your email and password to login';
     
+   include '../view/login.php';
 
-    include '../view/joblist.php';
+
 
 
 
