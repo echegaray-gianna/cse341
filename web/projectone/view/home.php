@@ -11,26 +11,26 @@
 
     <?php
 
-    require_once "../connections/dbconnect.php";
-    $db = getdb();
+    // require_once "../connections/dbconnect.php";
+    // $db = getdb();
 
 
-    $sql = 'SELECT * 
-            FROM client';
+    // $sql = 'SELECT * 
+    //         FROM client';
 
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
+    // $stmt = $db->prepare($sql);
+    // $stmt->execute();
 
-    while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    // while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        $catid = $client['clientid'];
-        $categoryname = $client['clientname'];
+    //     $catid = $client['clientid'];
+    //     $categoryname = $client['clientname'];
 
 
 
-        echo "<h1 class='title-category-job'> $catid</h1>";
-        echo "<h4 class= 'subtitle-category-job'> $categoryname </h4>";
-    }
+    //     echo "<h1 class='title-category-job'> $catid</h1>";
+    //     echo "<h4 class= 'subtitle-category-job'> $categoryname </h4>";
+    // }
 
 
     ?>
