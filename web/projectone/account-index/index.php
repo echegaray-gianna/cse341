@@ -29,6 +29,29 @@ switch ($action) {
 
     $stmt->execute();
     
+    
+    // require_once "../connections/dbconnect.php";
+    // $db = getdb();
+
+
+    $sql = 'SELECT * FROM client';
+
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+
+    while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+        $catid = $client['clientid'];
+        $clyname = $client['clientname'];
+        $cltype = $clientt['clienttype'];
+
+
+
+        echo "<p class='title-category-job'> $catid</p>";
+        echo "<p class= 'subtitle-category-job'> $clyname </p>";
+        echo "<p class= 'subtitle-category-job'> $cltype </p>";
+    }
+
     include '../view/login.php';
 
 
