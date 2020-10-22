@@ -48,29 +48,34 @@
             <label>
                 <?php
 
-                //connect to DB
-                require_once "../connections/dbconnect.php";
-                $db = getdb();
+                // //connect to DB
+                // require_once "../connections/dbconnect.php";
+                // $db = getdb();
 
-                $clType = '<select name="clienttype" id="typelist">';
-                $clType .= "<option>Choose your Account Type </option>";
+                // $clType = '<select name="clienttype" id="typelist">';
+                // $clType .= "<option>Choose your Account Type </option>";
 
-                $sql = 'SELECT clienttype FROM client';
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                while ($types = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                // $sql = 'SELECT clienttype FROM client';
+                // $stmt = $db->prepare($sql);
+                // $stmt->execute();
+                // while ($types = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                    $typename = $types['clienttype'];
+                //     $typename = $types['clienttype'];
 
-                    $clType .= "<option value='$typename'> $typename </option>";;
-                }
+                //     $clType .= "<option value='$typename'> $typename </option>";;
+                // }
 
                 ?>
 
 
                 <label for="clienttype">
                     <span>Account type</span>
-                    <?php echo $clType; ?>
+                    <select name="clienttype" id="typelist">
+                        <option>Choose your Account Type </option>
+                        <option value='typename'> Company </option>
+                        <option value='typename'> Company </option>
+                    </select>
+
                 </label>
 
 
