@@ -42,16 +42,16 @@
         exit;
     }
 
-    // A valid user exists, log them in
-    $_SESSION['loggedin'] = TRUE;
-    setcookie('firstname', '', time() - 3600, '/');
-    // Remove the password from the array
+    // // A valid user exists, log them in
+    // $_SESSION['loggedin'] = TRUE;
+    // setcookie('firstname', '', time() - 3600, '/');
+    // // Remove the password from the array
 
-    array_pop($clientdata);
-    // Store the array into the session
-    $_SESSION['clientData'] = $clientData;
+    // array_pop($clientdata);
+    // // Store the array into the session
+    // $_SESSION['clientData'] = $clientData;
 
-    // Send them to the admin view
+    // // Send them to the admin view
     include '../view/admin.php';
     exit;
 
