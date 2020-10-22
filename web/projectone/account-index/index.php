@@ -7,7 +7,7 @@ switch ($action) {
 
   case 'logout_user':
     session_destroy();
-    header('location: /acme/index.php');
+    header('location: /projectone/index.php');
     exit;
     
   break;
