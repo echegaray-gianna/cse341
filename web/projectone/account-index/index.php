@@ -28,7 +28,7 @@ switch ($action) {
     $stmt->bindValue(':clienttype', $clienttype, PDO::PARAM_STR);
 
     $stmt->execute();
-
+    
     include '../view/login.php';
 
 
