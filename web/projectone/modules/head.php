@@ -40,7 +40,25 @@
                 <li><a class="nav-link" href="/projectone/index.php">Home</a> </li>
                 <li><a class="nav-link" href="/projectone/job-index/index.php">Jobs </a></li>
                 <li><a class="nav-link" href="/projectone/post-index/index.php">Post a Job </a></li>
-                <li style="float:right"><a class="nav-link login" href="/projectone/account-index/index.php">Login</a></li>
+                <li style="float:right">
+                <?php 
+                if (isset ($_SESSION['loggedin'])) {
+                    echo "<a class='nav-link' href='/projectone/view/admin.php'>Welcome "  . $_SESSION['clientdata']['clientfirstname'];
+                    echo "</a>";
+                    echo '<li style="float:right">';
+                    echo '<a class="nav-link" href="/projectone/account-index/index.php?action=logout_user" title="Logout"> Logout </a>';
+       
+
+                } else {
+                    echo '<a class="nav-link login" href="/projectone/view/admin.php">Login</a></li>';
+                }
+
+                ?>
+                
+                
+                
+                
+                
 
             </ul>
         </nav>
