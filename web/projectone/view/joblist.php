@@ -24,7 +24,7 @@
     
             $catid = $client['clientid'];
             $clyname = $client['clientfirstname'];
-            $cltype = $clientt['clienttype'];
+            $cltype = $client['clienttype'];
     
     
     
