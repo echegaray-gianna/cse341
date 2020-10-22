@@ -43,10 +43,10 @@
                 <li style="float:right">
                 <?php 
                 if (isset ($_SESSION['loggedin'])) {
-                    echo "<a class='nav-link' href='/projectone/view/admin.php'>Welcome "  . $_SESSION['clientdata']['clientfirstname'];
+                    echo "<a class='nav-link' href='/projectone/account-index/index.php'>Welcome "  . $_SESSION['clientdata']['clientfirstname'];
                     echo "</a>";
                     echo '<li style="float:right">';
-                    echo '<a class="nav-link" href="/projectone/account-index/index.php?action=logout_user" title="Logout"> Logout </a>';
+                    echo '<a class="nav-link" href="/projectone/process/process-logout.php" title="Logout"> Logout </a>';
        
                 } else {
                     echo '<a class="nav-link login" href="/projectone/view/login.php">Login</a></li>';
