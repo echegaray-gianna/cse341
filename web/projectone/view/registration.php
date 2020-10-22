@@ -16,17 +16,17 @@
         <fieldset class="form_registration_container">
             <label>
                 <span>Name</span>
-                <input type="text" name="clientfirstname" placeholder="Name" required>
+                <input type="text" name="clientfirstname" placeholder="Name" <?php if(isset($clientfirstname)){echo "value='$clientfirstname'";} ?> required>
             </label>
 
             <label>
                 <span>Last Name</span>
-                <input type="text" name="clientlastname" placeholder="Last Name" required>
+                <input type="text" name="clientlastname" placeholder="Last Name" <?php if(isset($clientlastname)){echo "value='$clientlastname'";}  ?>required>
             </label>
 
             <label>
                 <span>Email</span>
-                <input type="email" name="clientemail" placeholder="Email" required>
+                <input type="email" name="clientemail" placeholder="Email" <?php if(isset($clientemail)){echo "value='$clientemail'";}  ?>required>
             </label>
 
             <label>

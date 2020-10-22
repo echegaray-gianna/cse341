@@ -1,4 +1,5 @@
 <?php
+
 function checkEmail($clientemail)
 {
     $valEmail = filter_var($clientemail, FILTER_VALIDATE_EMAIL);
@@ -34,3 +35,4 @@ function checkExistingEmail($clientemail)
     return 1;
   }
 }
+

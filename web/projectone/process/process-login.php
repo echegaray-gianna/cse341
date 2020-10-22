@@ -23,7 +23,7 @@
         $message = '<p>Please provide information for all empty form fields.</p>';
         include '../view/registration.php';
         exit;
-      }
+    }
 
 
         $sql = 'SELECT *
@@ -32,14 +32,28 @@
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':clientemail', $clientemail);
 
-        $stmt->execute();
+        $clientdata = $statement->execute();
 
-        while ($client =$stmt->fetch(PDO::FETCH_ASSOC)) {
+        $hashCheck = password_verify($clientPassword, $clientdata['clientpassword']);
 
-            
+        if (!$hashCheck) {
+          $message = '<p class="notice">Please check your password and try again.</p>';
+          include '../view/login.php';
+          exit;
+        }
 
+    // A valid user exists, log them in
+    $_SESSION['loggedin'] = TRUE;
+    setcookie('firstname', '', time() - 3600, '/');
+    // Remove the password from the array
 
-        }     
+    array_pop($clientdata);
+    // Store the array into the session
+    $_SESSION['clientData'] = $clientData;
+
+    // Send them to the admin view
+    include '../view/admin.php';
+    exit;
 
 
 
@@ -53,5 +67,3 @@
 }
 
 header ('location: /projectone/view/login./php');
-
-?>
