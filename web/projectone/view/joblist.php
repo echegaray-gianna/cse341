@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; ?>
+<!-- <?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; ?>
 
 
 <main>
@@ -12,32 +12,42 @@
         <?php
 
         //connect to DB
-        require_once "../connections/dbconnect.php";
+         require_once "../connections/dbconnect.php";
         $db= getdb();
 
-        //statement
-        $sql = 'SELECT * FROM category';
+        $sql = 'SELECT * FROM client';
+
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $catname = $categories['categoryname'];
-            $catid = $categories['categoryid'];
-
-        echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
-
+    
+        while ($client = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    
+            $catid = $client['clientid'];
+            $clyname = $client['clientname'];
+            $cltype = $clientt['clienttype'];
+    
+    
+    
+            echo "<p class='title-category-job'> $catid</p>";
+            echo "<p class= 'subtitle-category-job'> $clyname </p>";
+            echo "<p class= 'subtitle-category-job'> $cltype </p>";
         }
+
+         //statement
+        // $sql = 'SELECT * FROM category';
+        // $stmt = $db->prepare($sql);
+        // $stmt->execute();
+        // while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        //     $catname = $categories['categoryname'];
+        //     $catid = $categories['categoryid'];
+
+        // echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+
+        // }
         
         ?>
 
     </div>
-
-
-
-
-
-
-
-
 
 </main>
 
@@ -50,4 +60,4 @@
 
 </body>
 
-</html>
+</html> -->
