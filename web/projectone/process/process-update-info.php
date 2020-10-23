@@ -29,7 +29,7 @@ try {
 
     // Check for missing data
 
-    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkPassword)) {
+    if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail)) {
         $message = '<p>Please provide information for all empty form fields.</p>';
         include '../view/registration.php';
         exit;
