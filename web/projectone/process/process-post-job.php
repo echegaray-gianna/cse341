@@ -22,6 +22,7 @@ session_start();
 
 
         // Check for missing data
+        //sd
 
         if ($categoryid === 'Choose a Category' ){
             $message = '<p>Please provide information for all empty form fields.</p>';
