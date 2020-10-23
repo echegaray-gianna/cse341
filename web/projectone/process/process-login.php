@@ -44,10 +44,11 @@
         
 
         if (!$hashCheck) {
+
             $_SESSION['message'] = $message;
             $message = '<p class="notice">Please check your password and try again.</p>';
 
-            include '/projectone/view/login.php';
+            include '..login.php';
 
             exit;
         }
