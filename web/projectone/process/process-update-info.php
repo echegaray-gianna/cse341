@@ -45,7 +45,7 @@ try {
     if ($updateInfo) {
         $message = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
         $_SESSION['message'] = $message;
-        $_SESSION['clientData'] = getAccountInfo($clientid);
+        $_SESSION['clientdata'] = getAccountInfo($clientid);
 
         header('location: /projectone/view/admin.php');
 
