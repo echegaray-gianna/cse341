@@ -45,7 +45,7 @@
 
         if (!$hashCheck) {
             $message = '<p class="notice">Please check your password and try again.</p>';
-            header('location:../view/login.php');
+            include '../view/login.php';
             exit;
         }
 

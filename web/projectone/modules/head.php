@@ -39,7 +39,6 @@
 
                 <li><a class="nav-link" href="/projectone/index.php">Home</a> </li>
                 <li><a class="nav-link" href="/projectone/job-index/index.php">Jobs </a></li>
-                <li><a class="nav-link" href="/projectone/post-index/index.php">Post a Job </a></li>
                 <li style="float:right">
                 <?php 
                 if (isset ($_SESSION['loggedin'])) {
