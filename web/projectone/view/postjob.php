@@ -112,9 +112,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
             </label>
 
 
-            <input type="hidden" name="clientid" value="<?php if (isset($clientid)) {
-                                                            echo $clientid;
-                                                        } ?>">
+            <input type="hidden" name="clientid" value="<?php if (isset($clientInfoAcc)) {
+                                                        echo $clientInfoAcc['clientid'];
+                                                    } elseif (isset($clientid)) {
+                                                        echo $clientid;
+                                                    } ?>">
 
 
             <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
