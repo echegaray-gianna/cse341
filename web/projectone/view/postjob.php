@@ -31,6 +31,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
     <h1> Post a Job </h1>
 
+    <?php
+
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
+
     <form action="/projectone/process/process-post-job.php" method="POST" name="account_login" class="form_login">
 
         <fieldset class="form_postjob_container">
@@ -101,7 +108,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 $catname = $categories['categoryname'];
                 $catid = $categories['categoryid'];
 
-                $catList .= "<option value='$catid[categoryid]'>$catname</option>";;
+                $catList .= "<option value='$catid'>$catname</option>";;
             }
 
             ?>
@@ -113,10 +120,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
 
             <input type="hidden" name="clientid" value="<?php if (isset($clientInfoAcc)) {
-                                                        echo $clientInfoAcc['clientid'];
-                                                    } elseif (isset($clientid)) {
-                                                        echo $clientid;
-                                                    } ?>">
+                                                            echo $clientInfoAcc['clientid'];
+                                                        } elseif (isset($clientid)) {
+                                                            echo $clientid;
+                                                        } ?>">
 
 
             <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
