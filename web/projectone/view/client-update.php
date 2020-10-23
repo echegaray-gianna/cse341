@@ -38,6 +38,7 @@ if (isset($clientInfoAcc['clientfirstname'])) {
 <h1>
     <?php
     echo "Update Account";
+    echo $_SESSION['loggedin'];
 
     ?>
 </h1>
