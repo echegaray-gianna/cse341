@@ -1,30 +1,31 @@
 <?php
 
-// require_once "../connections/dbconnect.php";
-// require_once "../functions/functions.php";
-// session_start();
+require_once "../connections/dbconnect.php";
+require_once "../functions/functions.php";
+session_start();
 
-// $db = getdb();
+$db = getdb();
 
-// try {
+try {
 
-// $clientInfo = getAccountInfo($clientid);
-// $clientInfoAcc= $_SESSION['clientdata'];
+$clientid = $_GET['id'];
+$clientInfo = getAccountInfo($clientid);
+$clientInfoAcc= $_SESSION['clientdata'];
 
-// if (isset($clientInfoAcc['clientfirstname'])) { 
-//   $page_title = "Update $clientInfoAcc[clientfirstname]'s Account ";
+if (isset($clientInfoAcc['clientfirstname'])) { 
+  $page_title = "Update $clientInfoAcc[clientfirstname]'s Account ";
 
-// } elseif (isset($clientfirstname)) { 
-//   echo $clientfirstname; 
-// };
+} elseif (isset($clientfirstname)) { 
+  echo $clientfirstname; 
+};
 
-// include '/projectone/view/client-update.php';
-// exit;
+include '/projectone/view/client-update.php';
+exit;
 
-// }catch (Exception $ex)
-// {
-//     // Please be aware that you don't want to output the Exception message in
-//     // a production environment
-//     echo "Error with DB. Details: $ex";
-//     die();
-// }
+}catch (Exception $ex)
+{
+    // Please be aware that you don't want to output the Exception message in
+    // a production environment
+    echo "Error with DB. Details: $ex";
+    die();
+}
