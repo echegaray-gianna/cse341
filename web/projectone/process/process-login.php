@@ -48,7 +48,7 @@
             $_SESSION['message'] = $message;
             $message = '<p class="notice">Please check your password and try again.</p>';
 
-            include '..login.php';
+            include '../view/login.php';
 
             exit;
         }
