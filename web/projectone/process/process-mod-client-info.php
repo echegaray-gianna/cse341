@@ -1,11 +1,12 @@
 <?php
 
-$clientid = ($_GET['clientid']);
+
 $clientInfo = getAccountInfo($clientid);
 $clientInfoAcc= $_SESSION['clientdata'];
 
 if (isset($clientInfoAcc['clientfirstname'])) { 
   $page_title = "Update $clientInfoAcc[clientfirstname]'s Account ";
+
 } elseif (isset($clientfirstname)) { 
   echo $clientfirstname; 
 };
