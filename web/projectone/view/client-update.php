@@ -18,7 +18,7 @@ if (isset($clientInfoAcc['clientfirstname'])) {
   } elseif (isset($clientfirstname)) { 
     echo $clientfirstname; 
   };
-  
+
 ?>
 
 <h1>
@@ -31,7 +31,7 @@ if (isset($clientInfoAcc['clientfirstname'])) {
 <p class="prod_text">All fields are required </p>
 
 
-<form action="/project/process/process-update-info.php" method="POST" name="account_reg" class="form_login">
+<form action="/projectone/process/process-update-info.php" method="POST" name="account_reg" class="form_login">
 
     <p class="field_name"> Use this form to update your name or email information </p>
 
