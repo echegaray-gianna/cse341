@@ -6,6 +6,7 @@ session_start();
 
 $db = getdb();
 
+try {
 $clientInfo = getAccountInfo($clientid);
 $clientInfoAcc= $_SESSION['clientdata'];
 
@@ -24,3 +25,11 @@ if($clientInfo ===TRUE){
 
 include '/projectone/view/client-update.php';
 exit;
+
+}catch (Exception $ex)
+{
+    // Please be aware that you don't want to output the Exception message in
+    // a production environment
+    echo "Error with DB. Details: $ex";
+    die();
+}
