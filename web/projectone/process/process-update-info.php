@@ -8,23 +8,22 @@ $db = getdb();
 
 try {
 
-    $clientfirstname = htmlspecialchars ($_POST['clientfirstname']);
-    $clientlastname = htmlspecialchars ($_POST['clientlastname']);
-    $clientemail = htmlspecialchars ($_POST['clientemail']);
-    $clientid = htmlspecialchars ($_POST['clientid']);
+    $clientfirstname = htmlspecialchars($_POST['clientfirstname']);
+    $clientlastname = htmlspecialchars($_POST['clientlastname']);
+    $clientemail = htmlspecialchars($_POST['clientemail']);
+    $clientid = htmlspecialchars($_POST['clientid']);
 
     $clientemail = checkEmail($clientemail);
 
-     //Check if the email is the same as the logged account
-    if ($clientemail !=$_SESSION ['clientdata']['clientemail']) {
+    //Check if the email is the same as the logged account
+    if ($clientemail != $_SESSION['clientdata']['clientemail']) {
         //Unique Registration Check - Check for existing email address in the table
         $existingEmail = checkExistingEmail($clientemail);
         // if exist...
         if ($existingEmail) {
-          $message = '<p class="notice">That email address already exists.</p>';
-          include '../view/client-update.php';
-          echo $_SESSION ['clientdata']['clientemail'];
-          exit;
+            $message = '<p class="notice">That email address already exists.</p>';
+            include '../view/client-update.php';
+            exit;
         }
     }
 
@@ -38,7 +37,8 @@ try {
 
     //Update info
 
-    function updateClientAcc ( $clientfirstname, $clientlastname, $clientemail, $clientid ) {
+    function updateClientAcc($clientfirstname, $clientlastname, $clientemail, $clientid)
+    {
 
         $db = getdb();
         $sql = 'UPDATE client 
@@ -59,21 +59,32 @@ try {
         $stmt->closeCursor();
         // Return the indication of success (rows changed)
         return $rowsChanged;
-    }    
+    }
 
-    $message = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
-    $_SESSION['message'] = $message;
-    $_SESSION['clientData'] = getAccountInfo($clientid);
+    $updateInfo = updateClientAcc(
+        $clientfirstname,
+        $clientlastname,
+        $clientemail,
+        $clientid
+    );
 
-    header('location: /projectone/view/admin.php');
+    if ($updateInfo) {
+        $message = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
+        $_SESSION['message'] = $message;
+        $_SESSION['clientData'] = getAccountInfo($clientid);
 
-    exit;
- 
+        header('location: /projectone/view/admin.php');
+
+        exit;
+    } else {
+        $message = "<p>Sorry, but we couldnt update $clientfirstname's account information. Please try again.</p>";
+        include '../view/client-update.php';
+        exit;
+    }
+    
 
 
-
-}catch (Exception $ex)
-{
+} catch (Exception $ex) {
     // Please be aware that you don't want to output the Exception message in
     // a production environment
     echo "Error with DB. Details: $ex";
