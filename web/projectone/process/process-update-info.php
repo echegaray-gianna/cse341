@@ -47,7 +47,7 @@ try {
         $_SESSION['message'] = $message;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
 
-        header('location: /projectone/view/admin.php');
+        header('location: /projectone/account-index/index.php');
 
         exit;
     } else {
