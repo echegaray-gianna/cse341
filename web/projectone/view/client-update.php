@@ -6,6 +6,9 @@ require_once "../functions/functions.php";
 
 session_start();
 
+$_SESSION['loggedin'];
+
+
 $updateInfo = updateClientAcc(
     $clientfirstname,
     $clientlastname,
