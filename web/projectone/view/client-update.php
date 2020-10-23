@@ -33,7 +33,7 @@ $clientInfoAcc = $_SESSION['clientdata'];
 if (isset($clientInfoAcc['clientfirstname'])) { 
     $page_title = "Update $clientInfoAcc[clientfirstname]'s Account ";
   
-  } elseif (isset($clientfirstname)) { 
+  } else if (isset($clientfirstname)) { 
     echo $clientfirstname; 
   };
 
