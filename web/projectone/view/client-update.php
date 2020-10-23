@@ -1,10 +1,14 @@
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
-
+<?php 
 require_once "../connections/dbconnect.php";
 require_once "../functions/functions.php";
 
 session_start();
+
+
+include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
+
+
 
 $updateInfo = updateClientAcc(
     $clientfirstname,
