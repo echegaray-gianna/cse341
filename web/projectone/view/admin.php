@@ -1,5 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
+require_once "../connections/dbconnect.php";
+require_once "../functions/functions.php";
 session_start();
 
 ?>
@@ -39,7 +41,7 @@ session_start();
 
 
     //Level >1 have the add product link after they login 
-    // if ($clientLevel === 'company'){
+    // if ($clienttype === 'company'){
     //     echo "<div class= 'adm_function'>
     //                 <h2 class = 'adm_funtion_title'> Administrative Functions </h2>
     //                 <p class= 'adm_text'> Use the link below to manage products. </p>
