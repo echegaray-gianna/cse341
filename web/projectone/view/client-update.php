@@ -3,6 +3,14 @@
 
 require_once "../connections/dbconnect.php";
 session_start();
+
+$updateInfo = updateClientAcc(
+    $clientfirstname,
+    $clientlastname,
+    $clientemail,
+    $clientid
+);
+
 ?>
 
 <main>
