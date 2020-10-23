@@ -22,7 +22,6 @@ session_start();
 
 
         // Check for missing data
-        //sd
 
         if ($categoryid === 'Choose a Category' ){
             $message = '<p>Please provide information for all empty form fields.</p>';
@@ -57,6 +56,7 @@ session_start();
         $stmt->execute();
 
         setcookie('jobposition', $jobname, strtotime('+1 year'), '/');
+        
         $message = "<p>Thanks for post. $jobname was post in our list.</p>";
         include '../account-index/index.php';
         exit;

@@ -23,7 +23,11 @@
           <h2 class= 'logged_text'> You are logged in. </h2>";
 
     if (isset($_SESSION['message'])) {
-            echo $_SESSION['message'];
+            echo $_SESSION['message'];        
+    }
+
+    if (isset($message)) {
+        echo $message;
     }
 
     echo "<ul class='admin_client_info'>
