@@ -44,8 +44,11 @@
         
 
         if (!$hashCheck) {
+            
+            $_SESSION['message'] = $message;
             $message = '<p class="notice">Please check your password and try again.</p>';
-            include '../view/login.php';
+            header('location: /projectone/view/login.php');
+            
             exit;
         }
 

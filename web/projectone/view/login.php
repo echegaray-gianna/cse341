@@ -1,8 +1,4 @@
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
-
-
-?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; ?>
 
 <main>
 
