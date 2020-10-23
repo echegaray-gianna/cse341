@@ -8,7 +8,7 @@ $db = getdb();
 
 try {
 
-$clientid = $_GET['id'];
+$clientid = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $clientInfo = getAccountInfo($clientid);
 $clientInfoAcc= $_SESSION['clientdata'];
 
