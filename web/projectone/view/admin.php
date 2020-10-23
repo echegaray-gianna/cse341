@@ -31,7 +31,7 @@
                 <li> Last Name: $clientlastname </li>
                 <li> Email Address: $clientemail </li>
           </ul>
-          <p class= 'adm_text'> Use the link below to manage your account. </p>
+          <h2 class= 'adm_text'> Use the link below to manage your account. </h2>
           <div class= 'admnAccLink'>
                 <a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
           </div>" ;
@@ -42,7 +42,7 @@
         echo "<div class= 'post-job-add-container'>
                     <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>
                     <div class= 'post-job-add-link'>
-                        <a href='/projectone/post-index/index.php' title= 'jobs'> Products </a> 
+                        <a href='/projectone/post-index/index.php' title= 'jobs'> List a New Post </a> 
                     </div> 
               </div>";
 

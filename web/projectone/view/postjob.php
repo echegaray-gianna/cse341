@@ -1,14 +1,33 @@
-<?php 
+<?php
+
 require_once "../connections/dbconnect.php";
 require_once "../functions/functions.php";
 
 session_start();
 
-include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
+
+include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
 ?>
 
 <main>
+
+    <?php
+    //Only allow access to the view if client is logged in
+    if ($_SESSION['loggedin'] = FALSE) {
+        header('location: /projectone/index.php');
+        exit;
+    }
+
+    $clientInfoAcc = $_SESSION['clientdata'];
+
+    if (isset($clientInfoAcc['clientfirstname'])) {
+        $page_title = "Post a Job $clientInfoAcc[clientfirstname] ";
+    } else if (isset($clientfirstname)) {
+        echo $clientfirstname;
+    };
+
+    ?>
 
     <h1> Post a Job </h1>
 
@@ -92,11 +111,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <?php echo $catList; ?>
             </label>
 
-            <input type='hidden' name='clientid' value='<?php if (isset($clientid)) {
-                                                            echo $clientid;
-                                                        } ?>'>
 
-            <input type='hidden' name='action' value='add_job'>
+            <input type="hidden" name="clientid" value="<?php if (isset($clientid)) {
+                                                            echo $clientid;
+                                                        } ?>">
+
+
             <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
 
 
