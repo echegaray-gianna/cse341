@@ -16,13 +16,14 @@ try {
     $clientemail = checkEmail($clientemail);
 
      //Check if the email is the same as the logged account
-    if ($clientemail != $_SESSION ['clientdata']['clientemail']) {
+    if ($clientemail !=$_SESSION ['clientdata']['clientemail']) {
         //Unique Registration Check - Check for existing email address in the table
         $existingEmail = checkExistingEmail($clientemail);
         // if exist...
         if ($existingEmail) {
           $message = '<p class="notice">That email address already exists.</p>';
           include '../view/client-update.php';
+          echo $_SESSION ['clientdata']['clientemail'];
           exit;
         }
     }
@@ -31,7 +32,7 @@ try {
 
     if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail)) {
         $message = '<p>Please provide information for all empty form fields.</p>';
-        include '../view/registration.php';
+        include '../view/client-update.php';
         exit;
     }
 
