@@ -30,7 +30,6 @@ try {
     // Check for missing data
 
     if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail)) {
-        session_destroy();
         $message = '<p>Please provide information for all empty form fields.</p>';
         include '../view/client-update.php';
         exit;
