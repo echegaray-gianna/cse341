@@ -1,6 +1,7 @@
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
 
+require_once "../connections/dbconnect.php";
 session_start();
 ?>
 
