@@ -36,10 +36,14 @@ try {
     }
 
     //Update info
-    $sql = 'UPDATE client 
-            SET clientfirstname = :clientfirstname, clientlastname = :clientlastname,
-                clientemail =:clientemail
-            WHERE clientid =:clientid';
+
+    function updateClientAcc ( $clientfirstname, $clientlastname, $clientemail, $clientid ) {
+
+        $db = getdb();
+        $sql = 'UPDATE client 
+                SET clientfirstname = :clientfirstname, clientlastname = :clientlastname,
+                    clientemail =:clientemail
+                WHERE clientid =:clientid';
 
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':clientfirstname', $clientfirstname);
@@ -49,13 +53,20 @@ try {
 
         $stmt->execute();
 
-        $message = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
-        $_SESSION['message'] = $message;
-        $_SESSION['clientData'] = getAccountInfo($clientid);
-        
-        header('location: /projectone/view/admin.php');
+        $rowsChanged = $stmt->rowCount();
+        // Close the database interaction
+        $stmt->closeCursor();
+        // Return the indication of success (rows changed)
+        return $rowsChanged;
+    }    
 
-        exit;
+    $message = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
+    $_SESSION['message'] = $message;
+    $_SESSION['clientData'] = getAccountInfo($clientid);
+
+    header('location: /projectone/view/admin.php');
+
+    exit;
  
 
 
