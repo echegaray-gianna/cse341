@@ -35,32 +35,6 @@ try {
         exit;
     }
 
-    //Update info
-
-    function updateClientAcc($clientfirstname, $clientlastname, $clientemail, $clientid)
-    {
-
-        $db = getdb();
-        $sql = 'UPDATE client 
-                SET clientfirstname = :clientfirstname, clientlastname = :clientlastname,
-                    clientemail =:clientemail
-                WHERE clientid =:clientid';
-
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':clientfirstname', $clientfirstname);
-        $stmt->bindValue(':clientlastname', $clientlastname);
-        $stmt->bindValue(':clientemail', $clientemail);
-        $stmt->bindValue(':clientid', $clientid);
-
-        $stmt->execute();
-
-        $rowsChanged = $stmt->rowCount();
-        // Close the database interaction
-        $stmt->closeCursor();
-        // Return the indication of success (rows changed)
-        return $rowsChanged;
-    }
-
     $updateInfo = updateClientAcc(
         $clientfirstname,
         $clientlastname,
