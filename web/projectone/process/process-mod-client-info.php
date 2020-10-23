@@ -22,5 +22,5 @@ if($clientInfo ===TRUE){
   $_SESSION ['$message'] = 'Sorry, account information could not be found.';
 }
 
-include '.projectone/view/client-update.php';
+include '/projectone/view/client-update.php';
 exit;
