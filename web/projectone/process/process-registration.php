@@ -1,8 +1,8 @@
 <?php 
 
- require_once "../connections/dbconnect.php";
- require_once "../functions/functions.php";
-
+require_once "../connections/dbconnect.php";
+require_once "../functions/functions.php";
+session_start();
 
  $db = getdb();
 
@@ -72,5 +72,3 @@
     }
 
 header ('location: /projectone/view/login./php');
-
-?>

@@ -40,17 +40,15 @@ session_start();
 
 
 
-    //Level >1 have the add product link after they login 
-    // if ($clienttype === 'company'){
-    //     echo "<div class= 'adm_function'>
-    //                 <h2 class = 'adm_funtion_title'> Administrative Functions </h2>
-    //                 <p class= 'adm_text'> Use the link below to manage products. </p>
-    //                 <div class= 'admnProdLink'>
-    //                     <a href='../products/index.php?action=login' title= 'Product'> Products </a> 
-    //                 </div> 
-    //           </div>";
+    if ($clienttype === 'company'){
+        echo "<div class= 'post-job-add-container'>
+                    <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>
+                    <div class= 'post-job-add-link'>
+                        <a href='/projectone/post-index/index.php' title= 'jobs'> Products </a> 
+                    </div> 
+              </div>";
 
-    // }
+    }
 
     // if (isset($_SESSION['messageReviewTwo'])) {
     //     echo $_SESSION['messageReviewTwo'];
