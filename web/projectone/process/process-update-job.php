@@ -62,7 +62,7 @@
         } else {
             $messageReviewTwo = '<p class="notice">Sorry but we coudnt update your review. Please try again.</p>';
             $_SESSION['messageReviewTwo'] = $messageReviewTwo;
-            header('location: /projectone/accounts-index/index.php');
+            header('location: /projectone/account-index/index.php');
             exit;
         }
     } catch (Exception $ex) {
