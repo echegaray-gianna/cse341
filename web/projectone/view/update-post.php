@@ -29,7 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
     ?>
 
-    <h1> Post a Job </h1>
+    <h1> Update your Post Job </h1>
 
     <?php
 
@@ -38,7 +38,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     }
     ?>
 
-    <form action="/projectone/process/process-post-job.php" method="POST" name="jobpost" class="form jobpost">
+    <form action="/projectone/process/process-update-job.php" method="POST" name="jobupdate" class="form jobupdate">
 
         <fieldset class="form_postjob_container">
 

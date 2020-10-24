@@ -7,23 +7,23 @@
 
 <main>
 
-<?php
-    if($_SESSION['loggedin']= FALSE){
+    <?php
+    if ($_SESSION['loggedin'] = FALSE) {
         header('location: /projectone/index.php');
         exit;
     }
 
-    $clientfirstname = $_SESSION ['clientdata'] ['clientfirstname'];
-    $clientlastname = $_SESSION ['clientdata'] ['clientlastname'];
-    $clientemail = $_SESSION ['clientdata'] ['clientemail'];
-    $clienttype = $_SESSION ['clientdata'] ['clienttype'];
-    
+    $clientfirstname = $_SESSION['clientdata']['clientfirstname'];
+    $clientlastname = $_SESSION['clientdata']['clientlastname'];
+    $clientemail = $_SESSION['clientdata']['clientemail'];
+    $clienttype = $_SESSION['clientdata']['clienttype'];
+
 
     echo "<h1> $clientfirstname $clientlastname </h1>
           <h2 class= 'logged_text'> You are logged in. </h2>";
 
     if (isset($_SESSION['message'])) {
-            echo $_SESSION['message'];        
+        echo $_SESSION['message'];
     }
 
     if (isset($message)) {
@@ -38,11 +38,15 @@
           <h2 class= 'adm_text'> Use the link below to manage your account. </h2>
           <div class= 'admnAccLink'>
                 <a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
-          </div>" ;
+          </div>";
 
 
+    if (isset($_SESSION['messageReviewTwo'])) {
+        echo $_SESSION['messageReviewTwo'];
+        unset($_SESSION['messageReviewTwo']);
+    }
 
-    if ($clienttype === 'company'){
+    if ($clienttype === 'company') {
         echo "<div class= 'post-job-add-container'>
                     <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>
                     <div class= 'post-job-add-link'>
@@ -50,16 +54,12 @@
                     </div> 
               </div>";
 
+        if (isset($jobClientDisplay)) {
+            echo $jobClientDisplay;
+        }
     }
 
-    // if (isset($_SESSION['messageReviewTwo'])) {
-    //     echo $_SESSION['messageReviewTwo'];
-    //     unset($_SESSION['messageReviewTwo']);
-    // }
-   
-
-
-?>
+    ?>
 
 </main>
 
