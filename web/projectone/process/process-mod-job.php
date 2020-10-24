@@ -1,6 +1,6 @@
 <?php
 
-$reviewId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$jobid = $_GET['id'];
 $reviewJobDetails = getSpecificJob($jobid);
 
 if ($reviewJobDetails) {
