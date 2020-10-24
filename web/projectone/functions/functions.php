@@ -108,7 +108,7 @@ function getJobPostByClient($clientid)
               INNER JOIN category 
               ON job.categoryid = category.categoryid
               WHERE job.clientid = :clientid
-              ORDER BY reviewDate DESC';
+              ORDER BY jobid DESC';
 
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientid', $clientid, PDO::PARAM_INT);
