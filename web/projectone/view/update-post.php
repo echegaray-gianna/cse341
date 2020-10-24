@@ -27,6 +27,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         echo $clientfirstname;
     };
 
+    $jobid = $_GET['id'];
+    $jobDetails = getSpecificJob($jobid);
+
+    if ($jobDetails) {
+        foreach ($jobDetails as $jobinfo) {
+            $jobid = $jobinfo['jobid'];
+            $clientid = $jobinfo['clientid'];
+        }
+    }
+
     ?>
 
     <h1> Update your Post Job </h1>
