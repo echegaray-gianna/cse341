@@ -54,9 +54,8 @@
 
     }
 
-    if (isset($jobClientDisplay)) {
-        echo $jobClientDisplay;
-    }
+    $postclientdetails=  getJobPostByClient($_SESSION['clientdata']['jobid']);
+    $jobClientDisplay = buildJobPost($postclientdetails);
 
     ?>
 
