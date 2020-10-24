@@ -131,18 +131,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 $catname = $categories['categoryname'];
                 $catid = $categories['categoryid'];
 
-
-                if (isset($categoryid)) {
-
-                    if ($categories['categoryid' === $categoryid]) {
-                        $catList .= 'selected';
-                    }
-                } elseif (isset($jobinfo['categoryid'])) {
-                    if ($categories['categoryid'] === $jobinfo['categoryid']) {
-                        $catList .= ' selected ';
-                    }
-                }
-
                 $catList .= "<option value='$catid'>$catname</option>";
 
 
