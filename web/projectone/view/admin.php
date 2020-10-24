@@ -52,9 +52,10 @@
                     </div> 
               </div>";
 
-        if (isset($jobClientDisplay)) {
-            echo $jobClientDisplay;
-        }
+    }
+
+    if (isset($jobClientDisplay)) {
+        echo $jobClientDisplay;
     }
 
     ?>
