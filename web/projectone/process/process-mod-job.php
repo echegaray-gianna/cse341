@@ -1,16 +1,16 @@
 <?php
 
 $jobid = $_GET['id'];
-$reviewJobDetails = getSpecificJob($jobid);
+$jobDetails = getSpecificJob($jobid);
 
-if ($reviewJobDetails) {
-  foreach ($reviewJobDetails as $jobinfo) {
+if ($jobDetails) {
+  foreach ($jobDetails as $jobinfo) {
     $jobid = $jobinfo['jobid'];
     $clientid = $jobinfo['clientid'];
   }
 }
 
-if ($reviewJobDetails < 1) {
+if ($jobDetails < 1) {
   $message = '<p class="notice"> Sorry, no product information could be found. </p>';
 }
 
