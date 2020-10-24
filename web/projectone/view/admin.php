@@ -55,7 +55,7 @@
     }
 
     $postclientdetails=  getJobPostByClient($_SESSION['clientdata']['clientid']);
-    $jobClientDisplay = buildJobPost($postclientdetails);
+   echo $jobClientDisplay = buildJobPost($postclientdetails);
 
     ?>
 
