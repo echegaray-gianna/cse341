@@ -10,8 +10,5 @@ switch ($action) {
 
   default:
 
-    $postclientdetails=  getJobPostByClient($_SESSION['clientdata']['jobid']);
-    $jobClientDisplay = buildJobPost($postclientdetails);
-
     include '../view/admin.php';
 }
