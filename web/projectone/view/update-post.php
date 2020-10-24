@@ -143,9 +143,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
 
             <input type="hidden" name="clientid" value="<?php if (isset($clientid)) {
-                                                            echo "value='$clientid'";
+                                                            echo $clientid;
                                                         } elseif (isset($jobinfo['clientid'])) {
-                                                            echo "value= '$jobinfo[clientid]'";
+                                                            echo $jobinfo['clientid'];
                                                         }  ?>">
 
 
