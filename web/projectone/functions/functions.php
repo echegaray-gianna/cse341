@@ -180,7 +180,7 @@ function updateJobPost( $jobid, $jobname, $jobcompany, $joblocation, $jobsalary,
   $sql = 'UPDATE job 
           SET jobname =:jobname, jobcompany =:jobcompany, joblocation =:joblocation, jobsalary =:jobsalary,
               jobrequirements =:jobrequirements, jobresponsibilities =:jobresponsibilities, jobdescription =:jobdescription,
-              categoryid =:categoryid
+              categoryid =:categoryid, clientid =:clientid
           WHERE jobid =:jobid';
   
   
