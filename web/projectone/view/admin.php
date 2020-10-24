@@ -51,11 +51,10 @@
                         <a href='/projectone/post-index/index.php' title= 'jobs'> List a New Post </a> 
                     </div> 
               </div>";
-
     }
 
-    $postclientdetails=  getJobPostByClient($_SESSION['clientdata']['clientid']);
-   echo $jobClientDisplay = buildJobPost($postclientdetails);
+    $postclientdetails =  getJobPostByClient($_SESSION['clientdata']['clientid']);
+    echo $jobClientDisplay = buildJobPost($postclientdetails);
 
     ?>
 
