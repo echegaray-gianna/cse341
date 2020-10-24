@@ -57,7 +57,7 @@
         if ($updatePostResult) {
             $messageReviewTwo = '<p class="notice">Thanks for updating your review</p>';
             $_SESSION['messageReviewTwo'] = $messageReviewTwo;
-            header('location: /projectone/accounts-index/index.php');
+            header('location: /projectone/account-index/index.php');
             exit;
         } else {
             $messageReviewTwo = '<p class="notice">Sorry but we coudnt update your review. Please try again.</p>';
