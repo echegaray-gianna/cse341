@@ -19,7 +19,7 @@
 
         if ($categoryid === 'Choose a Category') {
             $message = '<p>Please provide information for all empty form fields.</p>';
-            include '../view/postjob.php';
+            include '../view/update-post.php';
             exit;
         }
 
@@ -28,7 +28,7 @@
             empty($jobrequirements) || empty($jobresponsibilities) || empty($jobdescription)
         ) {
             $message = '<p>Please provide information for all empty form fields.</p>';
-            include '../view/postjob.php';
+            include '../view/update-post.php';
             exit;
         }
 

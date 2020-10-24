@@ -160,7 +160,7 @@ function buildJobPost($postclientdetails)
 
 
       $jp .= "<tr><td class='job-name-post'> $postitemdetails[jobname]</td>";
-      $jp .= "<td class='review-mod'><a href='/projectone/process/process-update-job.php?id=$postitemdetails[jobid]' title='Edit'> Edit</a></td>";
+      $jp .= "<td class='review-mod'><a href='/projectone/process/update-post.php?id=$postitemdetails[jobid]' title='Edit'> Edit</a></td>";
       $jp .= "<td class='review-del'><a href='/projectone/process/process-delete-job.php?id=$postitemdetails[jobid]' title='Delete'> Delete</a></td>";
       $jp .= "</tr>";
     }
