@@ -51,6 +51,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     <form action="/projectone/process/process-update-job.php" method="POST" name="jobupdate" class="form jobupdate">
 
         <fieldset class="form_postjob_container">
+        
+        <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
+                                                            echo $jobid;
+                                                        } elseif (isset($jobinfo['jobid'])) {
+                                                            echo $jobinfo['jobid'];
+                                                        }  ?>">
 
             <label for="jobname">
                 <span>Position Name</span>
@@ -147,13 +153,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                         } elseif (isset($jobinfo['clientid'])) {
                                                             echo $jobinfo['clientid'];
                                                         }  ?>">
-
-            <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
-                                                            echo $jobid;
-                                                        } elseif (isset($jobinfo['jobid'])) {
-                                                            echo $jobinfo['jobid'];
-                                                        }  ?>">
-
 
             <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
 
