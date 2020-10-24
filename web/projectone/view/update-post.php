@@ -131,7 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 $catname = $categories['categoryname'];
                 $catid = $categories['categoryid'];
 
-                $catList .= "<option value='$catname'>$catname</option>";
+                $catList .= "<option value='$catid'>$catname</option>";
 
 
             }
