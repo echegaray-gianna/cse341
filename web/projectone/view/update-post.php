@@ -55,8 +55,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
             <label for="jobname">
                 <span>Position Name</span>
                 <input type="text" name="jobname" id="jobname" placeholder="Enter Position Name" <?php if (isset($jobname)) {
-                                                                                                        echo "value='$jobname'";
-                                                                                                    }  ?> required>
+                                                                                                echo "value='$jobname'";
+                                                                                            } elseif (isset($jobinfo['jobname'])) {
+                                                                                                echo "value= '$jobinfo[jobname]'";
+                                                                                            }  ?> required>
             </label>
 
             <label for="jobcompany">
