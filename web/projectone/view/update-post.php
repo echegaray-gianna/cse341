@@ -55,16 +55,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
             <label for="jobname">
                 <span>Position Name</span>
                 <input type="text" name="jobname" id="jobname" placeholder="Enter Position Name" <?php if (isset($jobname)) {
-                                                                                                echo "value='$jobname'";
-                                                                                            } elseif (isset($jobinfo['jobname'])) {
-                                                                                                echo "value= '$jobinfo[jobname]'";
-                                                                                            }  ?> required>
+                                                                                                        echo "value='$jobname'";
+                                                                                                    } elseif (isset($jobinfo['jobname'])) {
+                                                                                                        echo "value= '$jobinfo[jobname]'";
+                                                                                                    }  ?> required>
             </label>
 
             <label for="jobcompany">
                 <span>Company Name</span>
                 <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" <?php if (isset($jobcompany)) {
                                                                                                             echo "value='$jobcompany'";
+                                                                                                        } elseif (isset($jobinfo['jobcompany'])) {
+                                                                                                            echo "value= '$jobinfo[jobcompany]'";
                                                                                                         }  ?> required>
             </label>
 
@@ -72,6 +74,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <span>Job Location</span>
                 <input type="text" name="joblocation" id="joblocation" placeholder="Enter Job Location" <?php if (isset($joblocation)) {
                                                                                                             echo "value='$joblocation'";
+                                                                                                        } elseif (isset($jobinfo['joblocation'])) {
+                                                                                                            echo "value= '$jobinfo[joblocation]'";
                                                                                                         }  ?> required>
             </label>
 
@@ -79,6 +83,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <span>Job Salary</span>
                 <input type="text" name="jobsalary" id="jobsalary" placeholder="Enter Job Salary" <?php if (isset($jobsalary)) {
                                                                                                         echo "value='$jobsalary'";
+                                                                                                    } elseif (isset($jobinfo['jobsalary'])) {
+                                                                                                        echo "value= '$jobinfo[jobsalary]'";
                                                                                                     }  ?> required>
             </label>
 
@@ -86,6 +92,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <span>Job Requirements</span>
                 <input type="text" name="jobrequirements" id="jobrequirements" placeholder="Enter Job Requirements" <?php if (isset($jobrequirements)) {
                                                                                                                         echo "value='$jobrequirements'";
+                                                                                                                    } elseif (isset($jobinfo['jobrequirements'])) {
+                                                                                                                        echo "value= '$jobinfo[jobrequirements]'";
                                                                                                                     }  ?> required>
             </label>
 
@@ -93,6 +101,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <span>Job Responsibilities</span>
                 <input type="text" name="jobresponsibilities" id="jobresponsibilities" placeholder="Enter Job Responsibilities" <?php if (isset($jobresponsibilities)) {
                                                                                                                                     echo "value='$jobresponsibilities'";
+                                                                                                                                } elseif (isset($jobinfo['jobresponsibilities'])) {
+                                                                                                                                    echo "value= '$jobinfo[jobresponsibilities]'";
                                                                                                                                 }  ?> required>
             </label>
 
@@ -100,28 +110,51 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <span>Job Description</span>
                 <input type="text" name="jobdescription" id="jobdescription" placeholder="Enter Job Description" <?php if (isset($jobdescription)) {
                                                                                                                         echo "value='$jobdescription'";
+                                                                                                                    } elseif (isset($jobinfo['jobdescription'])) {
+                                                                                                                        echo "value= '$jobinfo[jobdescription]'";
                                                                                                                     }  ?> required>
             </label>
 
 
             <?php
 
-            //connect to DB
-            require_once "../connections/dbconnect.php";
-            $db = getdb();
+            function getcategories()
+            {
+
+                $db = getdb();
+
+                $sql = 'SELECT * FROM category';
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                $categories = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $stmt->closeCursor();
+                return $categories;
+            }
 
             $catList = '<select name="categoryid" id="categorylist">';
             $catList .= "<option>Choose a Category</option>";
 
-            $sql = 'SELECT * FROM category';
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-            while ($categories = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $catname = $categories['categoryname'];
-                $catid = $categories['categoryid'];
+            foreach ($categories as $category) {
+                $catname = $category['categoryname'];
+                $catid = $category['categoryid'];
 
-                $catList .= "<option value='$catid'>$catname</option>";;
+                $catList .= "<option value='$catid'>$catname</option>";
+
+                if (isset($categoryid)) {
+
+                    if ($category['categoryId' === $categoryid]) {
+                        $catList .= 'selected';
+                    }
+                } elseif (isset($jobinfo['categoryid'])) {
+                    if ($category['categoryid'] === $jobinfo['categoryid']) {
+                        $catList .= ' selected ';
+                    }
+                }
             }
+
+
+
 
             ?>
 
