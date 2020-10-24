@@ -1,6 +1,12 @@
 
   <?php
 
+    require_once "../connections/dbconnect.php";
+    require_once "../functions/functions.php";
+    session_start();
+
+    $db = getdb();
+
     try {
 
         $jobid = htmlspecialchars($_POST['jobid']);
@@ -32,11 +38,21 @@
             exit;
         }
 
-       
 
 
-        $updatePostResult = updateJobPost( $jobid, $jobname, $jobcompany, $joblocation, $jobsalary, $jobrequirements,
-        $jobresponsibilities, $jobdescription, $categoryid, $clientid);
+
+        $updatePostResult = updateJobPost(
+            $jobid,
+            $jobname,
+            $jobcompany,
+            $joblocation,
+            $jobsalary,
+            $jobrequirements,
+            $jobresponsibilities,
+            $jobdescription,
+            $categoryid,
+            $clientid
+        );
 
         if ($updatePostResult) {
             $messageReviewTwo = '<p class="notice">Thanks for updating your review</p>';
@@ -49,7 +65,6 @@
             header('location: /projectone/accounts-index/index.php');
             exit;
         }
-        
     } catch (Exception $ex) {
         // Please be aware that you don't want to output the Exception message in
         // a production environment
