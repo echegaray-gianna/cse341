@@ -148,6 +148,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                             echo $jobinfo['clientid'];
                                                         }  ?>">
 
+            <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
+                                                            echo $jobid;
+                                                        } elseif (isset($jobinfo['jobid'])) {
+                                                            echo $jobinfo['jobid'];
+                                                        }  ?>">
+
 
             <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
 
