@@ -83,7 +83,7 @@ function updateClientAcc($clientfirstname, $clientlastname, $clientemail, $clien
 function getSpecificJob($jobid)
 {
   $db = getdb();
-  $sql = 'SELECT * , category.categoryname
+  $sql = 'SELECT * , category.categoryname, category.categoryid
               FROM job 
               INNER JOIN category
               On job.categoryid = category.categoryid
