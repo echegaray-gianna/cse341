@@ -44,11 +44,16 @@ session_start();
         unset($_SESSION['messageJobTwo']);
     }
 
+
+
+    // $clientInfoHere = getAccountInfo($clientid);
+
     if ($clienttype === 'company') {
         echo "<div class= 'post-job-add-container'>
                     <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>
                     <div class= 'post-job-add-link'>
                         <a href='/projectone/post-index/index.php' title= 'jobs'> List a New Post </a> 
+
                     </div> 
               </div>";
     }
