@@ -55,11 +55,14 @@
         );
 
         if ($updatePostResult) {
+            $_SESSION['clientdata'] = $clientdata;
+
             $messageJobTwo = '<p class="notice">Thanks for updating your job post</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
             include '../view/admin.php';
             exit;
         } else {
+            $_SESSION['clientdata'] = $clientdata;
             $messageJobTwo = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
             include '../view/admin.php';
