@@ -39,9 +39,9 @@
           </div>";
 
 
-    if (isset($_SESSION['messageReviewTwo'])) {
-        echo $_SESSION['messageReviewTwo'];
-        unset($_SESSION['messageReviewTwo']);
+    if (isset($_SESSION['messageJobTwo'])) {
+        echo $_SESSION['messageJobTwo'];
+        unset($_SESSION['messageJobTwo']);
     }
 
     if ($clienttype === 'company') {

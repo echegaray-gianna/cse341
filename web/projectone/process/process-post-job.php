@@ -57,7 +57,8 @@ session_start();
 
         setcookie('jobposition', $jobname, strtotime('+1 year'), '/');
         
-        $message = "<p>Thanks for post. $jobname was post in our list.</p>";
+        $messageJobTwo = "<p>Thanks for post. $jobname was post in our list.</p>";
+        $_SESSION['messageJobTwo'] = $messageJobTwo;
         include '../account-index/index.php';
         exit;
  
