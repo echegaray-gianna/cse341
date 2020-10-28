@@ -55,13 +55,13 @@
         );
 
         if ($updatePostResult) {
-            $messageReviewTwo = '<p class="notice">Thanks for updating your job post</p>';
-            $_SESSION['messageReviewTwo'] = $messageReviewTwo;
+            $messageJobTwo = '<p class="notice">Thanks for updating your job post</p>';
+            $_SESSION['messageJobTwo'] = $messageJobTwo;
             header('location: /projectone/account-index/index.php');
             exit;
         } else {
-            $messageReviewTwo = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
-            $_SESSION['messageReviewTwo'] = $messageReviewTwo;
+            $messageJobTwo = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
+            $_SESSION['messageJobTwo'] = $messageJobTwo;
             header('location: /projectone/account-index/index.php');
             exit;
         }
