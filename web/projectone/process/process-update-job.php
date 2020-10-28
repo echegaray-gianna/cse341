@@ -9,6 +9,11 @@
 
     try {
 
+        $clientfirstname = $_SESSION['clientdata']['clientfirstname'];
+        $clientlastname = $_SESSION['clientdata']['clientlastname'];
+        $clientemail = $_SESSION['clientdata']['clientemail'];
+        $clienttype = $_SESSION['clientdata']['clienttype'];
+
         $jobid = htmlspecialchars($_POST['jobid']);
         $jobname = htmlspecialchars($_POST['jobname']);
         $jobcompany = htmlspecialchars($_POST['jobcompany']);
@@ -55,16 +60,12 @@
         );
 
         if ($updatePostResult) {
-            $_SESSION['clientdata'] = $clientdata;
-
+            
             $messageJobTwo = '<p class="notice">Thanks for updating your job post</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
-            include '../account-index/index.php';
-            
-            //header ('location: /projectone/account-index/index.php');
+            header ('location: /projectone/account-index/index.php');
             exit;
         } else {
-            $_SESSION['clientdata'] = $clientdata;
             $messageJobTwo = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
             include '../view/admin.php';
