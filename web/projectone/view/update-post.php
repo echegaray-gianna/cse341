@@ -154,7 +154,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                             echo $jobinfo['clientid'];
                                                         }  ?>">
 
-            <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
+            <input type='submit' name='submit' id='btn jobpost' value='Update Job'>
 
 
         </fieldset>

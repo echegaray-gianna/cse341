@@ -161,7 +161,7 @@ function buildJobPost($postclientdetails)
 
       $jp .= "<tr><td class='job-name-post'> $postitemdetails[jobname]</td>";
       $jp .= "<td class='review-mod'><a href='/projectone/view/update-post.php?id=$postitemdetails[jobid]' title='Edit'> Edit</a></td>";
-      $jp .= "<td class='review-del'><a href='#' title='Delete'> Delete</a></td>";
+      $jp .= "<td class='review-del'><a href='/projectone/view/delete-post.php?id=$postitemdetails[jobid]' title='Delete'> Delete</a></td>";
       $jp .= "</tr>";
     }
     $jp .= "</tbody>";
@@ -201,4 +201,22 @@ function updateJobPost( $jobid, $jobname, $jobcompany, $joblocation, $jobsalary,
   $jobChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $jobChanged;
+  
+}
+
+
+function deletJob($jobid){
+
+  $db = getdb();
+  $sql = 'DELETE FROM job 
+          WHERE jobid = :jobid';
+
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':jobid', $jobid, PDO::PARAM_INT);
+  $stmt->execute();
+  $jobDel = $stmt->rowCount();
+  $stmt->closeCursor();
+
+  return $jobDel;
+
 }
