@@ -14,7 +14,7 @@ session_start();
     $clientlastname = $_SESSION['clientdata']['clientlastname'];
     $clientemail = $_SESSION['clientdata']['clientemail'];
     $clienttype = $_SESSION['clientdata']['clienttype'];
-    
+    $clientid = $_SESSION['clientdata']['clientid'];
 
 
     echo "<h1> $clientfirstname $clientlastname </h1>
