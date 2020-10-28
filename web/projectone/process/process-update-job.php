@@ -59,7 +59,7 @@
 
             $messageJobTwo = '<p class="notice">Thanks for updating your job post</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
-            header ('location: ../projectone/account-index/index.php');
+            header ('location: /projectone/account-index/index.php');
             exit;
         } else {
             $_SESSION['clientdata'] = $clientdata;
