@@ -57,12 +57,12 @@
         if ($updatePostResult) {
             $messageJobTwo = '<p class="notice">Thanks for updating your job post</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
-            header('location: /projectone/account-index/index.php');
+            include '../view/admin.php';
             exit;
         } else {
             $messageJobTwo = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
             $_SESSION['messageJobTwo'] = $messageJobTwo;
-            header('location: /projectone/account-index/index.php');
+            include '../view/admin.php';
             exit;
         }
     } catch (Exception $ex) {
