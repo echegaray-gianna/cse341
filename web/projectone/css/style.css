@@ -32,16 +32,22 @@ main {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color:#8d899e;
+    text-align: center;
+    border-top:  1px solid black;
+    border-bottom:  1px solid black;
 }
-
 
 
 .nav-info li {
-    float: left;
-    border-right: 1px solid #bbb;
+    display: inline;
+    margin: 1.5%;
 }
 
+
+.nav-info li:last-child {
+    border-right: none;
+}
 
 
 .nav-info li a {
@@ -63,15 +69,16 @@ a.nav-link {
 
 
 a.nav-link:hover {
-    background-color: #4b89e6;
-    color: white;
+    background-color: #b7b4c4;
+    color: #595762;
     font-size: 28px;
 }
 
 
 a.nav-link:active {
-    background-color: #12B0A8;
+    background-color: #b7b4c4;
 }
+
 
 
 
