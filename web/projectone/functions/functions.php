@@ -36,6 +36,23 @@ function checkExistingEmail($clientemail)
   }
 }
 
+
+function getclient($clientemail)
+{
+
+    $db = getdb();
+    $sql = 'SELECT *
+                FROM client
+                WHERE clientemail = :clientemail';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientemail', $clientemail);
+
+    $stmt->execute();
+
+    $clientdata = $stmt->fetch();
+    return $clientdata;
+}
+
 function getAccountInfo($clientid)
 {
 
@@ -201,7 +218,7 @@ function updateJobPost( $jobid, $jobname, $jobcompany, $joblocation, $jobsalary,
   $jobChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $jobChanged;
-  
+
 }
 
 

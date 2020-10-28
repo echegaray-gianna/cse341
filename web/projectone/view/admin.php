@@ -10,7 +10,8 @@ session_start();
         header('location: /projectone/index.php');
         exit;
     }
-
+    $clientdata = getclient($clientemail);
+    
     $clientfirstname = $_SESSION['clientdata']['clientfirstname'];
     $clientlastname = $_SESSION['clientdata']['clientlastname'];
     $clientemail = $_SESSION['clientdata']['clientemail'];

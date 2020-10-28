@@ -21,22 +21,6 @@ try {
         exit;
     }
 
-    function getclient($clientemail)
-    {
-
-        $db = getdb();
-        $sql = 'SELECT *
-                    FROM client
-                    WHERE clientemail = :clientemail';
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':clientemail', $clientemail);
-
-        $stmt->execute();
-
-        $clientdata = $stmt->fetch();
-        return $clientdata;
-    }
-
     $clientdata = getclient($clientemail);
 
 
