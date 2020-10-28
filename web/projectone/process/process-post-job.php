@@ -43,7 +43,6 @@ session_start();
                 VALUES (:jobname, :jobcompany, :joblocation, :jobsalary, :jobrequirements, :jobresponsibilities,
                         :jobdescription, :categoryid, :clientid)';
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':jobid', $jobid);
         $stmt->bindValue(':jobname', $jobname);
         $stmt->bindValue(':jobcompany', $jobcompany);
         $stmt->bindValue(':joblocation', $joblocation);
