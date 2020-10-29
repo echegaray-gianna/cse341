@@ -29,8 +29,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
+    $jobdata = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    foreach ($jobinfo as $jobinfo) {
 
         $catid = $jobinfo['categoryid'];
         $categoryname = $jobinfo['categoryname'];
