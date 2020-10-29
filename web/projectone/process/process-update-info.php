@@ -30,7 +30,7 @@ try {
     // Check for missing data
 
     if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail)) {
-        $message = '<p>Please provide information for all empty form fields.</p>';
+        $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
         include '../view/client-update.php';
         exit;
     }
@@ -43,15 +43,18 @@ try {
     );
 
     if ($updateInfo) {
-        $message = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
-        $_SESSION['message'] = $message;
+        $messageUpd = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
+        $_SESSION['messageUpd'] = $messageUpd;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
 
         header('location: /projectone/account-index/index.php');
 
         exit;
     } else {
-        $message = "<p>Sorry, but we couldnt update $clientfirstname's account information. Please try again.</p>";
+        $messageUpd = "<p class= 'notify> Sorry, but we couldnt update $clientfirstname's account information. Please try again.</p>";
+        $_SESSION['messageUpd'] = $messageUpd;
+        $_SESSION['clientdata'] = getAccountInfo($clientid);
+
         include '../view/client-update.php';
         exit;
     }

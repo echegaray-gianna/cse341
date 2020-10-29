@@ -67,7 +67,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; ?>
 
             <br>
 
-            <input type="submit" name="submit" class="btn registration" value="Register">
+            <input type="submit" name="submit" class="btn registrationbtn" value="Register">
 
 
         </fieldset>

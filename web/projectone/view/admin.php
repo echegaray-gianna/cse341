@@ -32,8 +32,13 @@ session_start();
                 <li> First Name: $clientfirstname </li>
                 <li> Last Name: $clientlastname </li>
                 <li> Email Address: $clientemail </li>
-          </ul>
-          <h2 class= 'adm_text'> Use the link below to manage your account. </h2>
+          </ul>";
+
+    if (isset($_SESSION['messageUpd'])) {
+        echo $_SESSION['messageUpd'];
+    }
+
+    echo  "<h2 class= 'adm_text'> Use the link below to manage your account. </h2>
           <div class= 'admnAccLink'>
                 <a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
           </div>";
