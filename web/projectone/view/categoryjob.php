@@ -30,16 +30,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
 
-
-
-    if ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $categoryname = $jobinfo['categoryname'];
-        echo "<h1 class='title-category-job'> $categoryname</h1>";
-    };
-
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        
+        $categoryname = $jobinfo['categoryname'];
         $jobname = $jobinfo['jobname'];
         $jobcompany = $jobinfo['jobcompany'];
         $joblocation = $jobinfo['joblocation'];
