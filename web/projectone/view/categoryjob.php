@@ -29,11 +29,37 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
-    $jobinfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    if ($jobdata = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        $catid = $jobinfo['categoryid'];
+        $catid = $jobdata['categoryid'];
+
+        foreach ($jobdata as $jobinfo){
+            $categoryname = $jobinfo['categoryname'];
+            $jobname = $jobinfo['jobname'];
+            $jobcompany = $jobinfo['jobcompany'];
+            $joblocation = $jobinfo['joblocation'];
+            $jobsalary = $jobinfo['jobsalary'];
+            $jobrequirements = $jobinfo['jobrequirements'];
+            $jobresponsibilities = $jobinfo['jobresponsibilities'];
+            $jobdescription = $jobinfo['jobdescription'];
+    
+    
+            echo "<h1 class='title-category-job'> $categoryname</h1>";
+            echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
+            echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
+            echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
+            echo "<p class= 'comp-salary'>  Salary: $jobsalary  </p>";
+            echo "<p class= 'comp-requirements-title'>   Requirements: </p>";
+            echo "<p class= 'comp-requirements'>   $jobrequirements </p>";
+            echo "<p class= 'comp-responsabilities-title'>   Responsibilities:  </p>";
+            echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
+            echo "<p class= 'comp-description-title'>  Description:  </p>";
+            echo "<p class= 'comp-description'>  $jobdescription  </p>";
+        }
+
+
+
 
     }else{
         echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
