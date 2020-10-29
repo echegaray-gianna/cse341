@@ -34,37 +34,39 @@ session_start();
                 <li> Email Address: $clientemail </li>
           </ul>";
 
+    echo  "<h2 class= 'adm_text'> Use the link below to manage your account. </h2>
+          <div class= 'admnAccLink'>";
+
     if (isset($_SESSION['messageUpd'])) {
         echo $_SESSION['messageUpd'];
+        unset($_SESSION['messageUpd']);
     }
 
-    echo  "<h2 class= 'adm_text'> Use the link below to manage your account. </h2>
-          <div class= 'admnAccLink'>
-                <a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
+    echo "<a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
           </div>";
 
 
-    if (isset($_SESSION['messageJobTwo'])) {
-        echo $_SESSION['messageJobTwo'];
-        unset($_SESSION['messageJobTwo']);
-    }
-
-
-
-    // $clientInfoHere = getAccountInfo($clientid);
+     // $clientInfoHere = getAccountInfo($clientid);
 
     if ($clienttype === 'company') {
         echo "<div class= 'post-job-add-container'>
-                    <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>
-                    <div class= 'post-job-add-link'>
+                    <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>";
+
+        if (isset($_SESSION['messageJobList'])) {
+            echo $_SESSION['messageJobList'];
+            unset($_SESSION['messageJobList']);
+        }
+
+        echo       " <div class= 'post-job-add-link'>
                         <a href='/projectone/post-index/index.php' title= 'jobs'> List a New Post </a> 
 
                     </div> 
               </div>";
-    }
 
-    $postclientdetails =  getJobPostByClient($clientid);
-    echo $jobClientDisplay = buildJobPost($postclientdetails);
+
+        $postclientdetails =  getJobPostByClient($clientid);
+        echo $jobClientDisplay = buildJobPost($postclientdetails);
+    };
 
     ?>
 
