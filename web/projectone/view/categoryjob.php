@@ -29,9 +29,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
-    $jobdata = $stmt->fetch(PDO::FETCH_ASSOC);
+    $jobinfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    foreach ($jobinfo as $jobinfo) {
+    while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         $catid = $jobinfo['categoryid'];
         $categoryname = $jobinfo['categoryname'];
@@ -56,10 +56,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         echo "<p class= 'comp-description-title'>  Description:  </p>";
         echo "<p class= 'comp-description'>  $jobdescription  </p>";
 
-    }
+    };
 
+    if (!$jobinfo){
+    
     echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
-
+    };
     
     ?>
 
