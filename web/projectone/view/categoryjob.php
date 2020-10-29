@@ -47,10 +47,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
         echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
         echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
-        echo "<p class= 'comp-salary'>  $jobsalary  </p>";
+        echo "<p class= 'comp-salary'>  Salary: $jobsalary  </p>";
+        echo "<p class= 'comp-requirements-title'>   Requirements: </p>";
         echo "<p class= 'comp-requirements'>   $jobrequirements </p>";
+        echo "<p class= 'comp-responsabilities-title'>   Responsibilities:  </p>";
         echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
+        echo "<p class= 'comp-description-title'>  Description:  </p>";
         echo "<p class= 'comp-description'>  $jobdescription  </p>";
+        
     }else{
 
 

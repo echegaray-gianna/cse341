@@ -13,9 +13,7 @@
     <h1 class="title-category"> Job Category </h1>
     <h3 class="subtitle-category"> Please select a category </h3>
 
-    <div for="categoryId">
-        <p>Category</p>
-
+    <div class="categoryId">
         <?php
 
         //connect to DB
@@ -30,7 +28,7 @@
             $catname = $categories['categoryname'];
             $catid = $categories['categoryid'];
 
-        echo "<h4 class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </h4>";
+        echo "<p class= 'category-list'> $catname <a href='/projectone/view/categoryjob.php?id=$catid'> Select </a> </p>";
 
         }
         
