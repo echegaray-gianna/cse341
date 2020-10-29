@@ -29,7 +29,7 @@
         // Check for missing data
 
         if ($categoryid === 'Choose a Category') {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
             include '../view/update-post.php';
             exit;
         }
@@ -38,7 +38,7 @@
             empty($jobname) || empty($jobcompany) || empty($joblocation) || empty($jobsalary) ||
             empty($jobrequirements) || empty($jobresponsibilities) || empty($jobdescription)
         ) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
             include '../view/update-post.php';
             exit;
         }
@@ -61,13 +61,13 @@
 
         if ($updatePostResult) {
             
-            $messageJobTwo = '<p class="notice">Thanks for updating your job post</p>';
-            $_SESSION['messageJobTwo'] = $messageJobTwo;
+            $messageJobChg = '<p class="notice"> Thanks for updating your job post</p>';
+            $_SESSION['messageJobChg'] = $messageJobChg;
             header('location: /projectone/account-index/index.php');
             exit;
         } else {
-            $messageJobTwo = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
-            $_SESSION['messageJobTwo'] = $messageJobTwo;
+            $messageJobChg = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
+            $_SESSION['messageJobChg'] = $messageJobChg;
             header('location: /projectone/account-index/index.php');
             exit;
         }

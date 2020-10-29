@@ -164,6 +164,13 @@ function buildJobPost($postclientdetails)
   $reviewClientJob = getJobPostByClient($clientid);
 
   $jp = "<h2 class= 'review-header'> Jobs Posts </h2>";
+
+  
+  if (isset($_SESSION['messageJobChg'])) {
+    echo $_SESSION['messageJobChg'];
+    unset($_SESSION['messageJobChg']);
+}
+
   $jp .= "<div class= 'client-post-display'>";
 
   if (count($reviewClientJob) > 0) {
