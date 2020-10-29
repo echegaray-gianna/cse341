@@ -3,6 +3,7 @@
 
     require_once "../connections/dbconnect.php";
     require_once "../functions/functions.php";
+
     session_start();
 
     $db = getdb();
@@ -39,12 +40,9 @@
             empty($jobrequirements) || empty($jobresponsibilities) || empty($jobdescription)
         ) {
             $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
-            header("location: ../view/update-post.php?id=$jobid ");
+            include '../view/update-post.php';
             exit;
         }
-
-
-
 
         $updatePostResult = updateJobPost(
             $jobid,

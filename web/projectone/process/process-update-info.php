@@ -47,7 +47,7 @@ try {
         $_SESSION['messageUpd'] = $messageUpd;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
 
-        header('location: /projectone/account-index/index.php');
+        header('location: ../account-index/index.php');
 
         exit;
     } else {
