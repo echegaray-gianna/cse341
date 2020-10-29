@@ -31,10 +31,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt->execute();
 
 
-    
+
+    if ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $categoryname = $jobinfo['categoryname'];
+        echo "<h1 class='title-category-job'> $categoryname</h1>";
+    };
+
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        $categoryname = $jobinfo['categoryname'];
+        
         $jobname = $jobinfo['jobname'];
         $jobcompany = $jobinfo['jobcompany'];
         $joblocation = $jobinfo['joblocation'];
@@ -42,11 +47,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         $jobrequirements = $jobinfo['jobrequirements'];
         $jobresponsibilities = $jobinfo['jobresponsibilities'];
         $jobdescription = $jobinfo['jobdescription'];
-
-
-        if ($categoryname){
-            echo "<h1 class='title-category-job'> $categoryname</h1>";
-        };
 
         echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
         echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
