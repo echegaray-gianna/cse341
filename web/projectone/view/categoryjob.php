@@ -44,7 +44,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         $jobdescription = $jobinfo['jobdescription'];
 
 
-        echo "<h1 class='title-category-job'> $categoryname</h1>";
+        if ($categoryname){
+            echo "<h1 class='title-category-job'> $categoryname</h1>";
+        };
+
         echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
         echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
         echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
