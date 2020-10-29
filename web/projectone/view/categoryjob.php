@@ -31,9 +31,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt->execute();
     $jobinfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    if ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         $catid = $jobinfo['categoryid'];
+
+    }else{
+        echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
+    }
+
+    while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $categoryname = $jobinfo['categoryname'];
         $jobname = $jobinfo['jobname'];
         $jobcompany = $jobinfo['jobcompany'];
@@ -56,12 +62,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         echo "<p class= 'comp-description-title'>  Description:  </p>";
         echo "<p class= 'comp-description'>  $jobdescription  </p>";
 
-    };
+    }
 
-    if (!$jobinfo){
-    
-    echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
-    };
     
     ?>
 
