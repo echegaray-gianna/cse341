@@ -51,8 +51,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     <form action="/projectone/process/process-delete-job.php" method="POST" name="jobupdate" class="form jobupdate">
 
         <fieldset class="form_postjob_container">
-        
-        <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
+
+            <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
                                                             echo $jobid;
                                                         } elseif (isset($jobinfo['jobid'])) {
                                                             echo $jobinfo['jobid'];
@@ -67,6 +67,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                     }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobcompany">
                 <span>Company Name</span>
                 <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" <?php if (isset($jobcompany)) {
@@ -75,6 +77,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                             echo "value= '$jobinfo[jobcompany]'";
                                                                                                         }  ?> required>
             </label>
+
+            <br>
 
             <label for="joblocation">
                 <span>Job Location</span>
@@ -85,13 +89,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                         }  ?> required>
             </label>
 
+            <br>
+
             <input type="hidden" name="clientid" value="<?php if (isset($clientid)) {
                                                             echo $clientid;
                                                         } elseif (isset($jobinfo['clientid'])) {
                                                             echo $jobinfo['clientid'];
                                                         }  ?>">
 
-            <input type='submit' name='submit' id='btn jobpost' value='Delete Job'>
+            <input type='submit' name='submit' class='btn deletepost' value='Delete Job'>
 
 
         </fieldset>

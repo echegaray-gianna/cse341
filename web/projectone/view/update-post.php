@@ -51,12 +51,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     <form action="/projectone/process/process-update-job.php" method="POST" name="jobupdate" class="form jobupdate">
 
         <fieldset class="form_postjob_container">
-        
-        <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
+
+            <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
                                                             echo $jobid;
                                                         } elseif (isset($jobinfo['jobid'])) {
                                                             echo $jobinfo['jobid'];
                                                         }  ?>">
+
+            <br>
 
             <label for="jobname">
                 <span>Position Name</span>
@@ -67,6 +69,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                     }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobcompany">
                 <span>Company Name</span>
                 <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" <?php if (isset($jobcompany)) {
@@ -75,6 +79,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                             echo "value= '$jobinfo[jobcompany]'";
                                                                                                         }  ?> required>
             </label>
+
+            <br>
 
             <label for="joblocation">
                 <span>Job Location</span>
@@ -85,6 +91,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                         }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobsalary">
                 <span>Job Salary</span>
                 <input type="text" name="jobsalary" id="jobsalary" placeholder="Enter Job Salary" <?php if (isset($jobsalary)) {
@@ -93,6 +101,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                         echo "value= '$jobinfo[jobsalary]'";
                                                                                                     }  ?> required>
             </label>
+
+            <br>
 
             <label for="jobrequirements">
                 <span>Job Requirements</span>
@@ -103,6 +113,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                                     }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobresponsibilities">
                 <span>Job Responsibilities</span>
                 <input type="text" name="jobresponsibilities" id="jobresponsibilities" placeholder="Enter Job Responsibilities" <?php if (isset($jobresponsibilities)) {
@@ -111,6 +123,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                                                     echo "value= '$jobinfo[jobresponsibilities]'";
                                                                                                                                 }  ?> required>
             </label>
+
+            <br>
 
             <label for="jobdescription">
                 <span>Job Description</span>
@@ -121,13 +135,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                                     }  ?> required>
             </label>
 
+            <br>
+
 
             <?php
 
             //connect to DB
             $db = getdb();
 
-            $catList = '<select name="categoryid" id="categorylist">';
+            $catList = '<select name="categoryid" id="categorylist" class= "categorylist">';
             $catList .= "<option>Choose a Category</option>";
 
             $sql = 'SELECT * FROM category';
@@ -147,6 +163,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <?php echo $catList; ?>
             </label>
 
+            <br>
+
 
             <input type="hidden" name="clientid" value="<?php if (isset($clientid)) {
                                                             echo $clientid;
@@ -154,7 +172,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                             echo $jobinfo['clientid'];
                                                         }  ?>">
 
-            <input type='submit' name='submit' id='btn jobpost' value='Update Job'>
+            <input type='submit' name='submit' class='btn jobpost' value='Update Job'>
 
 
         </fieldset>

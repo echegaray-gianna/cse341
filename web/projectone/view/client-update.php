@@ -1,12 +1,11 @@
-
-<?php 
+<?php
 require_once "../connections/dbconnect.php";
 require_once "../functions/functions.php";
 
 session_start();
 
 
-include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
+include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
 
 
@@ -21,84 +20,86 @@ $updateInfo = updateClientAcc(
 
 <main>
 
-<?php
-//Only allow access to the view if client is logged in
-if ($_SESSION['loggedin']= FALSE) {
-    header('location: /projectone/index.php');
-    exit;
-}
-
-$clientInfoAcc = $_SESSION['clientdata'];
-
-if (isset($clientInfoAcc['clientfirstname'])) { 
-    $page_title = "Update $clientInfoAcc[clientfirstname]'s Account ";
-  
-  } else if (isset($clientfirstname)) { 
-    echo $clientfirstname; 
-  };
-
-?>
-
-<h1>
     <?php
-    echo "Update Account";
+    //Only allow access to the view if client is logged in
+    if ($_SESSION['loggedin'] = FALSE) {
+        header('location: /projectone/index.php');
+        exit;
+    }
+
+    $clientInfoAcc = $_SESSION['clientdata'];
+
+    if (isset($clientInfoAcc['clientfirstname'])) {
+        $page_title = "Update $clientInfoAcc[clientfirstname]'s Account ";
+    } else if (isset($clientfirstname)) {
+        echo $clientfirstname;
+    };
+
     ?>
-</h1>
 
-<p class="prod_text">All fields are required </p>
-
-
-<form action="/projectone/process/process-update-info.php" method="POST" name="account_reg" class="form_login">
-
-    <p class="field_name"> Use this form to update your name or email information </p>
-
-    <div class="message">
+    <h1>
         <?php
-        if (isset($message)) {
-            echo $message;
-        }
+        echo "Update Account";
         ?>
-    </div>
+    </h1>
 
-    <fieldset class="form_registration_container">
+    <form action="/projectone/process/process-update-info.php" method="POST" name="account_reg" class="form update">
 
-        <label for="clientfirstname">
-            <span> First Name</span>
-            <input type="text" id="clientfirstname" name="clientfirstname" placeholder="Name" <?php if (isset($clientfirstname)) {
-                                                                                                    echo "value='$clientfirstname'";
-                                                                                                } elseif (isset($clientInfoAcc['clientfirstname'])) {
-                                                                                                    echo "value= '$clientInfoAcc[clientfirstname]'";
-                                                                                                }  ?> required>
-        </label>
+        <p class="field_name"> Use this form to update your information </p>
+        <p class="prod_text">**All fields are required </p>
 
-        <label for="clientlastname">
-            <span>Last Name</span>
-            <input type="text" id="clientlastname" name="clientlastname" placeholder="Last Name" <?php if (isset($clientlastname)) {
-                                                                                                        echo "value='$clientlastname'";
-                                                                                                    } elseif (isset($clientInfoAcc['clientlastname'])) {
-                                                                                                        echo "value= '$clientInfoAcc[clientlastname]'";
+        <div class="message">
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
+        </div>
+
+        <fieldset class="form_update_container">
+
+            <label for="clientfirstname">
+                <span> First Name</span>
+                <input type="text" id="clientfirstname" name="clientfirstname" placeholder="Name" <?php if (isset($clientfirstname)) {
+                                                                                                        echo "value='$clientfirstname'";
+                                                                                                    } elseif (isset($clientInfoAcc['clientfirstname'])) {
+                                                                                                        echo "value= '$clientInfoAcc[clientfirstname]'";
                                                                                                     }  ?> required>
-        </label>
+            </label>
 
-        <label for="clientemail">
-            <span>Email</span>
-            <input type="email" id="clientemail" name="clientemail" placeholder="Email" <?php if (isset($clientemail)) {
-                                                                                            echo "value='$clientemail'";
-                                                                                        } elseif (isset($clientInfoAcc['clientemail'])) {
-                                                                                            echo "value= '$clientInfoAcc[clientemail]'";
-                                                                                        }  ?> required>
-        </label>
+            <br>
 
-        <input type="submit" name="submit" class="logbtn" value="Update Account">
-        <input type="hidden" name="clientid" value="<?php if (isset($clientInfoAcc)) {
-                                                        echo $clientInfoAcc['clientid'];
-                                                    } elseif (isset($clientid)) {
-                                                        echo $clientid;
-                                                    } ?>">
+            <label for="clientlastname">
+                <span>Last Name</span>
+                <input type="text" id="clientlastname" name="clientlastname" placeholder="Last Name" <?php if (isset($clientlastname)) {
+                                                                                                            echo "value='$clientlastname'";
+                                                                                                        } elseif (isset($clientInfoAcc['clientlastname'])) {
+                                                                                                            echo "value= '$clientInfoAcc[clientlastname]'";
+                                                                                                        }  ?> required>
+            </label>
 
-    </fieldset>
-</form>
+            <br>
 
+            <label for="clientemail">
+                <span class="update-email">Email</span>
+                <input type="email" id="clientemail" name="clientemail" placeholder="Email" <?php if (isset($clientemail)) {
+                                                                                                echo "value='$clientemail'";
+                                                                                            } elseif (isset($clientInfoAcc['clientemail'])) {
+                                                                                                echo "value= '$clientInfoAcc[clientemail]'";
+                                                                                            }  ?> required>
+            </label>
+
+            <br>
+
+            <input type="submit" name="submit" class="btn update" value="Update Account">
+            <input type="hidden" name="clientid" value="<?php if (isset($clientInfoAcc)) {
+                                                            echo $clientInfoAcc['clientid'];
+                                                        } elseif (isset($clientid)) {
+                                                            echo $clientid;
+                                                        } ?>">
+
+        </fieldset>
+    </form>
 
 </main>
 

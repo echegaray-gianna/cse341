@@ -13,19 +13,23 @@
 
     <form action="/projectone/process/process-login.php" method="POST" name="account_login" class="form login">
 
-        <div class="form_login_container">
-            <label>
-                <span>Email</span>
-                <input type="email" name="clientemail" placeholder="Enter Email" <?php if (isset($clientemail)) {
-                                                                                        echo "value='$clientemail'";
-                                                                                    } ?> required>
-            </label>
+        <div class="form-login-container">
 
             <label>
-                <span>Password</span>
-                <span class="password_info"> </span>
-                <input type="password" name="clientpassword" placeholder="Enter Password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                <span class="login-email">Email</span>
+                <input type="email" name="clientemail" class="input-login-email" placeholder="Enter Email" <?php if (isset($clientemail)) {
+                                                                                                                echo "value='$clientemail'";
+                                                                                                            } ?> required>
             </label>
+
+            <br>
+
+            <label>
+                <span class="login-pwd">Password </span>
+                <input type="password" name="clientpassword" class="input-login-pwd" placeholder="Enter Password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            </label>
+
+            <br>
 
             <input type="submit" name="submit" class="btn login" value="Login">
 

@@ -49,12 +49,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                     }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobcompany">
                 <span>Company Name</span>
                 <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" <?php if (isset($jobcompany)) {
                                                                                                             echo "value='$jobcompany'";
                                                                                                         }  ?> required>
             </label>
+
+            <br>
 
             <label for="joblocation">
                 <span>Job Location</span>
@@ -63,12 +67,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                         }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobsalary">
                 <span>Job Salary</span>
                 <input type="text" name="jobsalary" id="jobsalary" placeholder="Enter Job Salary" <?php if (isset($jobsalary)) {
                                                                                                         echo "value='$jobsalary'";
                                                                                                     }  ?> required>
             </label>
+
+            <br>
 
             <label for="jobrequirements">
                 <span>Job Requirements</span>
@@ -77,12 +85,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                                     }  ?> required>
             </label>
 
+            <br>
+
             <label for="jobresponsibilities">
                 <span>Job Responsibilities</span>
                 <input type="text" name="jobresponsibilities" id="jobresponsibilities" placeholder="Enter Job Responsibilities" <?php if (isset($jobresponsibilities)) {
                                                                                                                                     echo "value='$jobresponsibilities'";
                                                                                                                                 }  ?> required>
             </label>
+
+            <br>
 
             <label for="jobdescription">
                 <span>Job Description</span>
@@ -91,6 +103,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                                                                                     }  ?> required>
             </label>
 
+            <br>
 
             <?php
 
@@ -98,7 +111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
             require_once "../connections/dbconnect.php";
             $db = getdb();
 
-            $catList = '<select name="categoryid" id="categorylist">';
+            $catList = '<select name="categoryid" id="categorylist" class= "categorylist">';
             $catList .= "<option>Choose a Category</option>";
 
             $sql = 'SELECT * FROM category';
@@ -118,6 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                 <?php echo $catList; ?>
             </label>
 
+            <br>
 
             <input type="hidden" name="clientid" value="<?php if (isset($clientInfoAcc)) {
                                                             echo $clientInfoAcc['clientid'];
@@ -126,7 +140,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
                                                         } ?>">
 
 
-            <input type='submit' name='submit' id='btn jobpost' value='Add Job'>
+            <input type='submit' name='submit' class='btn jobpost' value='Add Job'>
 
 
         </fieldset>

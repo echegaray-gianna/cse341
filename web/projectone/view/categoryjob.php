@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 require_once "../connections/dbconnect.php";
 require_once "../functions/functions.php";
 
 session_start();
 
-include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php'; 
+include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
 ?>
 
@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
     require_once "../connections/dbconnect.php";
     $db = getdb();
-    
+
     $categoryid = $_GET['id'];
 
 
@@ -29,7 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':categoryid', $categoryid, PDO::PARAM_INT);
     $stmt->execute();
-  
+
     while ($jobinfo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         $categoryname = $jobinfo['categoryname'];
@@ -42,22 +42,27 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         $jobdescription = $jobinfo['jobdescription'];
 
         echo "<h1 class='title-category-job'> $categoryname</h1>";
+        echo "<div class= 'job-info-post'>";
         echo "<h4 class= 'subtitle-category-job'> $jobname </h4>";
         echo "<h5 class= 'comp-name'> $jobcompany   </h5>";
         echo "<h6 class= 'comp-location'>  $joblocation  </h6>";
         echo "<p class= 'comp-salary'>  Salary: $jobsalary  </p>";
+        echo "</div>";
+
+        echo "<div class= 'job-more-info-post'>";
         echo "<p class= 'comp-requirements-title'>   Requirements: </p>";
         echo "<p class= 'comp-requirements'>   $jobrequirements </p>";
         echo "<p class= 'comp-responsabilities-title'>   Responsibilities:  </p>";
         echo "<p class= 'comp-responsabilities'>   $jobresponsibilities  </p>";
         echo "<p class= 'comp-description-title'>  Description:  </p>";
         echo "<p class= 'comp-description'>  $jobdescription  </p>";
-
-    } if (empty($jobname)) {
+        echo "</div>";
+    }
+    if (empty($jobname)) {
 
         echo "<p class='no-job'> There are currently no jobs available in this category. </p>";
     }
-  
+
     ?>
 
 </main>
