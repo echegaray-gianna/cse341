@@ -40,7 +40,7 @@
             empty($jobrequirements) || empty($jobresponsibilities) || empty($jobdescription)
         ) {
             $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
-            include '../view/update-post.php';
+            include '../process/process-pre-update-post.php ';
             exit;
         }
 
