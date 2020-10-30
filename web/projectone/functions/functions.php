@@ -57,7 +57,7 @@ function getAccountInfo($clientid)
 {
 
   $db = getdb();
-  $sql = 'SELECT clientid, clientfirstname, clientlastname, clientemail
+  $sql = 'SELECT *
           FROM client
           WHERE clientid = :clientid';
   $stmt = $db->prepare($sql);
