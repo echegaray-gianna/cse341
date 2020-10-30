@@ -62,9 +62,6 @@
             $messageJobChg = '<p class="notice"> Thanks for updating your job post</p>';
             $_SESSION['messageJobChg'] = $messageJobChg;
 
-            $jobid = $_GET['id'];
-            $jobDetails = getSpecificJob($jobid);
-            
             header('location: /projectone/account-index/index.php');
             exit;
         } else {

@@ -184,7 +184,7 @@ function buildJobPost($postclientdetails)
 
 
       $jp .= "<tr><td class='job-name-post'> $postitemdetails[jobname]</td>";
-      $jp .= "<td class='review-mod'><a href='/projectone/view/update-post.php?id=$postitemdetails[jobid]' title='Edit'> Edit</a></td>";
+      $jp .= "<td class='review-mod'><a href='/projectone/process/process-pre-update-post.php?id=$postitemdetails[jobid]' title='Edit'> Edit</a></td>";
       $jp .= "<td class='review-del'><a href='/projectone/view/delete-post.php?id=$postitemdetails[jobid]' title='Delete'> Delete</a></td>";
       $jp .= "</tr>";
     }
