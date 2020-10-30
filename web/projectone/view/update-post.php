@@ -8,6 +8,19 @@ session_start();
 
 include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
+$updatePostResult = updateJobPost(
+    $jobid,
+    $jobname,
+    $jobcompany,
+    $joblocation,
+    $jobsalary,
+    $jobrequirements,
+    $jobresponsibilities,
+    $jobdescription,
+    $categoryid,
+    $clientid
+);
+
 ?>
 
 <main>
@@ -36,19 +49,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
             $clientid = $jobinfo['clientid'];
         }
     }
-
-    $updatePostResult = updateJobPost(
-        $jobid,
-        $jobname,
-        $jobcompany,
-        $joblocation,
-        $jobsalary,
-        $jobrequirements,
-        $jobresponsibilities,
-        $jobdescription,
-        $categoryid,
-        $clientid
-    );
 
     ?>
 
