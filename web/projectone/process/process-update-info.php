@@ -53,8 +53,8 @@ try {
     $clientlastname = $_SESSION['clientdata']['clientlastname'];
     $clientemail = $_SESSION['clientdata']['clientemail'];
     $clienttype = $_SESSION['clientdata']['clienttype'];
-    
-        header('location: /projectone/account-index/index.php');
+
+        include '../view/client-update.php';
 
         exit;
     } else {
