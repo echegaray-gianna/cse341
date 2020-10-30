@@ -52,11 +52,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
         <fieldset class="form_postjob_container">
 
-            <input type="hidden" name="jobid" value="<?php if (isset($jobid)) {
-                                                            echo $jobid;
-                                                        } elseif (isset($jobinfo['jobid'])) {
+            <input type="hidden" name="jobid" value="<?php if (isset($jobinfo['jobid'])) {
                                                             echo $jobinfo['jobid'];
-                                                        }  ?>">
+                                                        } elseif (isset($jobid)) {
+                                                            echo $jobid; }  ?>">
 
             <br>
 
