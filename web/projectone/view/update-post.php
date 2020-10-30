@@ -37,6 +37,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         }
     }
 
+    $updatePostResult = updateJobPost(
+        $jobid,
+        $jobname,
+        $jobcompany,
+        $joblocation,
+        $jobsalary,
+        $jobrequirements,
+        $jobresponsibilities,
+        $jobdescription,
+        $categoryid,
+        $clientid
+    );
+
     ?>
 
     <h1> Update your Post Job </h1>
