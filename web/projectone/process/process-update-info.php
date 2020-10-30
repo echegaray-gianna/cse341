@@ -47,7 +47,7 @@ try {
         $_SESSION['messageUpd'] = $messageUpd;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
 
-        header('location: ../view/admin/php');
+        header('location: ../view/admin.php');
 
         exit;
     } else {
