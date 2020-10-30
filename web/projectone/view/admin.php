@@ -46,9 +46,6 @@ session_start();
     echo "<a href= '/projectone/view/client-update.php' title= 'Update Account Information'> Update Account Information </a>
           </div>";
 
-
-     // $clientInfoHere = getAccountInfo($clientid);
-
     if ($clienttype === 'company') {
         echo "<div class= 'post-job-add-container'>
                     <h2 class = 'post-job-add'>Use the link below to manage your post  </h2>";

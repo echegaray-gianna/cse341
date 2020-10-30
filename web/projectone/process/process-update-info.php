@@ -55,8 +55,7 @@ try {
     } else {
         $messageUpd = "<p class= 'notify> Sorry, but we couldnt update $clientfirstname's account information. Please try again.</p>";
         $_SESSION['messageUpd'] = $messageUpd;
-        $_SESSION['clientdata'] = getAccountInfo($clientid);
-
+  
         include '../view/client-update.php';
         exit;
     }

@@ -60,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
             <label for="jobname">
                 <span>Position Name</span>
-                <input type="text" name="jobname" id="jobname" placeholder="Enter Position Name" <?php if (isset($jobname)) {
+                <input type="text" name="jobname" id="jobname" placeholder="Enter Position Name" readonly <?php if (isset($jobname)) {
                                                                                                         echo "value='$jobname'";
                                                                                                     } elseif (isset($jobinfo['jobname'])) {
                                                                                                         echo "value= '$jobinfo[jobname]'";
@@ -71,7 +71,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
             <label for="jobcompany">
                 <span>Company Name</span>
-                <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" <?php if (isset($jobcompany)) {
+                <input type="text" name="jobcompany" id="jobcompany" placeholder="Enter Company Name" readonly <?php if (isset($jobcompany)) {
                                                                                                             echo "value='$jobcompany'";
                                                                                                         } elseif (isset($jobinfo['jobcompany'])) {
                                                                                                             echo "value= '$jobinfo[jobcompany]'";
@@ -82,7 +82,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
             <label for="joblocation">
                 <span>Job Location</span>
-                <input type="text" name="joblocation" id="joblocation" placeholder="Enter Job Location" <?php if (isset($joblocation)) {
+                <input type="text" name="joblocation" id="joblocation" placeholder="Enter Job Location" readonly <?php if (isset($joblocation)) {
                                                                                                             echo "value='$joblocation'";
                                                                                                         } elseif (isset($jobinfo['joblocation'])) {
                                                                                                             echo "value= '$jobinfo[joblocation]'";
