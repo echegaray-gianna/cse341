@@ -8,13 +8,6 @@ $db = getdb();
 
 try {
 
-    
-    $clientfirstname = $_SESSION['clientdata']['clientfirstname'];
-    $clientlastname = $_SESSION['clientdata']['clientlastname'];
-    $clientemail = $_SESSION['clientdata']['clientemail'];
-    $clienttype = $_SESSION['clientdata']['clienttype'];
-
-    
     $clientfirstname = htmlspecialchars($_POST['clientfirstname']);
     $clientlastname = htmlspecialchars($_POST['clientlastname']);
     $clientemail = htmlspecialchars($_POST['clientemail']);
@@ -50,6 +43,12 @@ try {
     );
 
     if ($updateInfo) {
+
+        $clientfirstname = $_SESSION['clientdata']['clientfirstname'];
+        $clientlastname = $_SESSION['clientdata']['clientlastname'];
+        $clientemail = $_SESSION['clientdata']['clientemail'];
+        $clienttype = $_SESSION['clientdata']['clienttype'];
+        
         $messageUpd = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
         $_SESSION['messageUpd'] = $messageUpd;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
@@ -65,9 +64,6 @@ try {
         include '../view/client-update.php';
         exit;
     }
-    
-
-
 } catch (Exception $ex) {
     // Please be aware that you don't want to output the Exception message in
     // a production environment
