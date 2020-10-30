@@ -47,7 +47,7 @@ try {
         $_SESSION['messageUpd'] = $messageUpd;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
 
-        include '../account-index/index.php';
+        include '../view/admin.php';
 
         exit;
     } else {
