@@ -27,7 +27,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
         echo $clientfirstname;
     };
 
-    $jobid = $_GET['id'];
+
     $jobDetails = getSpecificJob($jobid);
 
     if ($jobDetails) {
