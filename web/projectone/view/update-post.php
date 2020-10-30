@@ -8,19 +8,6 @@ session_start();
 
 include $_SERVER['DOCUMENT_ROOT'] . '/projectone/modules/head.php';
 
-$updatePostResult = updateJobPost(
-    $jobid,
-    $jobname,
-    $jobcompany,
-    $joblocation,
-    $jobsalary,
-    $jobrequirements,
-    $jobresponsibilities,
-    $jobdescription,
-    $categoryid,
-    $clientid
-);
-
 ?>
 
 <main>
@@ -65,7 +52,7 @@ $updatePostResult = updateJobPost(
 
         <fieldset class="form_postjob_container">
 
-            <input type="hidden" name="jobid" value="<?php if (isset($jobinfo['jobid'])) {
+            <input type="hidden" name="jobid" value="<?php if (isset($jobinfo)) {
                                                             echo $jobinfo['jobid'];
                                                         } elseif (isset($jobid)) {
                                                             echo $jobid; }  ?>">
