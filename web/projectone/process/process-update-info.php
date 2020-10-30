@@ -48,7 +48,7 @@ try {
         $_SESSION['messageUpd'] = $messageUpd;
         
 
-        $clienttype = $_SESSION['clientdata']['clienttype'];
+        
     
         header('location: /projectone/account-index/index.php');
 
