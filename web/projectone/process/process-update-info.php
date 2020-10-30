@@ -46,15 +46,11 @@ try {
 
         $messageUpd = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
         $_SESSION['messageUpd'] = $messageUpd;
-        $_SESSION['clientdata'] = getAccountInfo($clientid);
+        
 
-            
-    $clientfirstname = $_SESSION['clientdata']['clientfirstname'];
-    $clientlastname = $_SESSION['clientdata']['clientlastname'];
-    $clientemail = $_SESSION['clientdata']['clientemail'];
-    $clienttype = $_SESSION['clientdata']['clienttype'];
-
-        include '../view/client-update.php';
+        $clienttype = $_SESSION['clientdata']['clienttype'];
+    
+        header('location: /projectone/account-index/index.php');
 
         exit;
     } else {

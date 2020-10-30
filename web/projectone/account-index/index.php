@@ -10,8 +10,5 @@ $page_title = 'Login';
 switch ($action) {
 
   default:
-
-
-
     include '../view/admin.php';
 }
