@@ -134,11 +134,12 @@ p {
 
 }
 
-.notice {
+.notice, .notify{
     color: red;
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
 
 
 /************ Form  *************/
@@ -220,6 +221,11 @@ footer {
 
 .comp-responsabilities-title,
 .comp-description-title {
+    margin-top: 5%;
+}
+
+.no-job {
+    margin-left: 8%;
     margin-top: 5%;
 }
 
