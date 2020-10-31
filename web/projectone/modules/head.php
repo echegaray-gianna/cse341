@@ -27,7 +27,7 @@
     <header>
 
         <div class="container-logo">
-            <a href="index.php">
+            <a href="/projectone/index.php">
                 <div class="logo">
                     <h1 class="title-header">Silicone Slopes</h1>
                     <p class="text-header">Tech Jobs</p>
