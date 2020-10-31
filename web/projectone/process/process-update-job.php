@@ -59,13 +59,13 @@
 
         if ($updatePostResult) {
             
-            $messageJobChg = '<p class="notice"> Thanks for updating your job post</p>';
+            $messageJobChg = '<p class="jobchg"> Thanks for updating your job post</p>';
             $_SESSION['messageJobChg'] = $messageJobChg;
 
             header('location: /projectone/account-index/index.php');
             exit;
         } else {
-            $messageJobChg = '<p class="notice">Sorry but we coudnt update your job post. Please try again.</p>';
+            $messageJobChg = '<p class="jobchg">Sorry but we coudnt update your job post. Please try again.</p>';
             $_SESSION['messageJobChg'] = $messageJobChg;
             header('location: /projectone/account-index/index.php');
             exit;

@@ -18,13 +18,13 @@ try {
     $deletePostResult =  deletJob($jobid);
 
     if ($deletePostResult) {
-        $messageJobTwo = '<p class="notice">Your Job post  was deleted</p>';
-        $_SESSION['messageJobTwo'] = $messageJobTwo;
+        $messageJobChg = '<p class="jobchg">Your Job post  was deleted</p>';
+        $_SESSION['messageJobChg'] = $messageJobChg;
         header('location: /projectone/account-index/index.php');
         exit;
     } else {
-        $messageJobTwo = '<p class="notice">Sorry but we coudnt delete your job post. Please try again.</p>';
-        $_SESSION['messageJobTwo'] = $messageJobTwo;
+        $messageJobChg = '<p class="jobchg">Sorry but we coudnt delete your job post. Please try again.</p>';
+        $_SESSION['messageJobChg'] = $messageJobChg;
         header('location: /projectone/account-index/index.php');
         exit;
     }

@@ -61,6 +61,11 @@ session_start();
                     </div> 
               </div>";
 
+              if (isset($_SESSION['messageJobChg'])) {
+                echo $_SESSION['messageJobChg'];
+                unset($_SESSION['messageJobChg']);
+            }
+
 
         $postclientdetails =  getJobPostByClient($clientid);
         echo $jobClientDisplay = buildJobPost($postclientdetails);
