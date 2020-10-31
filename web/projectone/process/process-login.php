@@ -16,8 +16,8 @@ try {
 
     // Check for missing data
     if (empty($clientemail) || empty($checkPassword)) {
-        $message = '<p>Please provide information for all empty form fields.</p>';
-        include '../view/registration.php';
+        $message = '<p class="notify">Please provide information for all empty form fields.</p>';
+        include '../view/login.php';
         exit;
     }
 

@@ -11,7 +11,7 @@ if ($jobDetails) {
 }
 
 if ($jobDetails < 1) {
-  $message = '<p class="notice"> Sorry, no product information could be found. </p>';
+  $message = '<p class="notify"> Sorry, no product information could be found. </p>';
 }
 
 include '../view/update-post.php';

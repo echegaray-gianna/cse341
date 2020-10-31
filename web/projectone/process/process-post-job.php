@@ -24,14 +24,14 @@ session_start();
         // Check for missing data
 
         if ($categoryid === 'Choose a Category' ){
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p class="notify">Please provide information for all empty form fields.</p>';
             include '../view/postjob.php';
             exit;
         }
 
         if (empty($jobname) || empty($jobcompany) || empty($joblocation) || empty($jobsalary) ||
             empty($jobrequirements) || empty($jobresponsibilities) || empty($jobdescription)) {
-            $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
+            $message = '<p class="notify"> Please provide information for all empty form fields.</p>';
             include '../view/postjob.php';
             exit;
         }
@@ -57,7 +57,7 @@ session_start();
 
         setcookie('jobposition', $jobname, strtotime('+1 year'), '/');
         
-        $messageJobList = "<p>Thanks for post. $jobname was post in our list.</p>";
+        $messageJobList = "<p class='notice' >Thanks for post! $jobname was added in our list.</p>";
         $_SESSION['messageJobList'] = $messageJobList;
         include '../account-index/index.php';
         exit;

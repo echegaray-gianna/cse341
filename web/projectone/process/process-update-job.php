@@ -30,7 +30,7 @@
         // Check for missing data
 
         if ($categoryid === 'Choose a Category') {
-            $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
+            $message = '<p class="notify"> Please provide information for all empty form fields.</p>';
             include '../view/update-post.php';
             exit;
         }
@@ -39,7 +39,7 @@
             empty($jobname) || empty($jobcompany) || empty($joblocation) || empty($jobsalary) ||
             empty($jobrequirements) || empty($jobresponsibilities) || empty($jobdescription)
         ) {
-            $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
+            $message = '<p class="notify"> Please provide information for all empty form fields.</p>';
             include '../process/process-pre-update-post.php ';
             exit;
         }

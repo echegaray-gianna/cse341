@@ -23,7 +23,7 @@ session_start();
 
         // Check for existing email address in the table
         if ($existingEmail) {
-            $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+            $message = '<p class="notify">That email address already exists. Do you want to login instead?</p>';
             include '../view/login.php';
             exit;
         }
@@ -31,13 +31,13 @@ session_start();
         // Check for missing data
 
         if ($clienttype === 'Choose your Account Type' ){
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p class="notify">Please provide information for all empty form fields.</p>';
             include '../view/registration.php';
             exit;
         }
 
         if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail) || empty($checkPassword)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p class="notify">Please provide information for all empty form fields.</p>';
             include '../view/registration.php';
             exit;
         }
@@ -58,7 +58,7 @@ session_start();
         $stmt->execute();
 
         setcookie('firstname', $clientfirstname, strtotime('+1 year'), '/');
-        $message = "<p>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
+        $message = "<p class='notice'>Thanks for registering $clientfirstname. Please use your email and password to login.</p>";
         include '../view/login.php';
         exit;
  

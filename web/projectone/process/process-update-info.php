@@ -21,7 +21,7 @@ try {
         $existingEmail = checkExistingEmail($clientemail);
         // if exist...
         if ($existingEmail) {
-            $message = '<p class="notice">That email address already exists.</p>';
+            $message = '<p class="notify">That email address already exists.</p>';
             include '../view/client-update.php';
             exit;
         }
@@ -30,7 +30,7 @@ try {
     // Check for missing data
 
     if (empty($clientfirstname) || empty($clientlastname) || empty($clientemail)) {
-        $message = '<p class="notice"> Please provide information for all empty form fields.</p>';
+        $message = '<p class="notify"> Please provide information for all empty form fields.</p>';
         include '../view/client-update.php';
         exit;
     }
@@ -44,7 +44,7 @@ try {
 
     if ($updateInfo) {
 
-        $messageUpd = "<p class= 'notify'> $clientfirstname, your account information was updated. </p>";
+        $messageUpd = "<p class= 'notice'> $clientfirstname, your account information was updated. </p>";
         $_SESSION['messageUpd'] = $messageUpd;
         $_SESSION['clientdata'] = getAccountInfo($clientid);
 
@@ -53,7 +53,7 @@ try {
 
         exit;
     } else {
-        $messageUpd = "<p class= 'notify> Sorry, but we couldnt update $clientfirstname's account information. Please try again.</p>";
+        $messageUpd = "<p class= 'notice> Sorry, but we couldnt update $clientfirstname's account information. Please try again.</p>";
         $_SESSION['messageUpd'] = $messageUpd;
   
         include '../view/client-update.php';
